@@ -14,6 +14,10 @@ public:
     int getY() const;
 
 public:
+    Coordinates(int x, int y);
+
+    Coordinates();
+
     void setX(int x);
 
     void setY(int y);

@@ -9,19 +9,21 @@
 
 class Move {
     Coordinates old_coordinates;
-public:
-    const Coordinates &getOld_coordinates() const;
-
-    const Coordinates &getNew_coordinates() const;
-
-private:
     Coordinates new_coordinates;
 public:
+    Move(const Coordinates &old_coordinates, const Coordinates &new_coordinates);
+
+    Move();
+
     bool if_move_possible();
 
     void setOld_coordinates(const Coordinates &old_coordinates);
 
     void setNew_coordinates(const Coordinates &new_coordinates);
+
+    const Coordinates &getOld_coordinates() const;
+
+    const Coordinates &getNew_coordinates() const;
 };
 
 

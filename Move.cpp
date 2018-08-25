@@ -23,3 +23,10 @@ const Coordinates &Move::getOld_coordinates() const {
 const Coordinates &Move::getNew_coordinates() const {
     return new_coordinates;
 }
+
+Move::Move(const Coordinates &old_coordinates, const Coordinates &new_coordinates) : old_coordinates(old_coordinates),
+                                                                                     new_coordinates(new_coordinates) {}
+
+Move::Move() {
+
+}
