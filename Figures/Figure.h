@@ -11,6 +11,7 @@
 #include <string>
 
 
+// TODO: Сделать абстрактным
 class Figure  {
     bool side;
     Coordinates coordinates;
@@ -22,7 +23,7 @@ private:
     std::vector <Move> possible_moves;
     std::string name;
 public:
-    Figure(bool side, const Coordinates &coordinates, const std::string &name);
+    Figure(bool side, const Coordinates &coordinates, const char *name);
 
     Figure();
 
@@ -46,6 +47,5 @@ public:
 
     void add_move_to_available_moves(Coordinates new_coordinates);
 };
-
 
 #endif //CHESS_FIGURE_H

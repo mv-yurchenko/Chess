@@ -4,10 +4,7 @@
 
 #include "Figure.h"
 
-Figure::Figure(bool side, const Coordinates &coordinates, const std::string &name) : side(side),
-                                                                                     coordinates(coordinates),
-                                                                                     name(name) {
-    this->name = name;
+Figure::Figure(bool side, const Coordinates &coordinates, const char *name) {
     this->side = side;
     this->coordinates = coordinates;
     calculate_available_moves();
