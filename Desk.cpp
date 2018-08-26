@@ -13,6 +13,7 @@ Desk::Desk() {
     for (int i = 0; i < 8; i++){
         desk[i] = new Figure[8];
     }
+
     //////////////////////////////////////////
     //  Инициализация фигур
     /////////////////////////////////////////
@@ -29,4 +30,19 @@ Desk::Desk() {
     black_figures[0] = black_king;
     desk[7][4] = *black_king;
 
+}
+
+void Desk::add_figure(Figure figure) {
+    //////////////////////////////////////////
+    //  Дебаг - функиця
+    /////////////////////////////////////////
+    int x = figure.getCoordinates().getX();
+    int y = figure.getCoordinates().getY();
+    this->desk[x][y] = figure;
+}
+
+Figure Desk::get_figure_by_coordinates(Coordinates coordinates) {
+    int x_coord = coordinates.getX();
+    int y_coord = coordinates.getY();
+    return desk[x_coord][y_coord];
 }

@@ -17,6 +17,8 @@ public:
 
     }
     void calculate_available_moves();
+
+    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
 };
 
 

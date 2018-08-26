@@ -8,7 +8,7 @@ Figure::Figure(bool side, const Coordinates &coordinates, const char *name) {
     this->side = side;
     this->coordinates = coordinates;
     calculate_available_moves();
-    calculate_possible_moves();
+//    calculate_possible_moves();
 }
 
 void Figure::move_figure() {
@@ -19,7 +19,7 @@ void Figure::calculate_available_moves() {
 
 }
 
-void Figure::calculate_possible_moves() {
+void Figure::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
 
 }
 
@@ -58,4 +58,8 @@ void Figure::add_move_to_available_moves(Coordinates new_coordinates) {
 
 void Figure::setCoordinates(const Coordinates &coordinates) {
     Figure::coordinates = coordinates;
+}
+
+bool Figure::is_coordinates_same(Coordinates coordinates1, Coordinates coordinates2) {
+    return coordinates1.getX() == coordinates2.getX() and coordinates2.getY() == coordinates1.getY();
 }

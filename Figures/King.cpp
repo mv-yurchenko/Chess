@@ -2,7 +2,7 @@
 // Created by Max Yurchenko on 25.08.2018.
 //
 
-#include "King.h"
+#include "../Desk.h"
 
 void King::calculate_available_moves() {
     Coordinates current_coordinates = this->getCoordinates();
@@ -57,4 +57,15 @@ void King::calculate_available_moves() {
 
 King::King() {
 
+}
+
+void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
+    for (auto move : getAvailable_moves()){
+        bool is_cell_available = true;
+        for (auto figure : white_figures){
+            if (is_coordinates_same(figure.getCoordinates(), move.getNew_coordinates())){
+                is_cell_available = false;
+            }
+        }
+    }
 }

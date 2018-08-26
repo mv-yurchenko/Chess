@@ -20,7 +20,10 @@ private:
     Figure* black_figures[16];
 public:
     Desk();
-};
 
+    Figure get_figure_by_coordinates(Coordinates coordinates);;
+
+    void add_figure(Figure figure);
+};
 
 #endif //CHESS_DESK_H

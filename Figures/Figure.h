@@ -10,7 +10,6 @@
 #include <vector>
 #include <string>
 
-
 // TODO: Сделать абстрактным
 class Figure  {
     bool side;
@@ -27,7 +26,7 @@ public:
 
     Figure();
 
-    void calculate_possible_moves();
+    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
 
     void calculate_available_moves();
 
@@ -46,6 +45,8 @@ public:
     bool is_out_of_border(Coordinates coordinates);
 
     void add_move_to_available_moves(Coordinates new_coordinates);
+
+    bool is_coordinates_same(Coordinates coordinates1, Coordinates coordinates2);
 };
 
 #endif //CHESS_FIGURE_H
