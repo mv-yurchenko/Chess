@@ -6,25 +6,20 @@
 #include "Figures/Figure.h"
 #include "Coordinates.h"
 #include "Figures/King.h"
-#include "Desk.h"
+#include "Figures/Pawn.h"
 
 using namespace std;
 
 
 int main (){
-    Coordinates coordinates(1, 0);
-    King king(true, coordinates);
-    king.setCoordinates(coordinates);
-    king.calculate_available_moves();
-    Desk desk;
-    Figure** desk_coord = desk.getDesk();
-    std::cout<<desk_coord[0][4].getCoordinates().getX()<<std::endl;
-    std::cout<<desk_coord[0][4].getCoordinates().getY()<<std::endl;
-    for (auto pos_move : king.getAvailable_moves()){
-        cout<<pos_move.getNew_coordinates().getX()<<endl;
-        cout<<pos_move.getNew_coordinates().getY()<<endl;
-        cout<<"-----------------------------------"<<endl;
-    }
+
+    // TODO: проверить работу get_possible_moves()
+    Coordinates coordinates(7, 7);
+    Pawn *w_pawn = new Pawn(false, coordinates);
+    w_pawn->calculate_available_moves();
+    w_pawn->print_available_moves();
+
+
     cout << endl;
     system("pause");
     return 0;
