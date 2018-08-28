@@ -28,3 +28,7 @@ Coordinates::Coordinates(int x, int y) {
 Coordinates::Coordinates() {
 
 }
+
+bool Coordinates::operator==(const Coordinates &coord_1) {
+    return coord_1.x == this->x and coord_1.y == this->y;
+}

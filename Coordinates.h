@@ -22,6 +22,8 @@ public:
 
     void setY(int y);
 
+    bool operator== (const Coordinates& coord_1);
+
 };
 
 
