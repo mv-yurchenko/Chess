@@ -30,9 +30,9 @@ public:
 
     Figure();
 
-    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
+    virtual void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
 
-    void calculate_available_moves();
+    virtual void calculate_available_moves();
 
     void move_figure();
 

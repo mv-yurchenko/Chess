@@ -13,12 +13,11 @@ class King : public Figure{
 public:
     King();
 
-    King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king"){
+    King(bool side, Coordinates coordinates);
 
-    }
-    void calculate_available_moves();
+    void calculate_available_moves() override;
 
-    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
+    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) override;
 };
 
 
