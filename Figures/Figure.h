@@ -14,15 +14,19 @@
 class Figure  {
     bool side;
     Coordinates coordinates;
-public:
-    void setCoordinates(const Coordinates &coordinates);
-
-private:
     std::vector <Move> available_moves;
     std::vector <Move> possible_moves;
     std::string name;
 public:
+    void setName(const std::string &name);
+
+public:
+
+    void setCoordinates(const Coordinates &coordinates);
+
     Figure(bool side, const Coordinates &coordinates, const char *name);
+
+    Figure(bool side, Coordinates coordinates);
 
     Figure();
 
@@ -31,8 +35,6 @@ public:
     void calculate_available_moves();
 
     void move_figure();
-
-    bool isSide() const;
 
     const Coordinates &getCoordinates() const;
 
@@ -47,6 +49,16 @@ public:
     void add_move_to_available_moves(Coordinates new_coordinates);
 
     bool is_coordinates_same(Coordinates coordinates1, Coordinates coordinates2);
+
+    bool is_figure_white();
+
+    bool is_figure_black();
+
+    void print_possible_moves();
+
+    void print_available_moves();
+
+    void setSide(bool side);
 };
 
 #endif //CHESS_FIGURE_H
