@@ -48,6 +48,8 @@ public:
 
     void add_move_to_available_moves(Coordinates new_coordinates);
 
+    void add_move_to_possible_moves(Coordinates new_coordinates);
+
     bool is_coordinates_same(Coordinates coordinates1, Coordinates coordinates2);
 
     bool is_figure_white();

@@ -104,3 +104,8 @@ void Figure::setName(const std::string &name) {
 void Figure::setSide(bool side) {
     Figure::side = side;
 }
+
+void Figure::add_move_to_possible_moves(Coordinates new_coordinates) {
+    Move available_move(this->getCoordinates(), new_coordinates);
+    this->possible_moves.push_back(available_move);
+}
