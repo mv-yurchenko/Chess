@@ -62,7 +62,7 @@ King::King() {
 void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
     for (auto move : getAvailable_moves()){
         bool is_move_possible = true;
-        for (auto figure : white_figures){
+        for (const auto &figure : white_figures){
             if (is_coordinates_same(figure.getCoordinates(), move.getNew_coordinates())){
                 is_move_possible = false;
             }
