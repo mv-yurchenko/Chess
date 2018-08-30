@@ -9,13 +9,14 @@
 #include "Figure.h"
 
 class Knight : public Figure{
+public:
     Knight(bool side, Coordinates coordinates);
 
     Knight();
 
     void calculate_available_moves() override;
 
-    void calculate_possible_moves()
+    void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
 
 };
 
