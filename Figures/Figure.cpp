@@ -109,3 +109,12 @@ void Figure::add_move_to_possible_moves(Coordinates new_coordinates) {
     Move available_move(this->getCoordinates(), new_coordinates);
     this->possible_moves.push_back(available_move);
 }
+
+bool Figure::is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> figures) {
+    for (const auto &figure : figures){
+        if (is_coordinates_same(cell, figure.getCoordinates())){
+            return false;
+        }
+    }
+    return true;
+}

@@ -61,6 +61,8 @@ public:
     void print_available_moves();
 
     void setSide(bool side);
+
+    bool is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> figures);
 };
 
 #endif //CHESS_FIGURE_H
