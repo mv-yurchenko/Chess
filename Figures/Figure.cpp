@@ -110,11 +110,20 @@ void Figure::add_move_to_possible_moves(Coordinates new_coordinates) {
     this->possible_moves.push_back(available_move);
 }
 
-bool Figure::is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> figures) {
-    for (const auto &figure : figures){
+bool Figure::is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> enemy_figures) {
+    for (const auto &figure : enemy_figures){
         if (is_coordinates_same(cell, figure.getCoordinates())){
-            return false;
+            return true;
         }
     }
-    return true;
+    return false;
+}
+
+bool Figure::is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> ally_figures) {
+    for (const auto &figure : ally_figures){
+        if (is_coordinates_same(cell, figure.getCoordinates())){
+            return true;
+        }
+    }
+    return false;
 }

@@ -62,7 +62,10 @@ public:
 
     void setSide(bool side);
 
-    bool is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> figures);
+    bool is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> enemy_figures);
+
+    bool is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> ally_figures);
+
 };
 
 #endif //CHESS_FIGURE_H
