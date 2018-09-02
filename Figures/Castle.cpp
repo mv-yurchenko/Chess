@@ -79,175 +79,197 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
     //TODO: rework!
 
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
-
+    bool is_way_free = true;
     bool is_not_out_of_border = true;
 
-    bool is_way_free = true;
 
-    if (is_figure_white()) {
 
-        // Проверяем по X вправо
-        for (int i = 1; i < 8; i++) {
-            new_coordinates.setX(getCoordinates().getX() + i);
-            if (is_not_out_of_border and is_way_free) {
-                if (not is_out_of_border(new_coordinates)) {
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
+    if (is_figure_white()){
+
+        //  Проверяем по X вправо
+
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getX() + i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
+                } else {
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
                         add_move_to_possible_moves(new_coordinates);
-                    } else {
                         is_way_free = false;
                     }
-                } else {
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по X влево
+        // Проверим по X влево
         new_coordinates.setX(getCoordinates().getX());
-        is_not_out_of_border = true;
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for (int i = 1; i < 8; i++) {
-            new_coordinates.setX(getCoordinates().getX() - i);
-            if (is_not_out_of_border) {
-                if (not is_out_of_border(new_coordinates)) {
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
-                        add_move_to_possible_moves(new_coordinates);
-                    }
-                    else {
-                        is_way_free = false;
-                    }
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getX() - i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
                 } else {
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
+                        add_move_to_possible_moves(new_coordinates);
+                        is_way_free = false;
+                    }
+                    if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по Y вверх
-        new_coordinates.setY(getCoordinates().getY());
-        is_not_out_of_border = true;
+        // Проверим по Y вверх
+        new_coordinates.setX(getCoordinates().getX());
+        new_coordinates.setX(getCoordinates().getY());
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for(int i = 1; i < 8; i++){
-            new_coordinates.setY(getCoordinates().getY() + i);
-            if(is_not_out_of_border){
-                if (not is_out_of_border(new_coordinates)){
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getY() + i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
+                } else {
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
                         add_move_to_possible_moves(new_coordinates);
-                    }
-                    else {
                         is_way_free = false;
                     }
-                } else{
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по Y вниз
-        new_coordinates.setY(getCoordinates().getY());
-        is_not_out_of_border = true;
+        // Проверим по Y вниз
+        new_coordinates.setX(getCoordinates().getY());
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for(int i = 1; i < 8; i++){
-            new_coordinates.setY(getCoordinates().getY() - i);
-            if(is_not_out_of_border){
-                if (not is_out_of_border(new_coordinates)){
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getY() - i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
+                } else {
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, black_figures)){
                         add_move_to_possible_moves(new_coordinates);
-                    }
-                    else {
                         is_way_free = false;
                     }
-                } else{
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
     }
 
-    if (is_figure_black()) {
-        new_coordinates.setX(getCoordinates().getX());
-        is_not_out_of_border = true;
-        is_way_free = true;
+    if (is_figure_black()){
 
-        // Проверяем по X вправо
-        for (int i = 1; i < 8; i++) {
-            new_coordinates.setX(getCoordinates().getX() + i);
-            if (is_not_out_of_border) {
-                if (not is_out_of_border(new_coordinates)) {
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
-                        add_move_to_possible_moves(new_coordinates);
-                    }
-                    else {
-                        is_way_free = false;
-                    }
+        //  Проверяем по X вправо
+
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getX() + i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
                 } else {
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
+                        add_move_to_possible_moves(new_coordinates);
+                        is_way_free = false;
+                    }
+                    if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по X влева
+        // Проверим по X влево
         new_coordinates.setX(getCoordinates().getX());
-        is_not_out_of_border = true;
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for (int i = 1; i < 8; i++) {
-            new_coordinates.setX(getCoordinates().getX() - i);
-            if (is_not_out_of_border) {
-                if (not is_out_of_border(new_coordinates)) {
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
-                        add_move_to_possible_moves(new_coordinates);
-                    }
-                    else {
-                        is_way_free = false;
-                    }
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getX() - i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
                 } else {
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
+                        add_move_to_possible_moves(new_coordinates);
+                        is_way_free = false;
+                    }
+                    if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по Y вверх
-        new_coordinates.setY(getCoordinates().getY());
-        is_not_out_of_border = true;
+        // Проверим по Y вверх
+        new_coordinates.setX(getCoordinates().getX());
+        new_coordinates.setX(getCoordinates().getY());
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for(int i = 1; i < 8; i++){
-            new_coordinates.setY(getCoordinates().getY() + i);
-            if(is_not_out_of_border){
-                if (not is_out_of_border(new_coordinates)){
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getY() + i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
+                } else {
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
                         add_move_to_possible_moves(new_coordinates);
-                    }else {
                         is_way_free = false;
                     }
-                } else{
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
-        // Проверяем по Y вниз
-        new_coordinates.setY(getCoordinates().getY());
-        is_not_out_of_border = true;
+        // Проверим по Y вниз
+        new_coordinates.setX(getCoordinates().getY());
         is_way_free = true;
+        is_not_out_of_border = true;
 
-        for(int i = 1; i < 8; i++){
-            new_coordinates.setY(getCoordinates().getY() - i);
-            if(is_not_out_of_border){
-                if (not is_out_of_border(new_coordinates)){
-                    if (not is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
+                new_coordinates.setX(getCoordinates().getY() - i);
+                if (is_out_of_border(new_coordinates)) {
+                    is_not_out_of_border = false;
+                } else {
+                    if (is_cell_busy_by_enemy_figure(new_coordinates, white_figures)){
                         add_move_to_possible_moves(new_coordinates);
-                    }else {
                         is_way_free = false;
                     }
-                } else{
-                    is_not_out_of_border = false;
+                    if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
+                        is_way_free = false;
+                    }
+                    add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
     }
+
 }
+
 
