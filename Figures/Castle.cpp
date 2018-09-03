@@ -76,7 +76,6 @@ void Castle::calculate_available_moves() {
 
 void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
 
-    //TODO: rework!
 
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
     bool is_way_free = true;
@@ -224,13 +223,13 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
 
         // Проверим по Y вверх
         new_coordinates.setX(getCoordinates().getX());
-        new_coordinates.setX(getCoordinates().getY());
+        new_coordinates.setY(getCoordinates().getY());
         is_way_free = true;
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
             if (is_way_free and is_not_out_of_border) {
-                new_coordinates.setX(getCoordinates().getY() + i);
+                new_coordinates.setY(getCoordinates().getY() + i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
                 } else {
@@ -247,13 +246,13 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         }
 
         // Проверим по Y вниз
-        new_coordinates.setX(getCoordinates().getY());
+        new_coordinates.setY(getCoordinates().getY());
         is_way_free = true;
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
             if (is_way_free and is_not_out_of_border) {
-                new_coordinates.setX(getCoordinates().getY() - i);
+                new_coordinates.setY(getCoordinates().getY() - i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
                 } else {

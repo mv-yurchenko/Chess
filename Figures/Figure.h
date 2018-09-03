@@ -10,7 +10,6 @@
 #include <vector>
 #include <string>
 
-// TODO: Сделать абстрактным
 class Figure  {
     bool side;
     Coordinates coordinates;
