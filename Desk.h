@@ -24,18 +24,7 @@ public:
 
     void initiatilize_desk();
 
-    void print_desk(){
-        //////////////////////////////////////////
-        //  Дебаг функция
-        /////////////////////////////////////////
-        for (int i = 0; i < 8; i ++){
-            for (int j = 0; j < 8; j ++) {
-                Figure *figure = desk[j][i];
-                std::cout << desk[j][i]->getName() << std::endl;
-                std::cout << "-------------------------" << std::endl;
-            }
-        }
-    }
+    void print_desk();
 };
 
 

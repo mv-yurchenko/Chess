@@ -126,3 +126,19 @@ void Desk::initiatilize_desk() {
     }
 
 }
+
+void Desk::print_desk() {
+    //////////////////////////////////////////
+    //  Дебаг функция
+    //////////////////////////////////////////
+    for (int i = 0; i < 8; i ++){
+        for (int j = 0; j < 8; j ++) {
+            if (not (desk[j][i]->getName() == "No figure")) {
+                Figure *figure = desk[j][i];
+                std::cout << "Figure on coordinates: " << j << " : "<< i  << std::endl;
+                std::cout << desk[j][i]->getName() << std::endl;
+                std::cout << "-------------------------" << std::endl;
+            }
+        }
+    }
+}
