@@ -5,7 +5,7 @@
 #include "Castle.h"
 
 Castle::Castle(bool side, Coordinates coordinates) : Figure(side, coordinates, "castle"){
-
+    this->setName("castle");
 }
 
 void Castle::calculate_available_moves() {

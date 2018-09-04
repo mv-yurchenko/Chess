@@ -7,6 +7,7 @@
 Figure::Figure(bool side, const Coordinates &coordinates, const char *name) {
     this->side = side;
     this->coordinates = coordinates;
+    this->name = name;
     calculate_available_moves();
 //    calculate_possible_moves();
 }
