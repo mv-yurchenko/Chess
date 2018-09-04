@@ -45,7 +45,7 @@ bool Figure::is_out_of_border(Coordinates coordinates) {
 }
 
 Figure::Figure() {
-
+    this->name = "No figure";
 }
 
 void Figure::add_move_to_available_moves(Coordinates new_coordinates) {
