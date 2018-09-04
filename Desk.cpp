@@ -4,6 +4,7 @@
 
 #include "Desk.h"
 
+// TODO: rework Print desk
 
 Desk::Desk() {
     for (int i=0; i<8;i++)
@@ -103,5 +104,25 @@ void Desk::initiatilize_desk() {
 
     desk[b_queen_coordinates.getX()][b_queen_coordinates.getY()] = b_queen;
     desk[b_King_coordinates.getX()][b_King_coordinates.getY()] = b_king;
+
+    // White Pawns
+
+    for (int8_t i = 0; i < 8; i++){
+        Coordinates w_pawn_coordinatrs(i, 1);
+
+        Pawn *w_pawn = new Pawn(true, w_pawn_coordinatrs);
+
+        desk[w_pawn->getCoordinates().getX()][w_pawn->getCoordinates().getY()] = w_pawn;
+    }
+
+    // Black Pawns
+
+    for (int8_t i = 0; i < 8; i++){
+        Coordinates b_pawn_coordinatrs(i, 6);
+
+        Pawn *b_pawn = new Pawn(true, b_pawn_coordinatrs);
+
+        desk[b_pawn->getCoordinates().getX()][b_pawn->getCoordinates().getY()] = b_pawn;
+    }
 
 }
