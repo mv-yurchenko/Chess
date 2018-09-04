@@ -19,8 +19,6 @@ class Figure  {
 public:
     void setName(const std::string &name);
 
-public:
-
     void setCoordinates(const Coordinates &coordinates);
 
     Figure(bool side, const Coordinates &coordinates, const char *name);
