@@ -12,6 +12,11 @@
 
 class Figure  {
     bool side;
+    int value;
+public:
+    void setValue(int value);
+
+private:
     Coordinates coordinates;
     std::vector <Move> available_moves;
     std::vector <Move> possible_moves;
@@ -21,7 +26,7 @@ public:
 
     void setCoordinates(const Coordinates &coordinates);
 
-    Figure(bool side, const Coordinates &coordinates, const char *name);
+    Figure(bool side, const Coordinates &coordinates, const char *name, int value);
 
     Figure(bool side, Coordinates coordinates);
 
@@ -62,6 +67,8 @@ public:
     bool is_cell_busy_by_enemy_figure(Coordinates cell, std::vector<Figure> enemy_figures);
 
     bool is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> ally_figures);
+
+    bool getSide() const;
 
 };
 
