@@ -25,6 +25,10 @@ public:
     void initiatilize_desk();
 
     void print_desk();
+
+    void move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
+
+    bool is_move_possible(Figure figure, Coordinates new_coordinates);
 };
 
 
