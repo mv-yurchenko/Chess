@@ -14,14 +14,12 @@ public:
     void initialize_game(){
         this->current_desk = new Desk();
         current_desk->initialize_desk();
-        current_desk->print_desk();
     }
 
     void move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y){
         Coordinates old_coord(old_x, old_y);
         Coordinates new_coord(new_x, new_y);
-        std::cout << this->current_desk->get_figure_by_coordinates(old_x, old_y)->getName() << std::endl;
-        this->current_desk->get_figure_by_coordinates(old_x, old_y)->print_possible_moves();
+//        this->current_desk->get_figure_by_coordinates(old_x, old_y)->print_possible_moves();
         std::cout <<this->current_desk->move_figure(old_coord, new_coord) << std::endl;
     }
 };

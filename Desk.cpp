@@ -145,12 +145,14 @@ void Desk::print_desk() {
 }
 
 bool Desk::move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
-    Figure *figure = new Figure(desk[old_coordinates.getX()][old_coordinates.getY()]->getSide(), desk[old_coordinates.getX()][old_coordinates.getY()]->getCoordinates());
+    Figure *figure = desk[old_coordinates.getX()][old_coordinates.getY()];
     Figure *old_figure = new Figure;
     if (is_move_possible(*figure, new_coordinates)){
         this->desk[new_coordinates.getX()][new_coordinates.getY()] = figure;
+        this->desk[new_coordinates.getX()][new_coordinates.getY()]->setCoordinates(new_coordinates);
         this->desk[old_coordinates.getX()][old_coordinates.getY()] = old_figure;
         reinitialize_white_black_figures();
+        initialize_possible_moves();
         return true;
     } else {
         return false;
@@ -183,6 +185,8 @@ void Desk::reinitialize_white_black_figures() {
 void Desk::initialize_possible_moves() {
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
+            this->desk[i][j]->clear_available_moves();
+            this->desk[i][j]->clear_possible_moves();
             this->desk[i][j]->calculate_available_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }

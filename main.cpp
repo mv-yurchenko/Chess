@@ -3,28 +3,17 @@
 //
 
 #include <iostream>
-#include "Figures/Figure.h"
-#include "Coordinates.h"
-#include "Figures/King.h"
-#include "Figures/Pawn.h"
-#include "Figures/Knight.h"
-#include "Figures/Castle.h"
-#include "Figures/Bishop.h"
-#include "Figures/Queen.h"
-
+#include "Game/Game.h"
 
 using namespace std;
 
 
-int main (){
+    int main (){
+    Game *game = new Game();
 
-    Coordinates w_queen_coordinates(3 , 3);
+    game->initialize_game();
 
-    Queen *w_queen = new Queen(true, w_queen_coordinates);
-
-    w_queen->calculate_available_moves();
-    w_queen->print_available_moves();
-
-
-
+    game->move_figure(1 , 1 , 1 , 3);
+    game->move_figure(1 , 1 , 1 , 3);
+    game->move_figure(1 , 3 , 1 , 4); // TODO: Почему нельзя?
 };
