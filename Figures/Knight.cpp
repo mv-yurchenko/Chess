@@ -8,6 +8,7 @@ Knight::Knight(bool side, Coordinates coordinates) {
     this->setName("Knight");
     this->setSide(side);
     this->setCoordinates(coordinates);
+    this->setValue(3);
 }
 
 Knight::Knight() {

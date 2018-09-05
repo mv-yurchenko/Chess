@@ -4,7 +4,7 @@
 
 #include "Castle.h"
 
-Castle::Castle(bool side, Coordinates coordinates) : Figure(side, coordinates, "castle"){
+Castle::Castle(bool side, Coordinates coordinates) : Figure(side, coordinates, "castle", 1){
     this->setName("castle");
 }
 

@@ -70,6 +70,6 @@ void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vect
     }
 }
 
-King::King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king"){
+King::King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king", 9999){
 
 }

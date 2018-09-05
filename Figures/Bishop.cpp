@@ -4,7 +4,7 @@
 
 #include "Bishop.h"
 
-Bishop::Bishop(bool side, Coordinates coordinates) : Figure(side, coordinates, "bishop"){
+Bishop::Bishop(bool side, Coordinates coordinates) : Figure(side, coordinates, "bishop", 3){
 
 }
 
