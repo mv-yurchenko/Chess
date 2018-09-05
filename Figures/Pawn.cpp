@@ -142,7 +142,7 @@ void Pawn::calculate_possible_moves(std::vector<Figure> white_figures, std::vect
             Coordinates possible_move (getCoordinates().getX(), getCoordinates().getY() + i);
             for (const auto &black_figure : black_figures){
                 if (black_figure.getCoordinates().getX() == possible_move.getX() and
-                black_figure.getCoordinates().getY() == possible_move.getY()){
+                    black_figure.getCoordinates().getY() == possible_move.getY()){
                     two_cell_move_possible = false;
                 }
             }
@@ -159,7 +159,7 @@ void Pawn::calculate_possible_moves(std::vector<Figure> white_figures, std::vect
             Coordinates possible_move (getCoordinates().getX(), getCoordinates().getY() - i);
             for (const auto &white_figure : white_figures){
                 if (white_figure.getCoordinates().getX() == possible_move.getX() and
-                        white_figure.getCoordinates().getY() == possible_move.getY()){
+                    white_figure.getCoordinates().getY() == possible_move.getY()){
                     two_cell_move_possible = false;
                 }
             }

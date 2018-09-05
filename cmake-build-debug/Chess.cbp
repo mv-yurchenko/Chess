@@ -136,6 +136,12 @@
 		<Unit filename="P:/Chess/Figures/Queen.h">
 			<Option target="Chess"/>
 		</Unit>
+		<Unit filename="P:/Chess/Game/Game.cpp">
+			<Option target="Chess"/>
+		</Unit>
+		<Unit filename="P:/Chess/Game/Game.h">
+			<Option target="Chess"/>
+		</Unit>
 		<Unit filename="P:/Chess/Move.cpp">
 			<Option target="Chess"/>
 		</Unit>

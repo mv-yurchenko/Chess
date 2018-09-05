@@ -16,19 +16,25 @@
 
 class Desk {
     Figure *desk[8][8];
+    std::vector<Figure> white_figures;
+    std::vector<Figure> black_figures;
 public:
 
     Desk();
 
     Figure *get_figure_by_coordinates(int x, int y);
 
-    void initiatilize_desk();
+    void initialize_desk();
 
     void print_desk();
 
-    void move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
+    bool move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
 
     bool is_move_possible(Figure figure, Coordinates new_coordinates);
+
+    void initialize_possible_moves();
+
+    void reinitialize_white_black_figures();
 };
 
 

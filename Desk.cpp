@@ -17,7 +17,7 @@ Figure *Desk::get_figure_by_coordinates(int x, int y) {
     return desk[x][y];
 }
 
-void Desk::initiatilize_desk() {
+void Desk::initialize_desk() {
 
     // White castles
     Coordinates w_castle1_coordinates(0, 0);
@@ -123,6 +123,9 @@ void Desk::initiatilize_desk() {
         desk[b_pawn->getCoordinates().getX()][b_pawn->getCoordinates().getY()] = b_pawn;
     }
 
+    reinitialize_white_black_figures();
+    initialize_possible_moves();
+
 }
 
 void Desk::print_desk() {
@@ -141,19 +144,48 @@ void Desk::print_desk() {
     }
 }
 
-void Desk::move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
+bool Desk::move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
     Figure *figure = new Figure(desk[old_coordinates.getX()][old_coordinates.getY()]->getSide(), desk[old_coordinates.getX()][old_coordinates.getY()]->getCoordinates());
     Figure *old_figure = new Figure;
     if (is_move_possible(*figure, new_coordinates)){
         this->desk[new_coordinates.getX()][new_coordinates.getY()] = figure;
         this->desk[old_coordinates.getX()][old_coordinates.getY()] = old_figure;
+        reinitialize_white_black_figures();
+        return true;
+    } else {
+        return false;
     }
 }
 
 bool Desk::is_move_possible(Figure figure, Coordinates new_coordinates) {
     for(auto move : figure.getPossible_moves()){
         Coordinates possible_coordinates = move.getNew_coordinates();
-        return possible_coordinates == new_coordinates;
+        if (possible_coordinates == new_coordinates){
+            return true;
+        }
     }
     return false;
 }
+
+void Desk::reinitialize_white_black_figures() {
+    for (int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j ++){
+            if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
+                white_figures.push_back(*desk[i][j]);
+            }
+            if(not desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
+                black_figures.push_back(*desk[i][j]);
+            }
+        }
+    }
+}
+
+void Desk::initialize_possible_moves() {
+    for (int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j ++){
+            this->desk[i][j]->calculate_available_moves();
+            this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
+        }
+    }
+}
+

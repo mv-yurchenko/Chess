@@ -365,6 +365,33 @@ Figures/Queen.cpp.s:
 	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Figures/Queen.cpp.s
 .PHONY : Figures/Queen.cpp.s
 
+Game/Game.obj: Game/Game.cpp.obj
+
+.PHONY : Game/Game.obj
+
+# target to build an object file
+Game/Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/Game.cpp.obj
+.PHONY : Game/Game.cpp.obj
+
+Game/Game.i: Game/Game.cpp.i
+
+.PHONY : Game/Game.i
+
+# target to preprocess a source file
+Game/Game.cpp.i:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/Game.cpp.i
+.PHONY : Game/Game.cpp.i
+
+Game/Game.s: Game/Game.cpp.s
+
+.PHONY : Game/Game.s
+
+# target to generate assembly for a file
+Game/Game.cpp.s:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/Game.cpp.s
+.PHONY : Game/Game.cpp.s
+
 Move.obj: Move.cpp.obj
 
 .PHONY : Move.obj
@@ -455,6 +482,9 @@ help:
 	@echo ... Figures/Queen.obj
 	@echo ... Figures/Queen.i
 	@echo ... Figures/Queen.s
+	@echo ... Game/Game.obj
+	@echo ... Game/Game.i
+	@echo ... Game/Game.s
 	@echo ... Move.obj
 	@echo ... Move.i
 	@echo ... Move.s

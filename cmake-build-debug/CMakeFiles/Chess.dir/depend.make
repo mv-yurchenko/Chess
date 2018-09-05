@@ -57,11 +57,25 @@ CMakeFiles/Chess.dir/Figures/Queen.cpp.obj: ../Figures/Queen.cpp
 CMakeFiles/Chess.dir/Figures/Queen.cpp.obj: ../Figures/Queen.h
 CMakeFiles/Chess.dir/Figures/Queen.cpp.obj: ../Move.h
 
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Coordinates.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Desk.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Bishop.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Castle.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Figure.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/King.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Knight.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Pawn.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Figures/Queen.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Game/Game.cpp
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Game/Game.h
+CMakeFiles/Chess.dir/Game/Game.cpp.obj: ../Move.h
+
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Coordinates.h
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Move.cpp
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Move.h
 
 CMakeFiles/Chess.dir/main.cpp.obj: ../Coordinates.h
+CMakeFiles/Chess.dir/main.cpp.obj: ../Desk.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Bishop.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Castle.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Figure.h
@@ -69,6 +83,7 @@ CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/King.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Knight.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Pawn.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Queen.h
+CMakeFiles/Chess.dir/main.cpp.obj: ../Game/Game.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Move.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../main.cpp
 

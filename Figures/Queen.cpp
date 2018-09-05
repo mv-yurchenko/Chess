@@ -130,10 +130,10 @@ void Queen::calculate_possible_moves(std::vector<Figure> white_figures, std::vec
 
     if (is_figure_white()){
 
-                //  Проверяем по X вправо
+        //  Проверяем по X вправо
 
-                for(uint8_t i = 1; i < 8; i++) {
-                    if (is_way_free and is_not_out_of_border) {
+        for(uint8_t i = 1; i < 8; i++) {
+            if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setX(getCoordinates().getX() + i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
