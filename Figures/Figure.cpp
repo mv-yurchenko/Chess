@@ -138,3 +138,11 @@ bool Figure::getSide() const {
 void Figure::setValue(int value) {
     Figure::value = value;
 }
+
+void Figure::clear_possible_moves() {
+    this->possible_moves.clear();
+}
+
+void Figure::clear_available_moves() {
+    this->available_moves.clear();
+}

@@ -70,6 +70,10 @@ public:
 
     bool getSide() const;
 
+    void clear_possible_moves();
+
+    void clear_available_moves();
+
 };
 
 #endif //CHESS_FIGURE_H
