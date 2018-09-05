@@ -68,6 +68,14 @@ P:/Chess/Game/Game.h
 ../Desk.h
 P:/Chess/Desk.h
 
+P:/Chess/Game/PVP_GAME.cpp
+PVP_GAME.h
+P:/Chess/Game/PVP_GAME.h
+
+P:/Chess/Game/PVP_GAME.h
+Game.h
+P:/Chess/Game/Game.h
+
 P:/Chess/Move.h
 Coordinates.h
 P:/Chess/Coordinates.h

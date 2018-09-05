@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Chess.dir/Desk.cpp.obj"
   "CMakeFiles/Chess.dir/Move.cpp.obj"
   "CMakeFiles/Chess.dir/Game/Game.cpp.obj"
+  "CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj"
   "Chess.pdb"
   "Chess.exe"
   "Chess.exe.manifest"

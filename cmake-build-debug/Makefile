@@ -392,6 +392,33 @@ Game/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/Game.cpp.s
 .PHONY : Game/Game.cpp.s
 
+Game/PVP_GAME.obj: Game/PVP_GAME.cpp.obj
+
+.PHONY : Game/PVP_GAME.obj
+
+# target to build an object file
+Game/PVP_GAME.cpp.obj:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj
+.PHONY : Game/PVP_GAME.cpp.obj
+
+Game/PVP_GAME.i: Game/PVP_GAME.cpp.i
+
+.PHONY : Game/PVP_GAME.i
+
+# target to preprocess a source file
+Game/PVP_GAME.cpp.i:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.i
+.PHONY : Game/PVP_GAME.cpp.i
+
+Game/PVP_GAME.s: Game/PVP_GAME.cpp.s
+
+.PHONY : Game/PVP_GAME.s
+
+# target to generate assembly for a file
+Game/PVP_GAME.cpp.s:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.s
+.PHONY : Game/PVP_GAME.cpp.s
+
 Move.obj: Move.cpp.obj
 
 .PHONY : Move.obj
@@ -485,6 +512,9 @@ help:
 	@echo ... Game/Game.obj
 	@echo ... Game/Game.i
 	@echo ... Game/Game.s
+	@echo ... Game/PVP_GAME.obj
+	@echo ... Game/PVP_GAME.i
+	@echo ... Game/PVP_GAME.s
 	@echo ... Move.obj
 	@echo ... Move.i
 	@echo ... Move.s
