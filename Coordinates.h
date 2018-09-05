@@ -13,7 +13,6 @@ public:
 
     int getY() const;
 
-public:
     Coordinates(int x, int y);
 
     Coordinates();
