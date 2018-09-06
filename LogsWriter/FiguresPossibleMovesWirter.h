@@ -6,7 +6,7 @@
 #define CHESS_FIGURESPOSSIBLEMOVESWIRTER_H
 
 
-class FiguresPossibleMovesWriter {
+class FiguresPossibleMovesWirter {
 
 };
 
