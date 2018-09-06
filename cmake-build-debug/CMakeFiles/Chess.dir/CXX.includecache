@@ -67,6 +67,10 @@ P:/Chess/Game/Game.h
 P:/Chess/Game/Game.h
 ../Desk.h
 P:/Chess/Desk.h
+conio.h
+P:/Chess/Game/conio.h
+stdio.h
+P:/Chess/Game/stdio.h
 
 P:/Chess/Game/PVP_GAME.cpp
 PVP_GAME.h
@@ -83,6 +87,6 @@ P:/Chess/Coordinates.h
 P:/Chess/main.cpp
 iostream
 -
-Game/Game.h
-P:/Chess/Game/Game.h
+Game/PVP_GAME.h
+P:/Chess/Game/PVP_GAME.h
 

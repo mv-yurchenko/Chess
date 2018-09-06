@@ -98,6 +98,7 @@ CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Knight.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Pawn.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Queen.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Game/Game.h
+CMakeFiles/Chess.dir/main.cpp.obj: ../Game/PVP_GAME.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Move.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../main.cpp
 

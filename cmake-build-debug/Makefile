@@ -419,6 +419,33 @@ Game/PVP_GAME.cpp.s:
 	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.s
 .PHONY : Game/PVP_GAME.cpp.s
 
+LogsFiles/FiguresPossibleMovesWirter.obj: LogsFiles/FiguresPossibleMovesWirter.cpp.obj
+
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.obj
+
+# target to build an object file
+LogsFiles/FiguresPossibleMovesWirter.cpp.obj:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsFiles/FiguresPossibleMovesWirter.cpp.obj
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.cpp.obj
+
+LogsFiles/FiguresPossibleMovesWirter.i: LogsFiles/FiguresPossibleMovesWirter.cpp.i
+
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.i
+
+# target to preprocess a source file
+LogsFiles/FiguresPossibleMovesWirter.cpp.i:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsFiles/FiguresPossibleMovesWirter.cpp.i
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.cpp.i
+
+LogsFiles/FiguresPossibleMovesWirter.s: LogsFiles/FiguresPossibleMovesWirter.cpp.s
+
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.s
+
+# target to generate assembly for a file
+LogsFiles/FiguresPossibleMovesWirter.cpp.s:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsFiles/FiguresPossibleMovesWirter.cpp.s
+.PHONY : LogsFiles/FiguresPossibleMovesWirter.cpp.s
+
 Move.obj: Move.cpp.obj
 
 .PHONY : Move.obj
@@ -515,6 +542,9 @@ help:
 	@echo ... Game/PVP_GAME.obj
 	@echo ... Game/PVP_GAME.i
 	@echo ... Game/PVP_GAME.s
+	@echo ... LogsFiles/FiguresPossibleMovesWirter.obj
+	@echo ... LogsFiles/FiguresPossibleMovesWirter.i
+	@echo ... LogsFiles/FiguresPossibleMovesWirter.s
 	@echo ... Move.obj
 	@echo ... Move.i
 	@echo ... Move.s

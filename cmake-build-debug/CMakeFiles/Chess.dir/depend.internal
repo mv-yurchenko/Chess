@@ -99,5 +99,6 @@ CMakeFiles/Chess.dir/main.cpp.obj
  P:/Chess/Figures/Pawn.h
  P:/Chess/Figures/Queen.h
  P:/Chess/Game/Game.h
+ P:/Chess/Game/PVP_GAME.h
  P:/Chess/Move.h
  P:/Chess/main.cpp

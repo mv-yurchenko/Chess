@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "P:/Chess/Figures/Queen.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Queen.cpp.obj"
   "P:/Chess/Game/Game.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/Game.cpp.obj"
   "P:/Chess/Game/PVP_GAME.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj"
+  "P:/Chess/LogsFiles/FiguresPossibleMovesWirter.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/LogsFiles/FiguresPossibleMovesWirter.cpp.obj"
   "P:/Chess/Move.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Move.cpp.obj"
   "P:/Chess/main.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/main.cpp.obj"
   )
