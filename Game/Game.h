@@ -25,15 +25,30 @@ public:
 
     void move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y);
 
-    void finish_game(){
-        is_game_finished = true;
-    }
+    void finish_game();
 
-    int input_coordinate(const char *coord_name){
-        std::cout<<coord_name << std::endl;
-        int coord;
-        std::cin >> coord;
-        return coord;
+    int input_coordinate(const char *coord_name);
+
+    bool is_mate(Coordinates coordinates);
+
+    void player_turn(bool is_white_turn){
+        std::cout<<"Input figure coordinates" << std::endl;
+
+        int x = input_coordinate("x");
+        int y = input_coordinate("y");
+
+        std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
+
+        std::cout<<"Input new coordinates" << std::endl;
+
+        int new_x = input_coordinate("x");
+        int new_y = input_coordinate("y");
+
+        if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
+            move_figure(x, y, new_x, new_y);
+        } else{
+            std::cout<<"Move is not possible" << std::endl;
+        }
     }
 };
 

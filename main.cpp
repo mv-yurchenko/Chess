@@ -3,11 +3,12 @@
 //
 
 #include <iostream>
-#include "Game/Game.h"
+#include "Game/PVP_GAME.h"
 
 using namespace std;
 
 
     int main (){
-
+        PVP_GAME game;
+        game.pvp_game();
 };

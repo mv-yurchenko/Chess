@@ -29,3 +29,18 @@ bool Game::get_is_game_finished() const {
 bool Game::isWhite_turn() const {
     return white_turn;
 }
+
+void Game::finish_game() {
+    is_game_finished = true;
+}
+
+int Game::input_coordinate(const char *coord_name) {
+    std::cout<<coord_name << std::endl;
+    int coord;
+    std::cin >> coord;
+    return coord;
+}
+
+bool Game::is_mate(Coordinates coordinates) {
+    return this->getCurrent_desk()->get_figure_by_coordinates(coordinates.getX(), coordinates.getY())->getName() == "king";
+}
