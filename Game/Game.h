@@ -13,6 +13,10 @@ class Game {
     Desk *current_desk;
 
     bool is_game_finished;
+public:
+    void setIs_game_finished(bool is_game_finished);
+
+private:
 
     bool white_turn;
 public:
@@ -31,7 +35,7 @@ public:
 
     int input_coordinate(const char *coord_name);
 
-    bool is_mate(Coordinates coordinates);
+    bool is_mate(int x, int y);
 
     void player_turn(bool is_white_turn);
 

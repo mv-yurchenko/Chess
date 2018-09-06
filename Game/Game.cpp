@@ -42,8 +42,8 @@ int Game::input_coordinate(const char *coord_name) {
     return coord;
 }
 
-bool Game::is_mate(Coordinates coordinates) {
-    return this->getCurrent_desk()->get_figure_by_coordinates(coordinates.getX(), coordinates.getY())->getName() == "king";
+bool Game::is_mate(int x, int y) {
+    return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king";
 }
 
 void Game::player_turn(bool is_white_turn) {
@@ -67,6 +67,8 @@ void Game::player_turn(bool is_white_turn) {
     } else{
         print_msg_about_failed_move(x, y, new_x, new_y);
     }
+
+    setIs_game_finished(is_mate(new_x, new_y));
 }
 
 void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y) {
@@ -75,4 +77,8 @@ void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new
 
 void Game::print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y) {
     std::cout << "Figure " << this->current_desk->get_figure_by_coordinates(old_x, old_y)->getName() << " was NOT moved from : (" << old_x << " , " << old_y << ") to (" << new_x << " , " << new_y << ")"<< std::endl;
+}
+
+void Game::setIs_game_finished(bool is_game_finished) {
+    Game::is_game_finished = is_game_finished;
 }
