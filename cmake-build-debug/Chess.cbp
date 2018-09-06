@@ -148,10 +148,10 @@
 		<Unit filename="P:/Chess/Game/PVP_GAME.h">
 			<Option target="Chess"/>
 		</Unit>
-		<Unit filename="P:/Chess/LogsWriter/FiguresPossibleMovesWirter.cpp">
+		<Unit filename="P:/Chess/LogsWriter/FiguresPossibleMovesWriter.cpp">
 			<Option target="Chess"/>
 		</Unit>
-		<Unit filename="P:/Chess/LogsWriter/FiguresPossibleMovesWirter.h">
+		<Unit filename="P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h">
 			<Option target="Chess"/>
 		</Unit>
 		<Unit filename="P:/Chess/Move.cpp">

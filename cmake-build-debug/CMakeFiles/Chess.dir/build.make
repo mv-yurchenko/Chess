@@ -225,18 +225,18 @@ CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\Chess\Game\PVP_GAME.cpp -o CMakeFiles\Chess.dir\Game\PVP_GAME.cpp.s
 
-CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.obj: CMakeFiles/Chess.dir/flags.make
-CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.obj: ../LogsWriter/FiguresPossibleMovesWirter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=P:\Chess\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWirter.cpp.obj -c P:\Chess\LogsWriter\FiguresPossibleMovesWirter.cpp
+CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: CMakeFiles/Chess.dir/flags.make
+CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../LogsWriter/FiguresPossibleMovesWriter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=P:\Chess\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWriter.cpp.obj -c P:\Chess\LogsWriter\FiguresPossibleMovesWriter.cpp
 
-CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E P:\Chess\LogsWriter\FiguresPossibleMovesWirter.cpp > CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWirter.cpp.i
+CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E P:\Chess\LogsWriter\FiguresPossibleMovesWriter.cpp > CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWriter.cpp.i
 
-CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\Chess\LogsWriter\FiguresPossibleMovesWirter.cpp -o CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWirter.cpp.s
+CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\Chess\LogsWriter\FiguresPossibleMovesWriter.cpp -o CMakeFiles\Chess.dir\LogsWriter\FiguresPossibleMovesWriter.cpp.s
 
 # Object files for target Chess
 Chess_OBJECTS = \
@@ -253,7 +253,7 @@ Chess_OBJECTS = \
 "CMakeFiles/Chess.dir/Move.cpp.obj" \
 "CMakeFiles/Chess.dir/Game/Game.cpp.obj" \
 "CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj" \
-"CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.obj"
+"CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj"
 
 # External object files for target Chess
 Chess_EXTERNAL_OBJECTS =
@@ -271,7 +271,7 @@ Chess.exe: CMakeFiles/Chess.dir/Desk.cpp.obj
 Chess.exe: CMakeFiles/Chess.dir/Move.cpp.obj
 Chess.exe: CMakeFiles/Chess.dir/Game/Game.cpp.obj
 Chess.exe: CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj
-Chess.exe: CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWirter.cpp.obj
+Chess.exe: CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj
 Chess.exe: CMakeFiles/Chess.dir/build.make
 Chess.exe: CMakeFiles/Chess.dir/linklibs.rsp
 Chess.exe: CMakeFiles/Chess.dir/objects1.rsp
