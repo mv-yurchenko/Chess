@@ -6,6 +6,8 @@
 #define CHESS_GAME_H
 
 #include "../Desk.h"
+#include "conio.h"
+#include "stdio.h"
 
 class Game {
     Desk *current_desk;
@@ -23,7 +25,7 @@ public:
 
     void initialize_game();
 
-    void move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y);
+    bool move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y);
 
     void finish_game();
 
@@ -31,25 +33,11 @@ public:
 
     bool is_mate(Coordinates coordinates);
 
-    void player_turn(bool is_white_turn){
-        std::cout<<"Input figure coordinates" << std::endl;
+    void player_turn(bool is_white_turn);
 
-        int x = input_coordinate("x");
-        int y = input_coordinate("y");
+    void print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y);
 
-        std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
-
-        std::cout<<"Input new coordinates" << std::endl;
-
-        int new_x = input_coordinate("x");
-        int new_y = input_coordinate("y");
-
-        if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
-            move_figure(x, y, new_x, new_y);
-        } else{
-            std::cout<<"Move is not possible" << std::endl;
-        }
-    }
+    void print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y);
 };
 
 

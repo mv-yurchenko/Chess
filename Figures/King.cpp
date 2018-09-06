@@ -52,7 +52,6 @@ void King::calculate_available_moves() {
     for (auto new_coordinates : vector_of_new_coordinates){
         this->add_move_to_available_moves(new_coordinates);
     }
-    std::cout<<std::endl;
 }
 
 King::King() {
