@@ -193,3 +193,11 @@ void Desk::initialize_possible_moves() {
     }
 }
 
+const std::vector<Figure> &Desk::getWhite_figures() const {
+    return white_figures;
+}
+
+const std::vector<Figure> &Desk::getBlack_figures() const {
+    return black_figures;
+}
+
