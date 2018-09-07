@@ -16,6 +16,8 @@ public:
     FiguresPossibleMovesWriter();
 
     void write_all_figures_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
+
+    void wrie_one_side_figures(std::vector<Figure> figures, const char *path_to_figure_logs_directory);
 };
 
 
