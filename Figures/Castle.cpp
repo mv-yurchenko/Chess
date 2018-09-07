@@ -89,6 +89,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
 
         for(uint8_t i = 1; i < 8; i++) {
             if (is_way_free and is_not_out_of_border) {
+                bool is_move_possible = true;
                 new_coordinates.setX(getCoordinates().getX() + i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
@@ -99,8 +100,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -111,6 +114,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setX(getCoordinates().getX() - i);
                 if (is_out_of_border(new_coordinates)) {
@@ -122,8 +126,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -135,8 +141,9 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
-                new_coordinates.setX(getCoordinates().getY() + i);
+                new_coordinates.setY(getCoordinates().getY() + i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
                 } else {
@@ -146,20 +153,24 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
 
         // Проверим по Y вниз
+        new_coordinates.setX(getCoordinates().getX());
         new_coordinates.setX(getCoordinates().getY());
         is_way_free = true;
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
-                new_coordinates.setX(getCoordinates().getY() - i);
+                new_coordinates.setY(getCoordinates().getY() - i);
                 if (is_out_of_border(new_coordinates)) {
                     is_not_out_of_border = false;
                 } else {
@@ -169,8 +180,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, white_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -181,6 +194,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         //  Проверяем по X вправо
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setX(getCoordinates().getX() + i);
                 if (is_out_of_border(new_coordinates)) {
@@ -192,8 +206,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -204,6 +220,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setX(getCoordinates().getX() - i);
                 if (is_out_of_border(new_coordinates)) {
@@ -215,8 +232,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -228,6 +247,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setY(getCoordinates().getY() + i);
                 if (is_out_of_border(new_coordinates)) {
@@ -239,8 +259,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
@@ -251,6 +273,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
         is_not_out_of_border = true;
 
         for(uint8_t i = 1; i < 8; i++) {
+            bool is_move_possible = true;
             if (is_way_free and is_not_out_of_border) {
                 new_coordinates.setY(getCoordinates().getY() - i);
                 if (is_out_of_border(new_coordinates)) {
@@ -262,8 +285,10 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
                     }
                     if (is_cell_busy_by_ally_figure(new_coordinates, black_figures)){
                         is_way_free = false;
+                        is_move_possible = false;
                     }
-                    add_move_to_possible_moves(new_coordinates);
+                    if (is_move_possible)
+                        add_move_to_possible_moves(new_coordinates);
                 }
             }
         }
