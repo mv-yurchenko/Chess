@@ -76,6 +76,7 @@ void Castle::calculate_available_moves() {
 
 void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
 
+    // TODO: Вынести как фуункции
 
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
     bool is_way_free = true;

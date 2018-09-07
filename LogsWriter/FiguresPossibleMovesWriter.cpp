@@ -34,7 +34,6 @@ void FiguresPossibleMovesWriter::write_figure_possible_moves(Figure *figure, boo
     std::ofstream output_file;
     output_file.open(this->full_path_to_output_file);
 
-    std::cout << DoesFileExist(this->full_path_to_output_file) << std::endl;
 
     // Записываем текущее положение
     output_file << std::to_string(figure->getCoordinates().getX()) << "," << std::to_string(figure->getCoordinates().getY()) << std::endl;

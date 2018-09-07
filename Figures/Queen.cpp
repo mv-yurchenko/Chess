@@ -124,7 +124,7 @@ void Queen::calculate_available_moves() {
 
 void Queen::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
 
-    // TODO Добавить is_move_possible как у Castle
+    // TODO: Вынести как фуункции
 
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
     bool is_way_free = true;
