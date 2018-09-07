@@ -61,6 +61,8 @@ void Bishop::calculate_available_moves() {
 
 void Bishop::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
 
+    // TODO Добавить is_move_possible как у Castle
+
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
     bool is_way_free = true;
     bool is_not_out_of_border = true;
