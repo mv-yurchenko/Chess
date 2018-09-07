@@ -16,14 +16,15 @@
 
 class Desk {
     Figure *desk[8][8];
+
     std::vector<Figure> white_figures;
+    std::vector<Figure> black_figures;
 public:
     const std::vector<Figure> &getWhite_figures() const;
 
     const std::vector<Figure> &getBlack_figures() const;
 
-private:
-    std::vector<Figure> black_figures;
+
 public:
 
     Desk();
