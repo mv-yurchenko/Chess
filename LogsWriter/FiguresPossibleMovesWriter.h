@@ -5,8 +5,9 @@
 #ifndef CHESS_FIGURESPOSSIBLEMOVESWRITER_H
 #define CHESS_FIGURESPOSSIBLEMOVESWRITER_H
 
-#include "../Figures/Figure.h"
+#include "../Desk.h"
 #include "fstream"
+
 
 class FiguresPossibleMovesWriter {
     std::string path_to_white_figure_logs_directory;
@@ -15,9 +16,12 @@ class FiguresPossibleMovesWriter {
 public:
     FiguresPossibleMovesWriter();
 
-    void write_all_figures_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
+    void write_all_figures_possible_moves(Desk *desk);
 
-    void wrie_one_side_figures(std::vector<Figure> figures, const char *path_to_figure_logs_directory);
+    void write_figure_possible_moves(Figure *figure, bool side);
+
+
+    bool DoesFileExist (const std::string& name);
 };
 
 
