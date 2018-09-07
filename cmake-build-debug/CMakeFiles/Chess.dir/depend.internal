@@ -84,6 +84,12 @@ CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj
  P:/Chess/Game/PVP_GAME.cpp
  P:/Chess/Game/PVP_GAME.h
  P:/Chess/Move.h
+CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj
+ P:/Chess/Coordinates.h
+ P:/Chess/Figures/Figure.h
+ P:/Chess/LogsWriter/FiguresPossibleMovesWriter.cpp
+ P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h
+ P:/Chess/Move.h
 CMakeFiles/Chess.dir/Move.cpp.obj
  P:/Chess/Coordinates.h
  P:/Chess/Move.cpp
@@ -99,5 +105,6 @@ CMakeFiles/Chess.dir/main.cpp.obj
  P:/Chess/Figures/Pawn.h
  P:/Chess/Figures/Queen.h
  P:/Chess/Game/Game.h
+ P:/Chess/Game/PVP_GAME.h
  P:/Chess/Move.h
  P:/Chess/main.cpp
