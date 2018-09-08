@@ -5,9 +5,8 @@
 #ifndef CHESS_CHESSGRAPHIC_H
 #define CHESS_CHESSGRAPHIC_H
 
-#include "SFML/"
+class ChessGraphic{
 
-class ChessGraphic {
 
 };
 

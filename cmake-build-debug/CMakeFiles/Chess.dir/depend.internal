@@ -84,6 +84,9 @@ CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj
  D:/Projects/Chess/Game/PVP_GAME.cpp
  D:/Projects/Chess/Game/PVP_GAME.h
  D:/Projects/Chess/Move.h
+CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.obj
+ D:/Projects/Chess/Graphics/ChessGraphic.cpp
+ D:/Projects/Chess/Graphics/ChessGraphic.h
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj
  D:/Projects/Chess/Coordinates.h
  D:/Projects/Chess/Desk.h
@@ -116,6 +119,7 @@ CMakeFiles/Chess.dir/main.cpp.obj
  D:/Projects/Chess/Figures/Queen.h
  D:/Projects/Chess/Game/Game.h
  D:/Projects/Chess/Game/PVP_GAME.h
+ D:/Projects/Chess/Graphics/ChessGraphic.h
  D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
  D:/Projects/Chess/Move.h
  D:/Projects/Chess/main.cpp

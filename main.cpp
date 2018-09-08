@@ -5,12 +5,15 @@
 #include <iostream>
 #include "Game/PVP_GAME.h"
 #include "LogsWriter/FiguresPossibleMovesWriter.h"
+#include "Graphics/ChessGraphic.h"
 
 using namespace std;
 
 
 int main (){
 
-    PVP_GAME pvp_game;
-    pvp_game.pvp_game();
+//    PVP_GAME pvp_game;
+//    pvp_game.pvp_game();
+
+    ChessGraphic chessGraphic;
 };

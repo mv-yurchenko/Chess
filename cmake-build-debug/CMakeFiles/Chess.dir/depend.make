@@ -84,6 +84,9 @@ CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj: ../Game/PVP_GAME.cpp
 CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj: ../Game/PVP_GAME.h
 CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj: ../Move.h
 
+CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.obj: ../Graphics/ChessGraphic.cpp
+CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.obj: ../Graphics/ChessGraphic.h
+
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../Coordinates.h
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../Desk.h
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../Figures/Bishop.h
@@ -115,6 +118,7 @@ CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Pawn.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Figures/Queen.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Game/Game.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Game/PVP_GAME.h
+CMakeFiles/Chess.dir/main.cpp.obj: ../Graphics/ChessGraphic.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../LogsWriter/FiguresPossibleMovesWriter.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../Move.h
 CMakeFiles/Chess.dir/main.cpp.obj: ../main.cpp

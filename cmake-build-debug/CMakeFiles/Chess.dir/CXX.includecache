@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/Projects/Chess/Coordinates.cpp
-Coordinates.h
 D:/Projects/Chess/Coordinates.h
-
-D:/Projects/Chess/Coordinates.h
-
-D:/Projects/Chess/Desk.cpp
-Desk.h
-D:/Projects/Chess/Desk.h
 
 D:/Projects/Chess/Desk.h
 Figures/Figure.h
@@ -32,23 +24,11 @@ D:/Projects/Chess/Figures/Bishop.h
 Figures/Queen.h
 D:/Projects/Chess/Figures/Queen.h
 
-D:/Projects/Chess/Figures/Bishop.cpp
-Bishop.h
-D:/Projects/Chess/Figures/Bishop.h
-
 D:/Projects/Chess/Figures/Bishop.h
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Castle.cpp
-Castle.h
 D:/Projects/Chess/Figures/Castle.h
-
-D:/Projects/Chess/Figures/Castle.h
-Figure.h
-D:/Projects/Chess/Figures/Figure.h
-
-D:/Projects/Chess/Figures/Figure.cpp
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
 
@@ -62,43 +42,23 @@ vector
 string
 -
 
-D:/Projects/Chess/Figures/King.cpp
-King.h
-D:/Projects/Chess/Figures/King.h
-
 D:/Projects/Chess/Figures/King.h
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
 string
 -
 
-D:/Projects/Chess/Figures/Knight.cpp
-Knight.h
-D:/Projects/Chess/Figures/Knight.h
-
 D:/Projects/Chess/Figures/Knight.h
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
-
-D:/Projects/Chess/Figures/Pawn.cpp
-Pawn.h
-D:/Projects/Chess/Figures/Pawn.h
 
 D:/Projects/Chess/Figures/Pawn.h
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Queen.cpp
-Queen.h
-D:/Projects/Chess/Figures/Queen.h
-
 D:/Projects/Chess/Figures/Queen.h
 Figure.h
 D:/Projects/Chess/Figures/Figure.h
-
-D:/Projects/Chess/Game/Game.cpp
-Game.h
-D:/Projects/Chess/Game/Game.h
 
 D:/Projects/Chess/Game/Game.h
 ../Desk.h
@@ -108,33 +68,23 @@ D:/Projects/Chess/Game/conio.h
 stdio.h
 D:/Projects/Chess/Game/stdio.h
 
-D:/Projects/Chess/Game/PVP_GAME.cpp
-PVP_GAME.h
-D:/Projects/Chess/Game/PVP_GAME.h
-
 D:/Projects/Chess/Game/PVP_GAME.h
 Game.h
 D:/Projects/Chess/Game/Game.h
 
-D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.cpp
-FiguresPossibleMovesWriter.h
-D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
+D:/Projects/Chess/Graphics/ChessGraphic.cpp
+ChessGraphic.h
+D:/Projects/Chess/Graphics/ChessGraphic.h
+
+D:/Projects/Chess/Graphics/ChessGraphic.h
+SFML/Graphics.hpp
+D:/Projects/Chess/Graphics/SFML/Graphics.hpp
 
 D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
 ../Desk.h
 D:/Projects/Chess/Desk.h
 fstream
 D:/Projects/Chess/LogsWriter/fstream
-
-D:/Projects/Chess/LogsWriter/GameLogsWriter.cpp
-GameLogsWriter.h
-D:/Projects/Chess/LogsWriter/GameLogsWriter.h
-
-D:/Projects/Chess/LogsWriter/GameLogsWriter.h
-
-D:/Projects/Chess/Move.cpp
-Move.h
-D:/Projects/Chess/Move.h
 
 D:/Projects/Chess/Move.h
 Coordinates.h
@@ -147,4 +97,6 @@ Game/PVP_GAME.h
 D:/Projects/Chess/Game/PVP_GAME.h
 LogsWriter/FiguresPossibleMovesWriter.h
 D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
+Graphics/ChessGraphic.h
+D:/Projects/Chess/Graphics/ChessGraphic.h
 
