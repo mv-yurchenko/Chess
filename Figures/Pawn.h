@@ -13,7 +13,7 @@ class Pawn : public Figure {
 public:
     Pawn();
 
-    Pawn(bool side, Coordinates coordinates);
+    Pawn(bool side, Coordinates coordinates, uint8_t num);
 
     void calculate_available_moves() override;
 
