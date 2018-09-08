@@ -9,6 +9,7 @@
 #include "Figure.h"
 
 class Bishop : public Figure{
+
 public:
 
     Bishop(bool side, Coordinates coordinates);

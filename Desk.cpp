@@ -105,7 +105,7 @@ void Desk::initialize_desk() {
 
     // White Pawns
 
-    for (int8_t i = 0; i < 8; i++){
+    for (uint8_t i = 0; i < 8; i++){
         Coordinates w_pawn_coordinates(i, 1);
 
         Pawn *w_pawn = new Pawn(true, w_pawn_coordinates, i);
@@ -115,10 +115,10 @@ void Desk::initialize_desk() {
 
     // Black Pawns
 
-    for (int8_t i = 0; i < 8; i++){
+    for (uint8_t i = 0; i < 8; i++){
         Coordinates b_pawn_coordinates(i, 6);
 
-        Pawn *b_pawn = new Pawn(true, b_pawn_coordinates, i);
+        Pawn *b_pawn = new Pawn(false, b_pawn_coordinates, i);
 
         desk[b_pawn->getCoordinates().getX()][b_pawn->getCoordinates().getY()] = b_pawn;
     }

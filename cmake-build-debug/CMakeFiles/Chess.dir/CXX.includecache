@@ -6,35 +6,35 @@
 
 #IncludeRegexTransform: 
 
-D:/Projects/Chess/Coordinates.h
+P:/Chess/Coordinates.h
 
-D:/Projects/Chess/Desk.h
+P:/Chess/Desk.h
 Figures/Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 Figures/King.h
-D:/Projects/Chess/Figures/King.h
+P:/Chess/Figures/King.h
 Figures/Pawn.h
-D:/Projects/Chess/Figures/Pawn.h
+P:/Chess/Figures/Pawn.h
 Figures/Knight.h
-D:/Projects/Chess/Figures/Knight.h
+P:/Chess/Figures/Knight.h
 Figures/Castle.h
-D:/Projects/Chess/Figures/Castle.h
+P:/Chess/Figures/Castle.h
 Figures/Bishop.h
-D:/Projects/Chess/Figures/Bishop.h
+P:/Chess/Figures/Bishop.h
 Figures/Queen.h
-D:/Projects/Chess/Figures/Queen.h
+P:/Chess/Figures/Queen.h
 
-D:/Projects/Chess/Figures/Bishop.h
+P:/Chess/Figures/Bishop.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Castle.h
+P:/Chess/Figures/Castle.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 ../Move.h
-D:/Projects/Chess/Move.h
+P:/Chess/Move.h
 iostream
 -
 vector
@@ -42,61 +42,55 @@ vector
 string
 -
 
-D:/Projects/Chess/Figures/King.h
+P:/Chess/Figures/King.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 string
 -
 
-D:/Projects/Chess/Figures/Knight.h
+P:/Chess/Figures/Knight.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Pawn.h
+P:/Chess/Figures/Pawn.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Figures/Queen.h
+P:/Chess/Figures/Queen.h
 Figure.h
-D:/Projects/Chess/Figures/Figure.h
+P:/Chess/Figures/Figure.h
 
-D:/Projects/Chess/Game/Game.h
+P:/Chess/Game/Game.h
 ../Desk.h
-D:/Projects/Chess/Desk.h
+P:/Chess/Desk.h
 conio.h
-D:/Projects/Chess/Game/conio.h
+P:/Chess/Game/conio.h
 stdio.h
-D:/Projects/Chess/Game/stdio.h
+P:/Chess/Game/stdio.h
 
-D:/Projects/Chess/Game/PVP_GAME.h
+P:/Chess/Game/PVP_GAME.h
 Game.h
-D:/Projects/Chess/Game/Game.h
+P:/Chess/Game/Game.h
 
-D:/Projects/Chess/Graphics/ChessGraphic.cpp
-ChessGraphic.h
-D:/Projects/Chess/Graphics/ChessGraphic.h
+P:/Chess/Graphics/ChessGraphic.h
 
-D:/Projects/Chess/Graphics/ChessGraphic.h
-SFML/Graphics.hpp
-D:/Projects/Chess/Graphics/SFML/Graphics.hpp
-
-D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
+P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h
 ../Desk.h
-D:/Projects/Chess/Desk.h
+P:/Chess/Desk.h
 fstream
-D:/Projects/Chess/LogsWriter/fstream
+P:/Chess/LogsWriter/fstream
 
-D:/Projects/Chess/Move.h
+P:/Chess/Move.h
 Coordinates.h
-D:/Projects/Chess/Coordinates.h
+P:/Chess/Coordinates.h
 
-D:/Projects/Chess/main.cpp
+P:/Chess/main.cpp
 iostream
 -
 Game/PVP_GAME.h
-D:/Projects/Chess/Game/PVP_GAME.h
+P:/Chess/Game/PVP_GAME.h
 LogsWriter/FiguresPossibleMovesWriter.h
-D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.h
+P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h
 Graphics/ChessGraphic.h
-D:/Projects/Chess/Graphics/ChessGraphic.h
+P:/Chess/Graphics/ChessGraphic.h
 
