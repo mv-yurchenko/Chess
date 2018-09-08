@@ -4,20 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "P:/Chess/Coordinates.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Coordinates.cpp.obj"
-  "P:/Chess/Desk.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Desk.cpp.obj"
-  "P:/Chess/Figures/Bishop.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Bishop.cpp.obj"
-  "P:/Chess/Figures/Castle.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Castle.cpp.obj"
-  "P:/Chess/Figures/Figure.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Figure.cpp.obj"
-  "P:/Chess/Figures/King.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/King.cpp.obj"
-  "P:/Chess/Figures/Knight.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Knight.cpp.obj"
-  "P:/Chess/Figures/Pawn.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Pawn.cpp.obj"
-  "P:/Chess/Figures/Queen.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Queen.cpp.obj"
-  "P:/Chess/Game/Game.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/Game.cpp.obj"
-  "P:/Chess/Game/PVP_GAME.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj"
-  "P:/Chess/LogsWriter/FiguresPossibleMovesWriter.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj"
-  "P:/Chess/Move.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Move.cpp.obj"
-  "P:/Chess/main.cpp" "P:/Chess/cmake-build-debug/CMakeFiles/Chess.dir/main.cpp.obj"
+  "D:/Projects/Chess/Coordinates.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Coordinates.cpp.obj"
+  "D:/Projects/Chess/Desk.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Desk.cpp.obj"
+  "D:/Projects/Chess/Figures/Bishop.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Bishop.cpp.obj"
+  "D:/Projects/Chess/Figures/Castle.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Castle.cpp.obj"
+  "D:/Projects/Chess/Figures/Figure.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Figure.cpp.obj"
+  "D:/Projects/Chess/Figures/King.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/King.cpp.obj"
+  "D:/Projects/Chess/Figures/Knight.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Knight.cpp.obj"
+  "D:/Projects/Chess/Figures/Pawn.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Pawn.cpp.obj"
+  "D:/Projects/Chess/Figures/Queen.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Figures/Queen.cpp.obj"
+  "D:/Projects/Chess/Game/Game.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/Game.cpp.obj"
+  "D:/Projects/Chess/Game/PVP_GAME.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.obj"
+  "D:/Projects/Chess/Graphics/ChessGraphic.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.obj"
+  "D:/Projects/Chess/LogsWriter/FiguresPossibleMovesWriter.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj"
+  "D:/Projects/Chess/LogsWriter/GameLogsWriter.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.obj"
+  "D:/Projects/Chess/Move.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/Move.cpp.obj"
+  "D:/Projects/Chess/main.cpp" "D:/Projects/Chess/cmake-build-debug/CMakeFiles/Chess.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = P:\Chess
+CMAKE_SOURCE_DIR = D:\Projects\Chess
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = P:\Chess\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Projects\Chess\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = P:\Chess\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2018.2.2\bin\cmake\win\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start P:\Chess\cmake-build-debug\CMakeFiles P:\Chess\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Chess\cmake-build-debug\CMakeFiles D:\Projects\Chess\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start P:\Chess\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\Chess\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -419,6 +419,33 @@ Game/PVP_GAME.cpp.s:
 	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Game/PVP_GAME.cpp.s
 .PHONY : Game/PVP_GAME.cpp.s
 
+Graphics/ChessGraphic.obj: Graphics/ChessGraphic.cpp.obj
+
+.PHONY : Graphics/ChessGraphic.obj
+
+# target to build an object file
+Graphics/ChessGraphic.cpp.obj:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.obj
+.PHONY : Graphics/ChessGraphic.cpp.obj
+
+Graphics/ChessGraphic.i: Graphics/ChessGraphic.cpp.i
+
+.PHONY : Graphics/ChessGraphic.i
+
+# target to preprocess a source file
+Graphics/ChessGraphic.cpp.i:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.i
+.PHONY : Graphics/ChessGraphic.cpp.i
+
+Graphics/ChessGraphic.s: Graphics/ChessGraphic.cpp.s
+
+.PHONY : Graphics/ChessGraphic.s
+
+# target to generate assembly for a file
+Graphics/ChessGraphic.cpp.s:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/Graphics/ChessGraphic.cpp.s
+.PHONY : Graphics/ChessGraphic.cpp.s
+
 LogsWriter/FiguresPossibleMovesWriter.obj: LogsWriter/FiguresPossibleMovesWriter.cpp.obj
 
 .PHONY : LogsWriter/FiguresPossibleMovesWriter.obj
@@ -445,6 +472,33 @@ LogsWriter/FiguresPossibleMovesWriter.s: LogsWriter/FiguresPossibleMovesWriter.c
 LogsWriter/FiguresPossibleMovesWriter.cpp.s:
 	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.s
 .PHONY : LogsWriter/FiguresPossibleMovesWriter.cpp.s
+
+LogsWriter/GameLogsWriter.obj: LogsWriter/GameLogsWriter.cpp.obj
+
+.PHONY : LogsWriter/GameLogsWriter.obj
+
+# target to build an object file
+LogsWriter/GameLogsWriter.cpp.obj:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.obj
+.PHONY : LogsWriter/GameLogsWriter.cpp.obj
+
+LogsWriter/GameLogsWriter.i: LogsWriter/GameLogsWriter.cpp.i
+
+.PHONY : LogsWriter/GameLogsWriter.i
+
+# target to preprocess a source file
+LogsWriter/GameLogsWriter.cpp.i:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.i
+.PHONY : LogsWriter/GameLogsWriter.cpp.i
+
+LogsWriter/GameLogsWriter.s: LogsWriter/GameLogsWriter.cpp.s
+
+.PHONY : LogsWriter/GameLogsWriter.s
+
+# target to generate assembly for a file
+LogsWriter/GameLogsWriter.cpp.s:
+	$(MAKE) -f CMakeFiles\Chess.dir\build.make CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.s
+.PHONY : LogsWriter/GameLogsWriter.cpp.s
 
 Move.obj: Move.cpp.obj
 
@@ -542,9 +596,15 @@ help:
 	@echo ... Game/PVP_GAME.obj
 	@echo ... Game/PVP_GAME.i
 	@echo ... Game/PVP_GAME.s
+	@echo ... Graphics/ChessGraphic.obj
+	@echo ... Graphics/ChessGraphic.i
+	@echo ... Graphics/ChessGraphic.s
 	@echo ... LogsWriter/FiguresPossibleMovesWriter.obj
 	@echo ... LogsWriter/FiguresPossibleMovesWriter.i
 	@echo ... LogsWriter/FiguresPossibleMovesWriter.s
+	@echo ... LogsWriter/GameLogsWriter.obj
+	@echo ... LogsWriter/GameLogsWriter.i
+	@echo ... LogsWriter/GameLogsWriter.s
 	@echo ... Move.obj
 	@echo ... Move.i
 	@echo ... Move.s

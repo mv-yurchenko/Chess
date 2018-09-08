@@ -97,6 +97,9 @@ CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../LogsWrite
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../LogsWriter/FiguresPossibleMovesWriter.h
 CMakeFiles/Chess.dir/LogsWriter/FiguresPossibleMovesWriter.cpp.obj: ../Move.h
 
+CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.obj: ../LogsWriter/GameLogsWriter.cpp
+CMakeFiles/Chess.dir/LogsWriter/GameLogsWriter.cpp.obj: ../LogsWriter/GameLogsWriter.h
+
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Coordinates.h
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Move.cpp
 CMakeFiles/Chess.dir/Move.cpp.obj: ../Move.h
