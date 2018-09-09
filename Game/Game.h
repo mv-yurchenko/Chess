@@ -8,6 +8,7 @@
 #include "../Desk.h"
 #include "conio.h"
 #include "stdio.h"
+#include "../LogsWriter/GameLogsWriter.h"
 
 class Game {
     Desk *current_desk;
@@ -15,6 +16,8 @@ class Game {
     bool is_game_finished;
 
     bool white_turn;
+
+    GameLogsWriter gameLogsWriter;
 public:
     void setWhite_turn(bool white_turn);
 
@@ -29,11 +32,11 @@ public:
 
     void initialize_game();
 
-    bool move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y);
+    bool move_figure(int old_x, int old_y, int new_x, int new_y);
 
     void finish_game();
 
-    uint8_t input_coordinate(const char *coord_name);
+    int input_coordinate(const char *coord_name);
 
     bool is_mate(int x, int y);
 
@@ -42,6 +45,8 @@ public:
     void print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y);
 
     void print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y);
+
+    void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y);
 };
 
 

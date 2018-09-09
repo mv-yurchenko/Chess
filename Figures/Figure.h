@@ -21,6 +21,7 @@ private:
     std::vector <Move> available_moves;
     std::vector <Move> possible_moves;
     std::string name;
+    bool is_dead = false;
 public:
     void setName(const std::string &name);
 
@@ -35,8 +36,6 @@ public:
     virtual void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
 
     virtual void calculate_available_moves();
-
-    void move_figure();
 
     const Coordinates &getCoordinates() const;
 

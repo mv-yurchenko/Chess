@@ -12,14 +12,8 @@ using namespace std;
 
 int main (){
 
-    PVP_GAME pvp_game;
-    FiguresPossibleMovesWriter possibleMovesWriter;
+    PVP_GAME pvp_game{};
 
-    pvp_game.initialize_game();
+    pvp_game.pvp_game();
 
-    Desk *desk = pvp_game.getCurrent_desk();
-
-    possibleMovesWriter.write_all_figures_possible_moves(desk);
-
-//    pvp_game.pvp_game();
 };

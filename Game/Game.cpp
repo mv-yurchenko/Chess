@@ -11,7 +11,7 @@ void Game::initialize_game() {
     current_desk->initialize_desk();
 }
 
-bool Game::move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y) {
+bool Game::move_figure(int old_x, int old_y, int new_x, int new_y) {
     Coordinates old_coord(old_x, old_y);
     Coordinates new_coord(new_x, new_y);
 //        this->current_desk->get_figure_by_coordinates(old_x, old_y)->print_possible_moves();
@@ -35,9 +35,9 @@ void Game::finish_game() {
     is_game_finished = true;
 }
 
-uint8_t Game::input_coordinate(const char *coord_name) {
+int Game::input_coordinate(const char *coord_name) {
     std::cout<<coord_name << std::endl;
-    uint8_t coord;
+    int coord;
     std::cin >> coord;
     return coord;
 }
@@ -49,20 +49,21 @@ bool Game::is_mate(int x, int y) {
 void Game::player_turn(bool is_white_turn) {
     std::cout<<"Input figure coordinates" << std::endl;
 
-    uint8_t x = input_coordinate("X:");
-    uint8_t y = input_coordinate("Y:");
+    int x = input_coordinate("X:");
+    int y = input_coordinate("Y:");
 
     std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
 
     std::cout<<"Input new coordinates" << std::endl;
 
-    uint8_t new_x = input_coordinate("X:");
-    uint8_t new_y = input_coordinate("Y:");
+    int new_x = input_coordinate("X:");
+    int new_y = input_coordinate("Y:");
 
     if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
         bool success_turn = move_figure(x, y, new_x, new_y);
         if (success_turn){
             print_msg_about_success_move(x, y, new_x, new_y);
+            write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_x, new_y), x , y, new_x, new_y);
         }
     } else{
         print_msg_about_failed_move(x, y, new_x, new_y);
@@ -87,3 +88,9 @@ void Game::setIs_game_finished(bool is_game_finished) {
 void Game::setWhite_turn(bool white_turn) {
     Game::white_turn = white_turn;
 }
+
+void Game::write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y) {
+    gameLogsWriter.write_log_about_move(figure, old_x, old_y, new_x, new_y);
+}
+
+
