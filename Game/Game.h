@@ -40,11 +40,15 @@ public:
 
     bool is_mate(int x, int y);
 
-    void player_turn(bool is_white_turn);
+    bool player_turn(bool is_white_turn);
 
     void print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y);
 
     void print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y);
+
+    void print_request_to_move_again(){
+        std::cout << "Move FAILED" << std::endl << "Try again: " << std::endl;
+    }
 
     void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y);
 };

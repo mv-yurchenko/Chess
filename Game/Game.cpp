@@ -46,7 +46,10 @@ bool Game::is_mate(int x, int y) {
     return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king";
 }
 
-void Game::player_turn(bool is_white_turn) {
+bool Game::player_turn(bool is_white_turn) {
+
+    bool move_done = false;
+
     std::cout<<"Input figure coordinates" << std::endl;
 
     int x = input_coordinate("X:");
@@ -63,14 +66,15 @@ void Game::player_turn(bool is_white_turn) {
         bool success_turn = move_figure(x, y, new_x, new_y);
         if (success_turn){
             print_msg_about_success_move(x, y, new_x, new_y);
+            setIs_game_finished(is_mate(new_x, new_y));
             write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_x, new_y), x , y, new_x, new_y);
+            move_done = true;
         }
     } else{
         print_msg_about_failed_move(x, y, new_x, new_y);
         setWhite_turn(not isWhite_turn());
     }
-
-    setIs_game_finished(is_mate(new_x, new_y));
+    return move_done;
 }
 
 void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y) {
