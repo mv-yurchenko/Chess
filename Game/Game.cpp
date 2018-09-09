@@ -35,9 +35,9 @@ void Game::finish_game() {
     is_game_finished = true;
 }
 
-int Game::input_coordinate(const char *coord_name) {
+uint8_t Game::input_coordinate(const char *coord_name) {
     std::cout<<coord_name << std::endl;
-    int coord;
+    uint8_t coord;
     std::cin >> coord;
     return coord;
 }
@@ -49,15 +49,15 @@ bool Game::is_mate(int x, int y) {
 void Game::player_turn(bool is_white_turn) {
     std::cout<<"Input figure coordinates" << std::endl;
 
-    int x = input_coordinate("X:");
-    int y = input_coordinate("Y:");
+    uint8_t x = input_coordinate("X:");
+    uint8_t y = input_coordinate("Y:");
 
     std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
 
     std::cout<<"Input new coordinates" << std::endl;
 
-    int new_x = input_coordinate("X:");
-    int new_y = input_coordinate("Y:");
+    uint8_t new_x = input_coordinate("X:");
+    uint8_t new_y = input_coordinate("Y:");
 
     if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
         bool success_turn = move_figure(x, y, new_x, new_y);
@@ -66,6 +66,7 @@ void Game::player_turn(bool is_white_turn) {
         }
     } else{
         print_msg_about_failed_move(x, y, new_x, new_y);
+        setWhite_turn(not isWhite_turn());
     }
 
     setIs_game_finished(is_mate(new_x, new_y));
@@ -81,4 +82,8 @@ void Game::print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_
 
 void Game::setIs_game_finished(bool is_game_finished) {
     Game::is_game_finished = is_game_finished;
+}
+
+void Game::setWhite_turn(bool white_turn) {
+    Game::white_turn = white_turn;
 }
