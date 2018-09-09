@@ -73,6 +73,7 @@ public:
 
     void clear_available_moves();
 
+    const char *get_side_as_string();
 };
 
 #endif //CHESS_FIGURE_H

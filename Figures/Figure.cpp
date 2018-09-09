@@ -144,3 +144,11 @@ void Figure::clear_possible_moves() {
 void Figure::clear_available_moves() {
     this->available_moves.clear();
 }
+
+const char *Figure::get_side_as_string() {
+    if (getSide()){
+        return "White";
+    } else{
+        return "Black";
+    }
+}
