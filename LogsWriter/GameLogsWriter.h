@@ -15,15 +15,9 @@ class GameLogsWriter {
     std::string log_filename;
     std::ofstream log_file;
 public:
-    GameLogsWriter(){
-        this->log_filename = "GameLogs";
-        this->log_file_path = "../LogsFiles/" + this->log_filename+ ".txt";
-        this->log_file.open(this->log_file_path);
-    }
+    GameLogsWriter();
 
-    void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y) {
-        log_file << "Figure " << figure->getName() << " was moved from : (" << old_x << " , " << old_y << ") to (" << new_x << " , " << new_y << ")"<< std::endl;
-    }
+    void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y);
 };
 
 
