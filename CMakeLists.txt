@@ -4,6 +4,9 @@ project(Chess)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
 set(CMAKE_CXX_STANDARD 17)
 
+# Detect and add SFML
+
+
 
 add_executable(Chess main.cpp Figures/Bishop.cpp Figures/Bishop.h Figures/Castle.cpp Figures/Castle.h Figures/Figure.cpp
         Figures/Figure.h Figures/King.cpp Figures/King.h Figures/Knight.cpp Figures/Knight.h Figures/Pawn.cpp Figures/Pawn.h
