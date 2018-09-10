@@ -60,31 +60,9 @@ P:/Chess/Figures/Queen.h
 Figure.h
 P:/Chess/Figures/Figure.h
 
-P:/Chess/Game/Game.h
-../Desk.h
-P:/Chess/Desk.h
-conio.h
-P:/Chess/Game/conio.h
-stdio.h
-P:/Chess/Game/stdio.h
-../LogsWriter/GameLogsWriter.h
+P:/Chess/LogsWriter/GameLogsWriter.cpp
+GameLogsWriter.h
 P:/Chess/LogsWriter/GameLogsWriter.h
-
-P:/Chess/Game/PVP_GAME.h
-Game.h
-P:/Chess/Game/Game.h
-
-P:/Chess/Graphics/ChessGraphic.cpp
-ChessGraphic.h
-P:/Chess/Graphics/ChessGraphic.h
-
-P:/Chess/Graphics/ChessGraphic.h
-
-P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h
-../Desk.h
-P:/Chess/Desk.h
-fstream
-P:/Chess/LogsWriter/fstream
 
 P:/Chess/LogsWriter/GameLogsWriter.h
 string
@@ -97,14 +75,4 @@ P:/Chess/Desk.h
 P:/Chess/Move.h
 Coordinates.h
 P:/Chess/Coordinates.h
-
-P:/Chess/main.cpp
-iostream
--
-Game/PVP_GAME.h
-P:/Chess/Game/PVP_GAME.h
-LogsWriter/FiguresPossibleMovesWriter.h
-P:/Chess/LogsWriter/FiguresPossibleMovesWriter.h
-Graphics/ChessGraphic.h
-P:/Chess/Graphics/ChessGraphic.h
 
