@@ -23,7 +23,10 @@ private:
     std::string name;
     std::string desk_name;
 public:
-    void setDesk_name(const std::string &desk_name);
+    const std::string &getDesk_name() const;
+
+public:
+    void setDesk_name(const char *desk_name);
 
 private:
     bool is_dead = false;

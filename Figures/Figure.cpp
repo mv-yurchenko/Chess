@@ -156,3 +156,7 @@ const char *Figure::get_side_as_string() {
 void Figure::setDesk_name(const char *desk_name) {
     Figure::desk_name = desk_name;
 }
+
+const std::string &Figure::getDesk_name() const {
+    return desk_name;
+}
