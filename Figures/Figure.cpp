@@ -152,3 +152,7 @@ const char *Figure::get_side_as_string() {
         return "Black";
     }
 }
+
+void Figure::setDesk_name(const char *desk_name) {
+    Figure::desk_name = desk_name;
+}

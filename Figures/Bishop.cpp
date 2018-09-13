@@ -5,7 +5,11 @@
 #include "Bishop.h"
 
 Bishop::Bishop(bool side, Coordinates coordinates) : Figure(side, coordinates, "bishop", 3){
-
+    if (side){
+        setDesk_name("W_B");
+    } else{
+        setDesk_name("B_B");
+    }
 }
 
 void Bishop::calculate_available_moves() {

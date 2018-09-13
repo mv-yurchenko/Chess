@@ -6,6 +6,11 @@
 
 Castle::Castle(bool side, Coordinates coordinates) : Figure(side, coordinates, "castle", 1){
     this->setName("castle");
+    if (side){
+        setDesk_name("W_C");
+    } else{
+        setDesk_name("B_C");
+    }
 }
 
 void Castle::calculate_available_moves() {

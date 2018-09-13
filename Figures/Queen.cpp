@@ -5,7 +5,11 @@
 #include "Queen.h"
 
 Queen::Queen(bool side, Coordinates coordinates) : Figure(side, coordinates, "queen", 9){
-
+    if (side){
+        setDesk_name("W_Q");
+    } else{
+        setDesk_name("B_Q");
+    }
 }
 
 Queen::Queen() {

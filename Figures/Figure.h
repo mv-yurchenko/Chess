@@ -21,6 +21,11 @@ private:
     std::vector <Move> available_moves;
     std::vector <Move> possible_moves;
     std::string name;
+    std::string desk_name;
+public:
+    void setDesk_name(const std::string &desk_name);
+
+private:
     bool is_dead = false;
 public:
     void setName(const std::string &name);
