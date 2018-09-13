@@ -12,8 +12,9 @@ class ChessGraphic{
 public:
     void print_letters(){
         for (auto letter : this->top_letters){
-            std::cout << letter << "\t";
+            std::cout << letter << "  \t";
         }
+        std::cout<<std::endl;
     }
 
     void print_horizontal_separate_lane(){
@@ -51,7 +52,7 @@ public:
     }
 
     void clear_desk(){
-        system("cls");
+        system("clear");
     }
 };
 
