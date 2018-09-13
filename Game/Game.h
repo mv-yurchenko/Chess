@@ -6,7 +6,6 @@
 #define CHESS_GAME_H
 
 #include "../Desk.h"
-#include "conio.h"
 #include "stdio.h"
 #include "../LogsWriter/GameLogsWriter.h"
 
