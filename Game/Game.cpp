@@ -39,7 +39,7 @@ int Game::input_coordinate(const char *coord_name) {
     std::cout<<coord_name << std::endl;
     int coord;
     std::cin >> coord;
-    return coord;
+    return coord - 1;
 }
 
 bool Game::is_mate(int x, int y) {
