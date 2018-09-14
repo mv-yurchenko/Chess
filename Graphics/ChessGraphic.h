@@ -29,6 +29,7 @@ public:
     }
 
     void print_desk(Desk *desk){
+        clear_desk();
         for (auto i = 0; i < 8;  i++){
             for (auto j = 0; j < 8; j++){
                 print_figure_on_cell(desk->get_figure_by_coordinates(j, i));
