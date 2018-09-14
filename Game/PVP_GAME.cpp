@@ -11,6 +11,7 @@ void PVP_GAME::pvp_game() {
     this->player1_side = true;
     this->player2_side = false;
 
+    // TODO: оптимизировать While
     while (not get_is_game_finished()){
         chessGraphic.print_desk(getCurrent_desk());
         if (not player_turn(isWhite_turn())) {

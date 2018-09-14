@@ -12,24 +12,23 @@ class ChessGraphic{
 public:
     void print_letters(){
         for (auto letter : this->top_letters){
-            std::cout << letter << "  \t";
+            std::cout << "  " << letter << "  ";
         }
-        std::cout<<std::endl;
     }
 
     void print_horizontal_separate_lane(){
-        std::cout<<std::endl;
-
-        for(int i=0; i<32; i++)
+        std::cout << std::endl;
+        for(int i=0; i<40; i++)
         {
-            std::cout<<"_";
+            std::cout<<"-";
         }
-
         std::cout << std::endl;
     }
 
     void print_desk(Desk *desk){
         clear_desk();
+        print_letters();
+        print_horizontal_separate_lane();
         for (auto i = 0; i < 8;  i++){
             for (auto j = 0; j < 8; j++){
                 print_figure_on_cell(desk->get_figure_by_coordinates(j, i));
