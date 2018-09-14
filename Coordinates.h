@@ -23,6 +23,7 @@ public:
 
     bool operator== (const Coordinates& coord_1);
 
+    bool operator!=(const Coordinates&coord_1);
 };
 
 
