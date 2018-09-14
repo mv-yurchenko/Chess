@@ -69,10 +69,10 @@ bool Game::player_turn(bool is_white_turn) {
             setIs_game_finished(is_mate(new_x, new_y));
             write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_x, new_y), x , y, new_x, new_y);
             move_done = true;
+            setWhite_turn(not isWhite_turn());
         }
     } else{
         print_msg_about_failed_move(x, y, new_x, new_y);
-        setWhite_turn(not isWhite_turn());
     }
     return move_done;
 }
