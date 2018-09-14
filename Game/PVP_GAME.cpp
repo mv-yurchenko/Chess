@@ -12,9 +12,10 @@ void PVP_GAME::pvp_game() {
     this->player2_side = false;
 
     while (not get_is_game_finished()){
-        player_turn(isWhite_turn());
+        chessGraphic.print_desk(getCurrent_desk());
+        if (not player_turn(isWhite_turn())) {
+            print_request_to_move_again();
+        }
     }
-
-    // TODO: Сообшенеи о невозможности хода и просьба переходить
 
 }

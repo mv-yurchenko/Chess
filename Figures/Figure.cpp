@@ -9,12 +9,9 @@ Figure::Figure(bool side, const Coordinates &coordinates, const char *name, int 
     this->coordinates = coordinates;
     this->name = name;
     this->value = value;
+    this->is_dead = false;
     calculate_available_moves();
 //    calculate_possible_moves();
-}
-
-void Figure::move_figure() {
-
 }
 
 void Figure::calculate_available_moves() {
@@ -98,6 +95,7 @@ void Figure::print_available_moves() {
 Figure::Figure(bool side, Coordinates coordinates) {
     this->side = side;
     this->coordinates = coordinates;
+    this->is_dead = false;
 }
 
 void Figure::setName(const std::string &name) {
@@ -145,4 +143,20 @@ void Figure::clear_possible_moves() {
 
 void Figure::clear_available_moves() {
     this->available_moves.clear();
+}
+
+const char *Figure::get_side_as_string() {
+    if (getSide()){
+        return "White";
+    } else{
+        return "Black";
+    }
+}
+
+void Figure::setDesk_name(const char *desk_name) {
+    Figure::desk_name = desk_name;
+}
+
+const std::string &Figure::getDesk_name() const {
+    return desk_name;
 }

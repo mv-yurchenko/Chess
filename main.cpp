@@ -1,16 +1,9 @@
-//
-// Created by Max Yurchenko on 24.08.2018.
-//
-
-#include <iostream>
 #include "Game/PVP_GAME.h"
-#include "LogsWriter/FiguresPossibleMovesWriter.h"
-
-using namespace std;
+#include "Graphics/ChessGraphic.h"
 
 
-int main (){
-
+int main(){
     PVP_GAME pvp_game;
+
     pvp_game.pvp_game();
-};
+}
