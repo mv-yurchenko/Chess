@@ -45,11 +45,79 @@ public:
 
     void print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y);
 
-    void print_request_to_move_again(){
-        std::cout << "Move FAILED" << std::endl << "Try again: " << std::endl;
-    }
+    void print_request_to_move_again();
 
     void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y);
+
+    Coordinates input_coordinates(){
+        int first_num;
+        bool success_input = false;
+        std::string coordinates;
+        while (not success_input)
+        {
+            std::cout << "Input Coordinates:";
+            std::cin >> coordinates;
+            first_num = convert_letter_to_num(coordinates[0]);
+            success_input = not (coordinates.length() != 2 or first_num == 0);
+        }
+        Coordinates return_coordinates(first_num -1, convert_char_to_string(coordinates[1]) - 1);
+        return return_coordinates;
+    }
+
+    int convert_letter_to_num(char letter){
+        if (letter == 'A') {
+            return 1;
+        }
+        if (letter == 'B') {
+            return 2;
+        }
+        if (letter == 'C') {
+            return 3;
+        }
+        if (letter == 'D') {
+            return 4;
+        }
+        if (letter == 'E') {
+            return 5;
+        }
+        if (letter == 'F') {
+            return 6;
+        }
+        if (letter == 'G') {
+            return 7;
+        }
+        if (letter == 'H') {
+            return 8;
+        }
+        return 0;
+    }
+
+    int convert_char_to_string(char num_as_char){
+        if (num_as_char == '1'){
+            return 1;
+        }
+        if (num_as_char == '2'){
+            return 2;
+        }
+        if (num_as_char == '3'){
+            return 3;
+        }
+        if (num_as_char == '4'){
+            return 4;
+        }
+        if (num_as_char == '5'){
+            return 5;
+        }
+        if (num_as_char == '6'){
+            return 6;
+        }
+        if (num_as_char == '7'){
+            return 7;
+        }
+        if (num_as_char == '8'){
+            return 8;
+        }
+    }
 };
 
 

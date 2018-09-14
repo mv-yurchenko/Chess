@@ -52,27 +52,25 @@ bool Game::player_turn(bool is_white_turn) {
 
     std::cout<<"Input figure coordinates" << std::endl;
 
-    int x = input_coordinate("X:");
-    int y = input_coordinate("Y:");
+    Coordinates old_coordinates = input_coordinates();
 
-    std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
+    std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getName()<< std::endl;
 
     std::cout<<"Input new coordinates" << std::endl;
 
-    int new_x = input_coordinate("X:");
-    int new_y = input_coordinate("Y:");
+    Coordinates new_coordinates = input_coordinates();
 
-    if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
-        bool success_turn = move_figure(x, y, new_x, new_y);
+    if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getSide()) {
+        bool success_turn = move_figure(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
         if (success_turn){
-            print_msg_about_success_move(x, y, new_x, new_y);
-            setIs_game_finished(is_mate(new_x, new_y));
-            write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_x, new_y), x , y, new_x, new_y);
+            print_msg_about_success_move(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
+            setIs_game_finished(is_mate(new_coordinates.getX(), new_coordinates.getY()));
+            write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_coordinates.getX(), new_coordinates.getY()), old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
             move_done = true;
             setWhite_turn(not isWhite_turn());
         }
     } else{
-        print_msg_about_failed_move(x, y, new_x, new_y);
+        print_msg_about_failed_move(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
     }
     return move_done;
 }
@@ -95,6 +93,10 @@ void Game::setWhite_turn(bool white_turn) {
 
 void Game::write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y) {
     gameLogsWriter.write_log_about_move(figure, old_x, old_y, new_x, new_y);
+}
+
+void Game::print_request_to_move_again() {
+    std::cout << "Move FAILED" << std::endl << "Try again: " << std::endl;
 }
 
 
