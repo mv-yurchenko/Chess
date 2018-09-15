@@ -1,0 +1,64 @@
+00 castle White
+10 Knight White
+20 bishop White
+30 queen White
+40 king White
+50 bishop White
+60 Knight White
+70 castle White
+01 Pawn0 White
+11 Pawn1 White
+21 Pawn2 White
+31 Pawn3 White
+41 No figure Black
+51 Pawn5 White
+61 Pawn6 White
+71 Pawn7 White
+02 No figure Black
+12 No figure Black
+22 No figure Black
+32 No figure Black
+42 No figure Black
+52 No figure Black
+62 No figure Black
+72 No figure Black
+03 No figure Black
+13 No figure Black
+23 No figure Black
+33 No figure Black
+43 Pawn4 White
+53 No figure Black
+63 No figure Black
+73 No figure Black
+04 No figure Black
+14 No figure Black
+24 No figure Black
+34 No figure Black
+44 No figure Black
+54 No figure Black
+64 No figure Black
+74 No figure Black
+05 No figure Black
+15 No figure Black
+25 No figure Black
+35 No figure Black
+45 No figure Black
+55 No figure Black
+65 No figure Black
+75 No figure Black
+06 Pawn0 Black
+16 Pawn1 Black
+26 Pawn2 Black
+36 Pawn3 Black
+46 Pawn4 Black
+56 Pawn5 Black
+66 Pawn6 Black
+76 Pawn7 Black
+07 castle Black
+17 Knight Black
+27 bishop Black
+37 queen Black
+47 king Black
+57 bishop Black
+67 Knight Black
+77 castle Black

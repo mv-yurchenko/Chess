@@ -2,6 +2,8 @@
 // Created by Max Yurchenko on 24.08.2018.
 //
 
+// TODO: Удалить available_moves
+
 #ifndef CHESS_FIGURE_H
 #define CHESS_FIGURE_H
 

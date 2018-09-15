@@ -40,6 +40,12 @@ void GameLogsWriter::save_game(Desk *desk, bool is_white_turn) {
     write_current_desk(desk, true);
 }
 
+std::string GameLogsWriter::generate_game_save_filename() {
+    time_t result = time(nullptr);
+    return asctime(localtime(&result));
+
+}
+
 
 
 

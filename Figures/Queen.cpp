@@ -19,6 +19,7 @@ Queen::Queen() {
 void Queen::calculate_available_moves() {
     //////////////////////////////////////////
     //  Bishop + Castle = Queen
+    // TODO: Проверить правильность работы на реальной доске
     //////////////////////////////////////////
 
     Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
