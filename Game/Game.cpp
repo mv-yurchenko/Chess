@@ -48,52 +48,6 @@ bool Game::is_mate(int x, int y) {
 
 bool Game::player_turn(bool is_white_turn) {
 
-    bool move_done = false;
-
-    // Координаты, указывающее на желание пользователя  сохранить игру
-    Coordinates save_game_coord(100, 100);
-    Coordinates new_coordinates;
-
-    std::cout<<"Input figure coordinates" << std::endl;
-    Coordinates old_coordinates = input_coordinates();
-
-    if (old_coordinates != save_game_coord) {
-        std::cout << "Your choice:" << getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(),
-                                                                                    old_coordinates.getY())->getName()
-                  << std::endl;
-
-        std::cout << "Input new coordinates" << std::endl;
-        new_coordinates = input_coordinates();
-    } else{
-        new_coordinates.setX(100); new_coordinates.setY(100);
-    }
-    bool is_game_saved = save_game_coord == new_coordinates or save_game_coord == old_coordinates;
-    if (is_game_saved){
-        GameLogsWriter gameLogsWriter;
-        gameLogsWriter.save_game(getCurrent_desk(), is_white_turn);
-    }
-    // TODO : Дебаг функции SAVE
-    if (not is_game_saved) {
-        if (is_white_turn ==
-            getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getSide()) {
-            bool success_turn = move_figure(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(),
-                                            new_coordinates.getY());
-            if (success_turn) {
-                print_msg_about_success_move(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(),
-                                             new_coordinates.getY());
-                setIs_game_finished(is_mate(new_coordinates.getX(), new_coordinates.getY()));
-                write_log_about_move(
-                        getCurrent_desk()->get_figure_by_coordinates(new_coordinates.getX(), new_coordinates.getY()),
-                        old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
-                move_done = true;
-                setWhite_turn(not isWhite_turn());
-            }
-        } else {
-            print_msg_about_failed_move(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(),
-                                        new_coordinates.getY());
-        }
-    }
-    return move_done;
 }
 
 void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y) {
@@ -191,6 +145,11 @@ int Game::convert_char_to_string(char num_as_char) {
     if (num_as_char == '8'){
         return 8;
     }
+}
+
+bool Game::random_player_side() {
+    int random_num = rand() % 100;
+    return random_num % 2 == 1;
 }
 
 

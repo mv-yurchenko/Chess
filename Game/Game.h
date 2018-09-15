@@ -39,7 +39,7 @@ public:
 
     bool is_mate(int x, int y);
 
-    bool player_turn(bool is_white_turn);
+    virtual bool player_turn(bool is_white_turn);
 
     void print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y);
 
@@ -54,6 +54,13 @@ public:
     int convert_letter_to_num(char letter);
 
     int convert_char_to_string(char num_as_char);
+
+    bool random_player_side();
+
+    void print_msg_about_figure_choice(Coordinates figure_coordinates){
+        std::cout << "You chose figure : " << this->getCurrent_desk()->
+            get_figure_by_coordinates(figure_coordinates.getX(), figure_coordinates.getY())->getName() << std::endl;
+    }
 };
 
 
