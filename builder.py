@@ -17,5 +17,7 @@ os_command = add_file(os_command, "Move.cpp")
 
 os_command = add_file(os_command, "Coordinates.cpp")
 
+os_command = add_file(os_command, "Graphics/*.cpp")
+
 
 os.system(os_command)
