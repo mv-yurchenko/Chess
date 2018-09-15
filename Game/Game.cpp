@@ -84,6 +84,7 @@ Coordinates Game::input_coordinates() {
         std::cin >> coordinates;
         if (coordinates == "save"){
             gameLogsWriter.save_game(getCurrent_desk(), isWhite_turn());
+            std::cout << "Game was saved." << std::endl;
         }
         first_num = convert_letter_to_num(coordinates[0]);
         success_input = not (coordinates.length() != 2 or first_num == 0);
