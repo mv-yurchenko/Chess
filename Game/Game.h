@@ -7,6 +7,7 @@
 
 #include "../Desk.h"
 #include "stdio.h"
+#include "ctime"
 #include "../LogsWriter/GameLogsWriter.h"
 
 class Game {

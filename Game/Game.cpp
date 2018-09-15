@@ -83,7 +83,7 @@ Coordinates Game::input_coordinates() {
         std::cout << "Input Coordinates:";
         std::cin >> coordinates;
         if (coordinates == "save"){
-            return Coordinates(100, 100);
+            gameLogsWriter.save_game(getCurrent_desk(), isWhite_turn());
         }
         first_num = convert_letter_to_num(coordinates[0]);
         success_input = not (coordinates.length() != 2 or first_num == 0);
