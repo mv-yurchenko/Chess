@@ -187,7 +187,6 @@ void Desk::initialize_possible_moves() {
         for(int j = 0; j < 8; j ++){
             this->desk[i][j]->clear_available_moves();
             this->desk[i][j]->clear_possible_moves();
-            this->desk[i][j]->calculate_available_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }
     }

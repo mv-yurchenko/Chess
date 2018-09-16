@@ -45,8 +45,6 @@ public:
 
     virtual void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
 
-    virtual void calculate_available_moves();
-
     const Coordinates &getCoordinates() const;
 
     const std::vector<Move> &getAvailable_moves() const;
