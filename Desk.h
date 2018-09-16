@@ -16,26 +16,32 @@
 
 class Desk {
     Figure *desk[8][8];
+
+    std::vector<Figure> white_figures;
+    std::vector<Figure> black_figures;
+public:
+    const std::vector<Figure> &getWhite_figures() const;
+
+    const std::vector<Figure> &getBlack_figures() const;
+
+
 public:
 
     Desk();
 
     Figure *get_figure_by_coordinates(int x, int y);
 
-    void initiatilize_desk();
+    void initialize_desk();
 
-    void print_desk(){
-        //////////////////////////////////////////
-        //  Дебаг функция
-        /////////////////////////////////////////
-        for (int i = 0; i < 8; i ++){
-            for (int j = 0; j < 8; j ++) {
-                Figure *figure = desk[j][i];
-                std::cout << desk[j][i]->getName() << std::endl;
-                std::cout << "-------------------------" << std::endl;
-            }
-        }
-    }
+    void print_desk();
+
+    bool move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
+
+    bool is_move_possible(Figure figure, Coordinates new_coordinates);
+
+    void initialize_possible_moves();
+
+    void reinitialize_white_black_figures();
 };
 
 

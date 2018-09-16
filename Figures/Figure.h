@@ -2,6 +2,8 @@
 // Created by Max Yurchenko on 24.08.2018.
 //
 
+// TODO: Удалить available_moves
+
 #ifndef CHESS_FIGURE_H
 #define CHESS_FIGURE_H
 
@@ -12,26 +14,36 @@
 
 class Figure  {
     bool side;
+    int value;
+public:
+    void setValue(int value);
+
+private:
     Coordinates coordinates;
     std::vector <Move> available_moves;
     std::vector <Move> possible_moves;
     std::string name;
+    std::string desk_name;
+public:
+    const std::string &getDesk_name() const;
+
+public:
+    void setDesk_name(const char *desk_name);
+
+private:
+    bool is_dead = false;
 public:
     void setName(const std::string &name);
 
     void setCoordinates(const Coordinates &coordinates);
 
-    Figure(bool side, const Coordinates &coordinates, const char *name);
+    Figure(bool side, const Coordinates &coordinates, const char *name, int value);
 
     Figure(bool side, Coordinates coordinates);
 
     Figure();
 
     virtual void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
-
-    virtual void calculate_available_moves();
-
-    void move_figure();
 
     const Coordinates &getCoordinates() const;
 
@@ -63,6 +75,13 @@ public:
 
     bool is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> ally_figures);
 
+    bool getSide() const;
+
+    void clear_possible_moves();
+
+    void clear_available_moves();
+
+    const char *get_side_as_string();
 };
 
 #endif //CHESS_FIGURE_H

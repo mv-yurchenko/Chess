@@ -13,9 +13,7 @@ class Pawn : public Figure {
 public:
     Pawn();
 
-    Pawn(bool side, Coordinates coordinates);
-
-    void calculate_available_moves() override;
+    Pawn(bool side, Coordinates coordinates, uint8_t num);
 
     void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
 };

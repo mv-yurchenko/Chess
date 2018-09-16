@@ -13,7 +13,6 @@ public:
 
     int getY() const;
 
-public:
     Coordinates(int x, int y);
 
     Coordinates();
@@ -24,6 +23,7 @@ public:
 
     bool operator== (const Coordinates& coord_1);
 
+    bool operator!=(const Coordinates&coord_1);
 };
 
 

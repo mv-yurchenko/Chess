@@ -4,20 +4,12 @@
 
 #include "Figure.h"
 
-Figure::Figure(bool side, const Coordinates &coordinates, const char *name) {
+Figure::Figure(bool side, const Coordinates &coordinates, const char *name, int value) {
     this->side = side;
     this->coordinates = coordinates;
     this->name = name;
-    calculate_available_moves();
-//    calculate_possible_moves();
-}
-
-void Figure::move_figure() {
-
-}
-
-void Figure::calculate_available_moves() {
-
+    this->value = value;
+    this->is_dead = false;
 }
 
 void Figure::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
@@ -45,7 +37,8 @@ bool Figure::is_out_of_border(Coordinates coordinates) {
 }
 
 Figure::Figure() {
-
+    this->name = "No figure";
+    this->side = NULL;
 }
 
 void Figure::add_move_to_available_moves(Coordinates new_coordinates) {
@@ -89,13 +82,14 @@ void Figure::print_available_moves() {
         std::cout << "New coordinates" << std::endl;
         std::cout << move.getNew_coordinates().getX() << std::endl;
         std::cout << move.getNew_coordinates().getY() << std::endl;
-        std::cout << "--------------------------" << std::endl;
+        std::cout << "------------------------" << std::endl;
     }
 }
 
 Figure::Figure(bool side, Coordinates coordinates) {
     this->side = side;
     this->coordinates = coordinates;
+    this->is_dead = false;
 }
 
 void Figure::setName(const std::string &name) {
@@ -127,4 +121,36 @@ bool Figure::is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> a
         }
     }
     return false;
+}
+
+bool Figure::getSide() const {
+    return side;
+}
+
+void Figure::setValue(int value) {
+    Figure::value = value;
+}
+
+void Figure::clear_possible_moves() {
+    this->possible_moves.clear();
+}
+
+void Figure::clear_available_moves() {
+    this->available_moves.clear();
+}
+
+const char *Figure::get_side_as_string() {
+    if (getSide()){
+        return "White";
+    } else{
+        return "Black";
+    }
+}
+
+void Figure::setDesk_name(const char *desk_name) {
+    Figure::desk_name = desk_name;
+}
+
+const std::string &Figure::getDesk_name() const {
+    return desk_name;
 }

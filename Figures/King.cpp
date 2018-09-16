@@ -52,7 +52,6 @@ void King::calculate_available_moves() {
     for (auto new_coordinates : vector_of_new_coordinates){
         this->add_move_to_available_moves(new_coordinates);
     }
-    std::cout<<std::endl;
 }
 
 King::King() {
@@ -70,6 +69,10 @@ void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vect
     }
 }
 
-King::King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king"){
-
+King::King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king", 9999){
+    if (side){
+        setDesk_name("W_K");
+    } else{
+        setDesk_name("B_K");
+    }
 }

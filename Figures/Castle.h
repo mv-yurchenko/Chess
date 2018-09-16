@@ -15,9 +15,10 @@ public:
 
     Castle(bool side, Coordinates coordinates);
 
-    void calculate_available_moves() override;
-
     void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
+
+    void calculate_one_direction(const std::vector<Figure> &white_figures, const std::vector<Figure> &black_figures,
+                                         bool increment_up,bool increment_down,bool increment_right, bool increment_left);
 };
 
 

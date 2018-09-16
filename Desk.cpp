@@ -4,7 +4,6 @@
 
 #include "Desk.h"
 
-
 Desk::Desk() {
     for (int i=0; i<8;i++)
         for(int j=0;j<8; j++) {
@@ -18,7 +17,7 @@ Figure *Desk::get_figure_by_coordinates(int x, int y) {
     return desk[x][y];
 }
 
-void Desk::initiatilize_desk() {
+void Desk::initialize_desk() {
 
     // White castles
     Coordinates w_castle1_coordinates(0, 0);
@@ -104,4 +103,100 @@ void Desk::initiatilize_desk() {
     desk[b_queen_coordinates.getX()][b_queen_coordinates.getY()] = b_queen;
     desk[b_King_coordinates.getX()][b_King_coordinates.getY()] = b_king;
 
+    // White Pawns
+
+    for (uint8_t i = 0; i < 8; i++){
+        Coordinates w_pawn_coordinates(i, 1);
+
+        Pawn *w_pawn = new Pawn(true, w_pawn_coordinates, i);
+
+        desk[w_pawn->getCoordinates().getX()][w_pawn->getCoordinates().getY()] = w_pawn;
+    }
+
+    // Black Pawns
+
+    for (uint8_t i = 0; i < 8; i++){
+        Coordinates b_pawn_coordinates(i, 6);
+
+        Pawn *b_pawn = new Pawn(false, b_pawn_coordinates, i);
+
+        desk[b_pawn->getCoordinates().getX()][b_pawn->getCoordinates().getY()] = b_pawn;
+    }
+
+    reinitialize_white_black_figures();
+    initialize_possible_moves();
+
 }
+
+void Desk::print_desk() {
+    //////////////////////////////////////////
+    //  Дебаг функция
+    //////////////////////////////////////////
+    for (int i = 0; i < 8; i ++){
+        for (int j = 0; j < 8; j ++) {
+            if (not (desk[j][i]->getName() == "No figure")) {
+                Figure *figure = desk[j][i];
+                std::cout << "Figure on coordinates: " << j << " : "<< i  << std::endl;
+                std::cout << desk[j][i]->getName() << std::endl;
+                std::cout << "-------------------------" << std::endl;
+            }
+        }
+    }
+}
+
+bool Desk::move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
+    Figure *figure = desk[old_coordinates.getX()][old_coordinates.getY()];
+    Figure *old_figure = new Figure;
+    if (is_move_possible(*figure, new_coordinates)){
+        this->desk[new_coordinates.getX()][new_coordinates.getY()] = figure;
+        this->desk[new_coordinates.getX()][new_coordinates.getY()]->setCoordinates(new_coordinates);
+        this->desk[old_coordinates.getX()][old_coordinates.getY()] = old_figure;
+        reinitialize_white_black_figures();
+        initialize_possible_moves();
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Desk::is_move_possible(Figure figure, Coordinates new_coordinates) {
+    for(auto move : figure.getPossible_moves()){
+        Coordinates possible_coordinates = move.getNew_coordinates();
+        if (possible_coordinates == new_coordinates){
+            return true;
+        }
+    }
+    return false;
+}
+
+void Desk::reinitialize_white_black_figures() {
+    for (int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j ++){
+            if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
+                white_figures.push_back(*desk[i][j]);
+            }
+            if(not desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
+                black_figures.push_back(*desk[i][j]);
+            }
+        }
+    }
+}
+
+void Desk::initialize_possible_moves() {
+    for (int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j ++){
+            this->desk[i][j]->clear_available_moves();
+            this->desk[i][j]->clear_possible_moves();
+            this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
+        }
+    }
+}
+
+const std::vector<Figure> &Desk::getWhite_figures() const {
+    return white_figures;
+}
+
+const std::vector<Figure> &Desk::getBlack_figures() const {
+    return black_figures;
+}
+
