@@ -4,9 +4,7 @@
 
 #include "King.h"
 
-King::King() {
-
-}
+King::King() = default;
 
 void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
     std::vector<Figure> ally_figures;

@@ -19,7 +19,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
 
     calculate_one_direction(white_figures, black_figures, false, true, false, false);
 
-    calculate_one_direction(white_figures, black_figures, false, false, false, true);
+    calculate_one_direction(white_figures, black_figures, false, false, true, false);
 
     calculate_one_direction(white_figures, black_figures, false, false, false, true);
 }
