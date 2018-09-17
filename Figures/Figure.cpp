@@ -66,6 +66,7 @@ void Figure::print_possible_moves() {
     //////////////////////////////////////////
     //  Дебаг функция
     /////////////////////////////////////////
+    std::cout << "POSSIBLE MOVES" << std::endl;
     for (auto move : this->getPossible_moves()){
         std::cout << "Possible move" << std::endl;
         std::cout << move.getNew_coordinates().getX() << std::endl;
