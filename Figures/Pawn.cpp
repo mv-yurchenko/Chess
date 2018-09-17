@@ -19,64 +19,6 @@ Pawn::Pawn() {
 
 }
 
-void Pawn::calculate_available_moves() {
-    Coordinates new_position;
-    if (is_figure_white()) {
-        new_position.setX(this->getCoordinates().getX());
-        new_position.setY(this->getCoordinates().getY() + 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-        // Первый ход на 2 клетки
-        if (this->getCoordinates().getY() == 1) {
-            new_position.setX(this->getCoordinates().getX());
-            new_position.setX(this->getCoordinates().getY() + 2);
-            if (not is_out_of_border(new_position)) {
-                add_move_to_available_moves(new_position);
-            }
-        }
-        // Пешка есть по диагонали
-        new_position.setX(this->getCoordinates().getX() + 1);
-        new_position.setY(this->getCoordinates().getY() + 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-
-        new_position.setX(this->getCoordinates().getX() - 1);
-        new_position.setY(this->getCoordinates().getY() + 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-    }
-    if (is_figure_black()){
-        new_position.setX(this->getCoordinates().getX());
-        new_position.setY(this->getCoordinates().getY() - 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-        // Первый ход на 2 клетки
-        if (this->getCoordinates().getY() == 6) {
-            new_position.setX(this->getCoordinates().getX());
-            new_position.setY(this->getCoordinates().getY() - 2);
-            if (not is_out_of_border(new_position)) {
-                add_move_to_available_moves(new_position);
-            }
-        }
-        // Пешка есть по диагонали
-        new_position.setX(this->getCoordinates().getX() + 1);
-        new_position.setY(this->getCoordinates().getY() - 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-
-        new_position.setX(this->getCoordinates().getX() - 1);
-        new_position.setY(this->getCoordinates().getY() - 1);
-        if (not is_out_of_border(new_position)) {
-            add_move_to_available_moves(new_position);
-        }
-    }
-}
-
 void Pawn::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
     // TODO: добавить 1 ход на 2 клетки
     for (auto move : getAvailable_moves()) {

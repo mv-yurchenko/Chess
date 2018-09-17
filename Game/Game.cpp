@@ -48,33 +48,6 @@ bool Game::is_mate(int x, int y) {
 
 bool Game::player_turn(bool is_white_turn) {
 
-    bool move_done = false;
-
-    std::cout<<"Input figure coordinates" << std::endl;
-
-    int x = input_coordinate("X:");
-    int y = input_coordinate("Y:");
-
-    std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
-
-    std::cout<<"Input new coordinates" << std::endl;
-
-    int new_x = input_coordinate("X:");
-    int new_y = input_coordinate("Y:");
-
-    if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
-        bool success_turn = move_figure(x, y, new_x, new_y);
-        if (success_turn){
-            print_msg_about_success_move(x, y, new_x, new_y);
-            setIs_game_finished(is_mate(new_x, new_y));
-            write_log_about_move(getCurrent_desk()->get_figure_by_coordinates(new_x, new_y), x , y, new_x, new_y);
-            move_done = true;
-            setWhite_turn(not isWhite_turn());
-        }
-    } else{
-        print_msg_about_failed_move(x, y, new_x, new_y);
-    }
-    return move_done;
 }
 
 void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y) {
@@ -95,6 +68,89 @@ void Game::setWhite_turn(bool white_turn) {
 
 void Game::write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y) {
     gameLogsWriter.write_log_about_move(figure, old_x, old_y, new_x, new_y);
+}
+
+void Game::print_request_to_move_again() {
+    std::cout << "Move FAILED" << std::endl << "Try again: " << std::endl;
+}
+
+Coordinates Game::input_coordinates() {
+    int first_num;
+    bool success_input = false;
+    std::string coordinates;
+    while (not success_input)
+    {
+        std::cout << "Input Coordinates:";
+        std::cin >> coordinates;
+        if (coordinates == "save"){
+            gameLogsWriter.save_game(getCurrent_desk(), isWhite_turn());
+            std::cout << "Game was saved." << std::endl;
+        }
+        first_num = convert_letter_to_num(coordinates[0]);
+        success_input = not (coordinates.length() != 2 or first_num == 0);
+    }
+    Coordinates return_coordinates(first_num -1, convert_char_to_string(coordinates[1]) - 1);
+    return return_coordinates;
+}
+
+int Game::convert_letter_to_num(char letter) {
+    if (letter == 'A') {
+        return 1;
+    }
+    if (letter == 'B') {
+        return 2;
+    }
+    if (letter == 'C') {
+        return 3;
+    }
+    if (letter == 'D') {
+        return 4;
+    }
+    if (letter == 'E') {
+        return 5;
+    }
+    if (letter == 'F') {
+        return 6;
+    }
+    if (letter == 'G') {
+        return 7;
+    }
+    if (letter == 'H') {
+        return 8;
+    }
+    return 0;
+}
+
+int Game::convert_char_to_string(char num_as_char) {
+    if (num_as_char == '1'){
+        return 1;
+    }
+    if (num_as_char == '2'){
+        return 2;
+    }
+    if (num_as_char == '3'){
+        return 3;
+    }
+    if (num_as_char == '4'){
+        return 4;
+    }
+    if (num_as_char == '5'){
+        return 5;
+    }
+    if (num_as_char == '6'){
+        return 6;
+    }
+    if (num_as_char == '7'){
+        return 7;
+    }
+    if (num_as_char == '8'){
+        return 8;
+    }
+}
+
+bool Game::random_player_side() {
+    int random_num = rand() % 100;
+    return random_num % 2 == 1;
 }
 
 

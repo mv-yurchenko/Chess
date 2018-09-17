@@ -15,8 +15,6 @@ public:
 
     Move();
 
-    bool if_move_possible();
-
     void setOld_coordinates(const Coordinates &old_coordinates);
 
     void setNew_coordinates(const Coordinates &new_coordinates);

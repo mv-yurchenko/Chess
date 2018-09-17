@@ -15,8 +15,6 @@ public:
 
     Pawn(bool side, Coordinates coordinates, uint8_t num);
 
-    void calculate_available_moves() override;
-
     void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
 };
 

@@ -8,6 +8,7 @@
 
 #include <string>
 #include <fstream>
+#include <ctime>
 #include "../Desk.h"
 
 class GameLogsWriter {
@@ -28,6 +29,10 @@ public:
     void write_current_desk(Desk *desk, bool to_save_game);
 
     void save_game(Desk *desk, bool is_white_turn);
+
+    std::string generate_game_save_filename();
+
+    std::string removeSpaces(std::string str);
 };
 
 

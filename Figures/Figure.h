@@ -2,6 +2,8 @@
 // Created by Max Yurchenko on 24.08.2018.
 //
 
+// TODO: Удалить available_moves
+
 #ifndef CHESS_FIGURE_H
 #define CHESS_FIGURE_H
 
@@ -42,8 +44,6 @@ public:
     Figure();
 
     virtual void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures );
-
-    virtual void calculate_available_moves();
 
     const Coordinates &getCoordinates() const;
 

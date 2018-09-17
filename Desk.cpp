@@ -187,7 +187,6 @@ void Desk::initialize_possible_moves() {
         for(int j = 0; j < 8; j ++){
             this->desk[i][j]->clear_available_moves();
             this->desk[i][j]->clear_possible_moves();
-            this->desk[i][j]->calculate_available_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }
     }
@@ -199,5 +198,9 @@ const std::vector<Figure> &Desk::getWhite_figures() const {
 
 const std::vector<Figure> &Desk::getBlack_figures() const {
     return black_figures;
+}
+
+Figure *Desk::get_figure_by_coordinates(Coordinates coordinates) {
+    return desk[coordinates.getX()][coordinates.getY()];
 }
 

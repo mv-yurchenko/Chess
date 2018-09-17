@@ -4,69 +4,26 @@
 
 #include "King.h"
 
-void King::calculate_available_moves() {
-    Coordinates current_coordinates = this->getCoordinates();
-    std::vector <Coordinates> vector_of_new_coordinates;
-    Coordinates new_pos;
-
-    new_pos.setX(current_coordinates.getX());
-    new_pos.setY(current_coordinates.getY() + 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() + 1);
-    new_pos.setY(current_coordinates.getY() + 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() + 1);
-    new_pos.setY(current_coordinates.getY());
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() + 1);
-    new_pos.setY(current_coordinates.getY() - 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX());
-    new_pos.setY(current_coordinates.getY() - 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() - 1);
-    new_pos.setY(current_coordinates.getY() - 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() - 1);
-    new_pos.setY(current_coordinates.getY());
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    new_pos.setX(current_coordinates.getX() - 1);
-    new_pos.setY(current_coordinates.getY() + 1);
-    if (not is_out_of_border(new_pos)) {
-        vector_of_new_coordinates.push_back(new_pos);
-    }
-    for (auto new_coordinates : vector_of_new_coordinates){
-        this->add_move_to_available_moves(new_coordinates);
-    }
-}
-
-King::King() {
-
-}
+King::King() = default;
 
 void King::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
-    for (auto move : getAvailable_moves()){
-        bool is_move_possible = true;
-        for (const auto &figure : white_figures){
-            if (is_coordinates_same(figure.getCoordinates(), move.getNew_coordinates())){
-                is_move_possible = false;
-            }
-        }
+    std::vector<Figure> ally_figures;
+    if (is_figure_white()){
+        ally_figures = white_figures;
+    } else{
+        ally_figures = black_figures;
     }
+
+    calculate_one_direction(ally_figures, true, false, false, false);
+    calculate_one_direction(ally_figures, false, true, false, false);
+    calculate_one_direction(ally_figures, false, false , true, false);
+    calculate_one_direction(ally_figures, false, false , false, true);
+
+    calculate_one_direction(ally_figures, true, false, true, false);
+    calculate_one_direction(ally_figures, true, false, false, true);
+    calculate_one_direction(ally_figures, false, true, false, true);
+    calculate_one_direction(ally_figures, false, true, true, false);
+
 }
 
 King::King(bool side, Coordinates coordinates) : Figure(side, coordinates ,"king", 9999){

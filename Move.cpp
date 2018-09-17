@@ -4,10 +4,6 @@
 
 #include "Move.h"
 
-bool Move::if_move_possible() {
-    // TODO: Как функцию правильно сделать?
-}
-
 void Move::setOld_coordinates(const Coordinates &old_coordinates) {
     Move::old_coordinates = old_coordinates;
 }

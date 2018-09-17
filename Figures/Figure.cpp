@@ -10,12 +10,6 @@ Figure::Figure(bool side, const Coordinates &coordinates, const char *name, int 
     this->name = name;
     this->value = value;
     this->is_dead = false;
-    calculate_available_moves();
-//    calculate_possible_moves();
-}
-
-void Figure::calculate_available_moves() {
-
 }
 
 void Figure::calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) {
@@ -72,6 +66,7 @@ void Figure::print_possible_moves() {
     //////////////////////////////////////////
     //  Дебаг функция
     /////////////////////////////////////////
+    std::cout << "POSSIBLE MOVES" << std::endl;
     for (auto move : this->getPossible_moves()){
         std::cout << "Possible move" << std::endl;
         std::cout << move.getNew_coordinates().getX() << std::endl;

@@ -11,11 +11,18 @@
 class PVP_GAME : public Game{
 
     bool player1_side;
+
     bool player2_side;
+
     ChessGraphic chessGraphic{};
+
 public:
 
-    void pvp_game();
+    bool player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates);
+
+    void local_game();
+
+    void pvp_game(bool is_game_online);
 };
 
 
