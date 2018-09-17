@@ -11,8 +11,8 @@ GameLogsWriter::GameLogsWriter() {
     this->desk_log_filename = "Desk";
     this->desk_log_file_path = "../LogsFiles/" + this->desk_log_filename+ ".txt";
     this->desk_log_file.open(this->desk_log_file_path);
-    this->game_save_filename = "../LogsFiles/SavedGames";
-    this->game_save_file_path = this->game_save_filename + generate_game_save_filename() + ".txt";
+    this->game_save_filename = "../LogsFiles/SavedGames/";
+    this->game_save_file_path = removeSpaces(this->game_save_filename + generate_game_save_filename() + ".txt");
     this->game_save_file.open(this->game_save_file_path);
 }
 
@@ -42,8 +42,21 @@ void GameLogsWriter::save_game(Desk *desk, bool is_white_turn) {
 
 std::string GameLogsWriter::generate_game_save_filename() {
     time_t result = time(nullptr);
-    return asctime(localtime(&result));
+    std::string time_string = asctime(localtime(&result));
+    // Удаляем преенос строки в конце
+    return time_string.substr(0, time_string.length() - 1);
+}
 
+std::string GameLogsWriter::removeSpaces(std::string str) {
+    std::string new_string;
+    for(auto symbol : str){
+        if (symbol != ' ' and symbol != ':'){
+            new_string.push_back(symbol);
+        }else{
+            new_string.push_back('_');
+        }
+    }
+    return new_string;
 }
 
 
