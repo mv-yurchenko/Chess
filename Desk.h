@@ -42,6 +42,8 @@ public:
     void initialize_possible_moves();
 
     void reinitialize_white_black_figures();
+
+    Figure *get_figure_by_coordinates(Coordinates coordinates);
 };
 
 

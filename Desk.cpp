@@ -200,3 +200,7 @@ const std::vector<Figure> &Desk::getBlack_figures() const {
     return black_figures;
 }
 
+Figure *Desk::get_figure_by_coordinates(Coordinates coordinates) {
+    return desk[coordinates.getX()][coordinates.getY()];
+}
+
