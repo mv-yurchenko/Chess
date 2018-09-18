@@ -4,7 +4,7 @@
 
 #include "Pawn.h"
 
-Pawn::Pawn(bool side, Coordinates coordinates, uint8_t num){
+Pawn::Pawn(bool side, Coordinates coordinates, int num){
     this->setName("Pawn" + std::to_string(num));
     this->setSide(side);
     this->setCoordinates(coordinates);

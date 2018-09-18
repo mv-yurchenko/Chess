@@ -49,6 +49,18 @@ public:
     void print_white_figures(bool to_file);
 
     void print_black_figures(bool to_file);
+
+    void initialize_castles(bool side);
+
+    void initialize_knights(bool side);
+
+    void initialize_bishops(bool side);
+
+    void initialize_king(bool side);
+
+    void initialize_queen(bool side);
+
+    void initialize_pawn(bool side, int num);
 };
 
 
