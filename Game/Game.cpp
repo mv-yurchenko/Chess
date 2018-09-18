@@ -43,7 +43,7 @@ int Game::input_coordinate(const char *coord_name) {
 }
 
 bool Game::is_mate(int x, int y) {
-    return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king";
+    return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king" and this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide() == isWhite_turn();
 }
 
 bool Game::player_turn(bool is_white_turn) {
