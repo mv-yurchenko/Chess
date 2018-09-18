@@ -204,3 +204,27 @@ Figure *Desk::get_figure_by_coordinates(Coordinates coordinates) {
     return desk[coordinates.getX()][coordinates.getY()];
 }
 
+void Desk::print_black_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("black_figures.txt");
+
+    for (auto figure : black_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY();
+    }
+}
+
+void Desk::print_white_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("white_figures.txt");
+
+    for (auto figure : white_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY();
+    }
+}
+
