@@ -170,6 +170,8 @@ bool Desk::is_move_possible(Figure figure, Coordinates new_coordinates) {
 }
 
 void Desk::reinitialize_white_black_figures() {
+    white_figures.clear();
+    black_figures.clear();
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
             if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
@@ -202,5 +204,29 @@ const std::vector<Figure> &Desk::getBlack_figures() const {
 
 Figure *Desk::get_figure_by_coordinates(Coordinates coordinates) {
     return desk[coordinates.getX()][coordinates.getY()];
+}
+
+void Desk::print_black_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("black_figures.txt");
+
+    for (auto figure : black_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY() << std::endl;
+    }
+}
+
+void Desk::print_white_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("white_figures.txt");
+
+    for (auto figure : white_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY() << std::endl;
+    }
 }
 

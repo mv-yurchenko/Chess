@@ -13,6 +13,7 @@
 #include "Figures/Castle.h"
 #include "Figures/Bishop.h"
 #include "Figures/Queen.h"
+#include <fstream>
 
 class Desk {
     Figure *desk[8][8];
@@ -44,6 +45,10 @@ public:
     void reinitialize_white_black_figures();
 
     Figure *get_figure_by_coordinates(Coordinates coordinates);
+
+    void print_white_figures(bool to_file);
+
+    void print_black_figures(bool to_file);
 };
 
 
