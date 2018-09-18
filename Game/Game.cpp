@@ -153,4 +153,9 @@ bool Game::random_player_side() {
     return random_num % 2 == 1;
 }
 
+void Game::print_msg_about_figure_choice(Coordinates figure_coordinates) {
+    std::cout << "You chose figure : " << this->getCurrent_desk()->
+            get_figure_by_coordinates(figure_coordinates.getX(), figure_coordinates.getY())->getName() << std::endl;
+}
+
 

@@ -20,31 +20,7 @@ Pawn::Pawn() {
 }
 
 void Pawn::calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
-    // TODO: добавить 1 ход на 2 клетки
-    for (auto move : getAvailable_moves()) {
-        if (is_figure_white()) {
-            for (const auto &black_figure : black_figures) {
-                // Проверка на съедение
-                if (is_coordinates_same(black_figure.getCoordinates(), move.getNew_coordinates())) {
-                    if (getCoordinates().getX() != move.getNew_coordinates().getX()) {
-                        add_move_to_possible_moves(move.getNew_coordinates());
-                    }
-                }
-            }
-        }
-        if (is_figure_black()){
-            {
-                for (const auto &white_figure : white_figures) {
-                    // Проверка на съедение
-                    if (is_coordinates_same(white_figure.getCoordinates(), move.getNew_coordinates())) {
-                        if (getCoordinates().getX() != move.getNew_coordinates().getX()) {
-                            add_move_to_possible_moves(move.getNew_coordinates());
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // TODO REWORK
     // Ход вперед
     if (is_figure_white()) {
         Coordinates move_forward_coord(getCoordinates().getX(), getCoordinates().getY() + 1);
