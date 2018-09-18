@@ -155,3 +155,17 @@ void Figure::setDesk_name(const char *desk_name) {
 const std::string &Figure::getDesk_name() const {
     return desk_name;
 }
+
+bool Figure::is_cell_empty(Coordinates cell, std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
+    for (const auto &figure : white_figures){
+        if (is_coordinates_same(cell, figure.getCoordinates())){
+            return false;
+        }
+    }
+    for (const auto &figure : black_figures){
+        if (is_coordinates_same(cell, figure.getCoordinates())){
+            return false;
+        }
+    }
+    return true;
+}
