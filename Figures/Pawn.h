@@ -21,27 +21,7 @@ public:
 
     void calculate_two_cell_move_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
 
-    void calculate_diagonal_move_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures){
-        Coordinates new_coordinates;
-
-        if(is_figure_white()){
-            for (int i = 0 ; i < 2; i++) {
-                new_coordinates.setY(getCoordinates().getY() + 1);
-                new_coordinates.setX(getCoordinates().getX() + (-1)^i);
-                if (is_cell_busy_by_enemy_figure(new_coordinates, black_figures)) {
-                    add_move_to_possible_moves(new_coordinates);
-                }
-            }
-        } else{
-            for (int i = 0 ; i < 2; i++) {
-                new_coordinates.setY(getCoordinates().getY() - 1);
-                new_coordinates.setX(getCoordinates().getX() + (-1)^i);
-                if (is_cell_busy_by_enemy_figure(new_coordinates, white_figures)) {
-                    add_move_to_possible_moves(new_coordinates);
-                }
-            }
-        }
-    }
+    void calculate_diagonal_move_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
 };
 
 
