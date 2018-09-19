@@ -75,6 +75,8 @@ public:
 
     bool is_cell_busy_by_ally_figure(Coordinates cell, std::vector<Figure> ally_figures);
 
+    bool is_cell_empty(Coordinates cell, std::vector<Figure> white_figures, std::vector<Figure> black_figures);
+
     bool getSide() const;
 
     void clear_possible_moves();

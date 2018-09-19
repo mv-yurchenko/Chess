@@ -16,6 +16,12 @@ public:
     Pawn(bool side, Coordinates coordinates, int num);
 
     void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
+
+    void calculate_move_forward_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
+
+    void calculate_two_cell_move_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
+
+    void calculate_diagonal_move_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures);
 };
 
 

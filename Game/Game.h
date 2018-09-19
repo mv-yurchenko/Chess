@@ -58,10 +58,7 @@ public:
 
     bool random_player_side();
 
-    void print_msg_about_figure_choice(Coordinates figure_coordinates){
-        std::cout << "You chose figure : " << this->getCurrent_desk()->
-            get_figure_by_coordinates(figure_coordinates.getX(), figure_coordinates.getY())->getName() << std::endl;
-    }
+    void print_msg_about_figure_choice(Coordinates figure_coordinates);
 };
 
 
