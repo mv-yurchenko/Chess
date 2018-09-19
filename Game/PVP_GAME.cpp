@@ -31,15 +31,6 @@ void PVP_GAME::pvp_game(bool is_game_online) {
     }
 }
 
-bool PVP_GAME::player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates) {
-    if (getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getSide() == is_white_move){
-        return move_figure(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
-    }
-    else{
-        return false;
-    }
-}
-
 void PVP_GAME::local_game() {
     std::cout << "Input figure to move" << std::endl;
     Coordinates figure_coordinates = input_coordinates();

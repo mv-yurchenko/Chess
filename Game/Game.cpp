@@ -158,4 +158,13 @@ void Game::print_msg_about_figure_choice(Coordinates figure_coordinates) {
             get_figure_by_coordinates(figure_coordinates.getX(), figure_coordinates.getY())->getName() << std::endl;
 }
 
+bool Game::player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates) {
+    if (getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getSide() == is_white_move){
+        return move_figure(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
+    }
+    else{
+        return false;
+    }
+}
+
 
