@@ -6,8 +6,9 @@
 #define CHESS_GAME_H
 
 #include "../Desk.h"
-#include "conio.h"
 #include "stdio.h"
+#include "ctime"
+#include "../LogsWriter/GameLogsWriter.h"
 
 class Game {
     Desk *current_desk;
@@ -15,6 +16,8 @@ class Game {
     bool is_game_finished;
 
     bool white_turn;
+
+    GameLogsWriter gameLogsWriter;
 public:
     void setWhite_turn(bool white_turn);
 
@@ -29,19 +32,35 @@ public:
 
     void initialize_game();
 
-    bool move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y);
+    bool move_figure(int old_x, int old_y, int new_x, int new_y);
 
     void finish_game();
 
-    uint8_t input_coordinate(const char *coord_name);
+    int input_coordinate(const char *coord_name);
 
     bool is_mate(int x, int y);
 
-    void player_turn(bool is_white_turn);
+    virtual bool player_turn(bool is_white_turn);
 
     void print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y);
 
     void print_msg_about_failed_move(int old_x, int old_y, int new_x, int new_y);
+
+    void print_request_to_move_again();
+
+    void write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y);
+
+    Coordinates input_coordinates();
+
+    int convert_letter_to_num(char letter);
+
+    int convert_char_to_string(char num_as_char);
+
+    bool random_player_side();
+
+    void print_msg_about_figure_choice(Coordinates figure_coordinates);
+
+    bool player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates);
 };
 
 

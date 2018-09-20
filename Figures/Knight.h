@@ -14,9 +14,23 @@ public:
 
     Knight();
 
-    void calculate_available_moves() override;
-
     void calculate_possible_moves(std::vector<Figure> white_figures, std::vector<Figure> black_figures) override;
+
+    void calculate_move_possibility_2_right_1_down(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_right_1_up(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_up_1_right(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_up_1_left(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_left_1_up(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_left_1_down(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_down_1_left(std::vector<Figure> ally_figures);
+
+    void calculate_move_possibility_2_down_1_right(std::vector<Figure> ally_figures);
 
 };
 

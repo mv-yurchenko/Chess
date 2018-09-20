@@ -32,3 +32,15 @@ Coordinates::Coordinates() {
 bool Coordinates::operator==(const Coordinates &coord_1) {
     return coord_1.x == this->x and coord_1.y == this->y;
 }
+
+bool Coordinates::operator!=(const Coordinates &coord_1) {
+    return coord_1.getX() != getX() or coord_1.getY() !=getY();
+}
+
+void Coordinates::print_coordinates() {
+    //////////////////////////////////////////
+    //  Дебаг функия
+    /////////////////////////////////////////
+    std::cout<< "X coordinate : " << getX() << std::endl << "Y coordinate : " << getY() << std::endl;
+    std::cout << "--------------------------------------------" << std::endl;
+}

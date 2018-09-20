@@ -11,7 +11,7 @@ void Game::initialize_game() {
     current_desk->initialize_desk();
 }
 
-bool Game::move_figure(uint8_t old_x, uint8_t old_y, uint8_t new_x, uint8_t new_y) {
+bool Game::move_figure(int old_x, int old_y, int new_x, int new_y) {
     Coordinates old_coord(old_x, old_y);
     Coordinates new_coord(new_x, new_y);
 //        this->current_desk->get_figure_by_coordinates(old_x, old_y)->print_possible_moves();
@@ -35,41 +35,19 @@ void Game::finish_game() {
     is_game_finished = true;
 }
 
-uint8_t Game::input_coordinate(const char *coord_name) {
+int Game::input_coordinate(const char *coord_name) {
     std::cout<<coord_name << std::endl;
-    uint8_t coord;
+    int coord;
     std::cin >> coord;
-    return coord;
+    return coord - 1;
 }
 
 bool Game::is_mate(int x, int y) {
-    return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king";
+    return this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getName() == "king" and this->getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide() == isWhite_turn();
 }
 
-void Game::player_turn(bool is_white_turn) {
-    std::cout<<"Input figure coordinates" << std::endl;
+bool Game::player_turn(bool is_white_turn) {
 
-    uint8_t x = input_coordinate("X:");
-    uint8_t y = input_coordinate("Y:");
-
-    std::cout<<"Your choice:" << getCurrent_desk()->get_figure_by_coordinates(x, y)->getName()<< std::endl;
-
-    std::cout<<"Input new coordinates" << std::endl;
-
-    uint8_t new_x = input_coordinate("X:");
-    uint8_t new_y = input_coordinate("Y:");
-
-    if (is_white_turn == getCurrent_desk()->get_figure_by_coordinates(x, y)->getSide()) {
-        bool success_turn = move_figure(x, y, new_x, new_y);
-        if (success_turn){
-            print_msg_about_success_move(x, y, new_x, new_y);
-        }
-    } else{
-        print_msg_about_failed_move(x, y, new_x, new_y);
-        setWhite_turn(not isWhite_turn());
-    }
-
-    setIs_game_finished(is_mate(new_x, new_y));
 }
 
 void Game::print_msg_about_success_move(int old_x, int old_y, int new_x, int new_y) {
@@ -87,3 +65,106 @@ void Game::setIs_game_finished(bool is_game_finished) {
 void Game::setWhite_turn(bool white_turn) {
     Game::white_turn = white_turn;
 }
+
+void Game::write_log_about_move(Figure *figure, int old_x, int old_y, int new_x, int new_y) {
+    gameLogsWriter.write_log_about_move(figure, old_x, old_y, new_x, new_y);
+}
+
+void Game::print_request_to_move_again() {
+    std::cout << "Move FAILED" << std::endl << "Try again: " << std::endl;
+}
+
+Coordinates Game::input_coordinates() {
+    int first_num;
+    bool success_input = false;
+    std::string coordinates;
+    while (not success_input)
+    {
+        std::cout << "Input Coordinates:";
+        std::cin >> coordinates;
+        if (coordinates == "save"){
+            gameLogsWriter.save_game(getCurrent_desk(), isWhite_turn());
+            std::cout << "Game was saved." << std::endl;
+        }
+        first_num = convert_letter_to_num(coordinates[0]);
+        success_input = not (coordinates.length() != 2 or first_num == 0);
+    }
+    Coordinates return_coordinates(first_num -1, convert_char_to_string(coordinates[1]) - 1);
+    return return_coordinates;
+}
+
+int Game::convert_letter_to_num(char letter) {
+    if (letter == 'A') {
+        return 1;
+    }
+    if (letter == 'B') {
+        return 2;
+    }
+    if (letter == 'C') {
+        return 3;
+    }
+    if (letter == 'D') {
+        return 4;
+    }
+    if (letter == 'E') {
+        return 5;
+    }
+    if (letter == 'F') {
+        return 6;
+    }
+    if (letter == 'G') {
+        return 7;
+    }
+    if (letter == 'H') {
+        return 8;
+    }
+    return 0;
+}
+
+int Game::convert_char_to_string(char num_as_char) {
+    if (num_as_char == '1'){
+        return 1;
+    }
+    if (num_as_char == '2'){
+        return 2;
+    }
+    if (num_as_char == '3'){
+        return 3;
+    }
+    if (num_as_char == '4'){
+        return 4;
+    }
+    if (num_as_char == '5'){
+        return 5;
+    }
+    if (num_as_char == '6'){
+        return 6;
+    }
+    if (num_as_char == '7'){
+        return 7;
+    }
+    if (num_as_char == '8'){
+        return 8;
+    }
+}
+
+bool Game::random_player_side() {
+    int random_num = rand() % 100;
+    return random_num % 2 == 1;
+}
+
+void Game::print_msg_about_figure_choice(Coordinates figure_coordinates) {
+    std::cout << "You chose figure : " << this->getCurrent_desk()->
+            get_figure_by_coordinates(figure_coordinates.getX(), figure_coordinates.getY())->getName() << std::endl;
+}
+
+bool Game::player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates) {
+    if (getCurrent_desk()->get_figure_by_coordinates(old_coordinates.getX(), old_coordinates.getY())->getSide() == is_white_move){
+        return move_figure(old_coordinates.getX(), old_coordinates.getY(), new_coordinates.getX(), new_coordinates.getY());
+    }
+    else{
+        return false;
+    }
+}
+
+

@@ -18,114 +18,33 @@ Figure *Desk::get_figure_by_coordinates(int x, int y) {
 }
 
 void Desk::initialize_desk() {
+    initialize_castles(true);
+    initialize_castles(false);
 
-    // White castles
-    Coordinates w_castle1_coordinates(0, 0);
-    Coordinates w_castle2_coordinates(7, 0);
+    initialize_knights(true);
+    initialize_knights(false);
 
-    Castle *w_castle1 = new Castle(true, w_castle1_coordinates);
-    Castle *w_castle2 = new Castle(true, w_castle2_coordinates);
+    initialize_bishops(true);
+    initialize_bishops(false);
 
-    desk[w_castle1_coordinates.getX()][w_castle1_coordinates.getY()] = w_castle1;
-    desk[w_castle2_coordinates.getX()][w_castle2_coordinates.getY()] = w_castle2;
+    initialize_king(true);
+    initialize_king(false);
 
-    // Black castles
-    Coordinates b_castle1_coordinates(0, 7);
-    Coordinates b_castle2_coordinates(7, 7);
-
-    Castle *b_castle1 = new Castle(false, b_castle1_coordinates);
-    Castle *b_castle2 = new Castle(false, b_castle2_coordinates);
-
-    desk[b_castle1_coordinates.getX()][b_castle1_coordinates.getY()] = b_castle1;
-    desk[b_castle2_coordinates.getY()][b_castle2_coordinates.getY()] = b_castle2;
-
-    // White Knights
-    Coordinates w_knight1_coordinates(1, 0);
-    Coordinates w_knight2_coordinates(6, 0);
-
-    Knight *w_knight1 = new Knight(true, w_knight1_coordinates);
-    Knight *w_knight2 = new Knight(true, w_knight2_coordinates);
-
-    desk[w_knight1_coordinates.getX()][w_knight1_coordinates.getY()] = w_knight1;
-    desk[w_knight2_coordinates.getX()][w_knight2_coordinates.getY()] = w_knight2;
-
-    // Black Knights
-    Coordinates b_knight1_coordinates(1, 7);
-    Coordinates b_knight2_coordinates(6, 7);
-
-    Knight *b_knight1 = new Knight(false, w_knight1_coordinates);
-    Knight *b_knight2 = new Knight(false, w_knight2_coordinates);
-
-    desk[b_knight1_coordinates.getX()][b_knight1_coordinates.getY()] = b_knight1;
-    desk[b_knight2_coordinates.getX()][b_knight2_coordinates.getY()] = b_knight2;
-
-    // White Bishops
-
-    Coordinates w_bishop1_coordinates(2, 0);
-    Coordinates w_bishop2_coordinates(5, 0);
-
-    auto w_bishop1 = new Bishop(true, w_bishop1_coordinates);
-    auto w_bishop2 = new Bishop(true, w_bishop2_coordinates);
-
-    desk[w_bishop1_coordinates.getX()][w_bishop1_coordinates.getY()] = w_bishop1;
-    desk[w_bishop2_coordinates.getX()][w_bishop2_coordinates.getY()] = w_bishop2;
-
-    // Black Bishops
-
-    Coordinates b_bishop1_coordinates(2, 7);
-    Coordinates b_bishop2_coordinates(5, 7);
-
-    Bishop *b_bishop1 = new Bishop(false, b_bishop1_coordinates);
-    Bishop *b_bishop2 = new Bishop(false, b_bishop2_coordinates);
-
-    desk[b_bishop1_coordinates.getX()][b_bishop1_coordinates.getY()] = b_bishop1;
-    desk[b_bishop2_coordinates.getX()][b_bishop2_coordinates.getY()] = b_bishop2;
-
-    // White King && Queen
-
-    Coordinates w_queen_coordinates(3, 0);
-    Coordinates w_King_coordinates(4, 0);
-
-    Queen *w_queen = new Queen(true, w_queen_coordinates);
-    King *w_king = new King(true, w_King_coordinates);
-
-    desk[w_queen_coordinates.getX()][w_queen_coordinates.getY()] = w_queen;
-    desk[w_King_coordinates.getX()][w_King_coordinates.getY()] = w_king;
-
-    // Black King && Queen
-
-    Coordinates b_queen_coordinates(3, 7);
-    Coordinates b_King_coordinates(4, 7);
-
-    Queen *b_queen = new Queen(false, b_queen_coordinates);
-    King *b_king = new King(false, b_King_coordinates);
-
-    desk[b_queen_coordinates.getX()][b_queen_coordinates.getY()] = b_queen;
-    desk[b_King_coordinates.getX()][b_King_coordinates.getY()] = b_king;
+    initialize_queen(true);
+    initialize_queen(false);
 
     // White Pawns
-
     for (uint8_t i = 0; i < 8; i++){
-        Coordinates w_pawn_coordinates(i, 1);
-
-        Pawn *w_pawn = new Pawn(true, w_pawn_coordinates, i);
-
-        desk[w_pawn->getCoordinates().getX()][w_pawn->getCoordinates().getY()] = w_pawn;
+        initialize_pawn(true, i);
     }
 
     // Black Pawns
-
     for (uint8_t i = 0; i < 8; i++){
-        Coordinates b_pawn_coordinates(i, 6);
-
-        Pawn *b_pawn = new Pawn(false, b_pawn_coordinates, i);
-
-        desk[b_pawn->getCoordinates().getX()][b_pawn->getCoordinates().getY()] = b_pawn;
+        initialize_pawn(false, i);
     }
 
     reinitialize_white_black_figures();
     initialize_possible_moves();
-
 }
 
 void Desk::print_desk() {
@@ -170,6 +89,8 @@ bool Desk::is_move_possible(Figure figure, Coordinates new_coordinates) {
 }
 
 void Desk::reinitialize_white_black_figures() {
+    white_figures.clear();
+    black_figures.clear();
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
             if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
@@ -187,7 +108,6 @@ void Desk::initialize_possible_moves() {
         for(int j = 0; j < 8; j ++){
             this->desk[i][j]->clear_available_moves();
             this->desk[i][j]->clear_possible_moves();
-            this->desk[i][j]->calculate_available_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }
     }
@@ -199,5 +119,136 @@ const std::vector<Figure> &Desk::getWhite_figures() const {
 
 const std::vector<Figure> &Desk::getBlack_figures() const {
     return black_figures;
+}
+
+Figure *Desk::get_figure_by_coordinates(Coordinates coordinates) {
+    return desk[coordinates.getX()][coordinates.getY()];
+}
+
+void Desk::print_black_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("black_figures.txt");
+
+    for (auto figure : black_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY() << std::endl;
+    }
+}
+
+void Desk::print_white_figures(bool to_file) {
+    ////////////////////////////////////////////
+    //  Дебаг функция
+    /////////////////////////////////////////
+    std::ofstream file;
+    file.open("white_figures.txt");
+
+    for (auto figure : white_figures){
+        file << figure.getName() << " : " << figure.getCoordinates().getX() << " , " << figure.getCoordinates().getY() << std::endl;
+    }
+}
+
+void Desk::initialize_castles(bool side) {
+    Coordinates castle1_coordinates;
+    Coordinates castle2_coordinates;
+    castle1_coordinates.setX(0);
+    castle2_coordinates.setX(7);
+    if (side){
+        castle1_coordinates.setY(0);
+        castle2_coordinates.setY(0);
+
+    }else{
+        castle1_coordinates.setY(7);
+        castle2_coordinates.setY(7);
+    }
+    Castle *castle1 = new Castle(side, castle1_coordinates);
+    Castle *castle2 = new Castle(side, castle2_coordinates);
+
+    desk[castle1_coordinates.getX()][castle1_coordinates.getY()] = castle1;
+    desk[castle2_coordinates.getX()][castle2_coordinates.getY()] = castle2;
+}
+
+void Desk::initialize_king(bool side) {
+    Coordinates king_coordinates{};
+    king_coordinates.setX(4);
+
+    if (side){
+        king_coordinates.setY(0);
+    } else{
+        king_coordinates.setY(7);
+    }
+
+    King *king = new King(side, king_coordinates);
+
+    desk[king_coordinates.getX()][king_coordinates.getY()] = king;
+}
+
+void Desk::initialize_queen(bool side) {
+    Coordinates queen_coordinates{};
+    queen_coordinates.setX(3);
+
+    if (side){
+        queen_coordinates.setY(0);
+    } else{
+        queen_coordinates.setY(7);
+    }
+
+    Queen *queen = new Queen(side, queen_coordinates);
+
+    desk[queen_coordinates.getX()][queen_coordinates.getY()] = queen;
+}
+
+void Desk::initialize_bishops(bool side) {
+    Coordinates bishop1_coordinates;
+    Coordinates bishop2_coordinates;
+    bishop1_coordinates.setX(2);
+    bishop2_coordinates.setX(5);
+
+    if (side){
+        bishop1_coordinates.setY(0);
+        bishop2_coordinates.setY(0);
+    } else{
+        bishop1_coordinates.setY(7);
+        bishop2_coordinates.setY(7);
+    }
+
+    Bishop *bishop1 = new Bishop(side, bishop1_coordinates);
+    Bishop *bishop2 = new Bishop(side, bishop2_coordinates);
+
+    desk[bishop1_coordinates.getX()][bishop1_coordinates.getY()] = bishop1;
+    desk[bishop2_coordinates.getX()][bishop2_coordinates.getY()] = bishop2;
+}
+
+void Desk::initialize_knights(bool side) {
+    Coordinates knight1_coordinates;
+    Coordinates knight2_coordinates;
+    knight1_coordinates.setX(1);
+    knight2_coordinates.setX(6);
+
+    if (side){
+        knight1_coordinates.setY(0);
+        knight2_coordinates.setY(0);
+    } else{
+        knight1_coordinates.setY(7);
+        knight2_coordinates.setY(7);
+    }
+
+    Knight *knight1 = new Knight(side, knight1_coordinates);
+    Knight *knight2 = new Knight(side, knight2_coordinates);
+
+    desk[knight1_coordinates.getX()][knight1_coordinates.getY()] = knight1;
+    desk[knight2_coordinates.getX()][knight2_coordinates.getY()] = knight2;
+}
+
+void Desk::initialize_pawn(bool side, int num) {
+    Coordinates pawn_coordinates{};
+    pawn_coordinates.setX(num);
+    if (side)
+        pawn_coordinates.setY(1);
+    else
+        pawn_coordinates.setY(6);
+    Pawn *pawn = new Pawn(side, pawn_coordinates, num);
+    desk[pawn_coordinates.getX()][pawn_coordinates.getY()] = pawn;
 }
 

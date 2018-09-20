@@ -6,6 +6,8 @@
 #define CHESS_COORDINATES_H
 
 
+#include <iostream>
+
 class Coordinates {
     int x,y;
 public:
@@ -23,6 +25,9 @@ public:
 
     bool operator== (const Coordinates& coord_1);
 
+    bool operator!=(const Coordinates&coord_1);
+
+    void print_coordinates();
 };
 
 

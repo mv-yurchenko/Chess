@@ -6,71 +6,10 @@
 
 Castle::Castle(bool side, Coordinates coordinates) : Figure(side, coordinates, "castle", 1){
     this->setName("castle");
-}
-
-void Castle::calculate_available_moves() {
-
-    Coordinates new_coordinates(getCoordinates().getX(), getCoordinates().getY());
-
-    bool is_not_out_of_border = true;
-
-    // Проверяем по X вправо
-    for(int i = 1; i < 8; i++){
-        new_coordinates.setX(getCoordinates().getX() + i);
-        if(is_not_out_of_border){
-            if (not is_out_of_border(new_coordinates)){
-                add_move_to_available_moves(new_coordinates);
-            } else{
-                is_not_out_of_border = false;
-            }
-        }
-    }
-
-    // Проверяем по X влево
-    new_coordinates.setX(getCoordinates().getX());
-    is_not_out_of_border = true;
-
-    for(int i = 1; i < 8; i++){
-        new_coordinates.setX(getCoordinates().getX() - i);
-        if(is_not_out_of_border){
-            if (not is_out_of_border(new_coordinates)){
-                add_move_to_available_moves(new_coordinates);
-            } else{
-                is_not_out_of_border = false;
-            }
-        }
-    }
-
-    new_coordinates.setX(getCoordinates().getX());
-
-    // Проверяем по Y вверх
-    new_coordinates.setY(getCoordinates().getY());
-    is_not_out_of_border = true;
-
-    for(int i = 1; i < 8; i++){
-        new_coordinates.setY(getCoordinates().getY() + i);
-        if(is_not_out_of_border){
-            if (not is_out_of_border(new_coordinates)){
-                add_move_to_available_moves(new_coordinates);
-            } else{
-                is_not_out_of_border = false;
-            }
-        }
-    }
-
-    // Проверяем по Y вних
-    new_coordinates.setY(getCoordinates().getY());
-    is_not_out_of_border = true;
-
-    for(int i = 1; i < 8; i++){
-        new_coordinates.setY(getCoordinates().getY() - i);
-        if(is_not_out_of_border){
-            if (not is_out_of_border(new_coordinates)){
-                add_move_to_available_moves(new_coordinates);
-            } else{
-                is_not_out_of_border = false;
-            }
-        }
+    if (side){
+        setDesk_name("W_C");
+    } else{
+        setDesk_name("B_C");
     }
 }
 
@@ -80,7 +19,7 @@ void Castle::calculate_possible_moves(std::vector<Figure> white_figures, std::ve
 
     calculate_one_direction(white_figures, black_figures, false, true, false, false);
 
-    calculate_one_direction(white_figures, black_figures, false, false, false, true);
+    calculate_one_direction(white_figures, black_figures, false, false, true, false);
 
     calculate_one_direction(white_figures, black_figures, false, false, false, true);
 }

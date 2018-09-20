@@ -15,9 +15,9 @@ public:
 
     King(bool side, Coordinates coordinates);
 
-    void calculate_available_moves() override;
+    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures) override;
 
-    void calculate_possible_moves(std::vector<Figure> white_figures ,std::vector<Figure> black_figures ) override;
+    void calculate_one_direction(const std::vector<Figure> &ally_figures, bool up, bool down, bool right, bool left);
 };
 
 
