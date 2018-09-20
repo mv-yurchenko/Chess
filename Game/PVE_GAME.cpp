@@ -25,9 +25,14 @@ void PVE_GAME::pve_game() {
     while (not this->get_is_game_finished()){
         chessGraphic.print_desk(getCurrent_desk());
         if (is_player_turn){
-            player_turn(isWhite_turn());
+            human_turn(isWhite_turn());
+//            is_player_turn = not is_player_turn;
         } else{
             engine_turn(engine_side);
         }
     }
+}
+
+void PVE_GAME::write_desk() {
+    gameLogsWriter.write_current_desk(getCurrent_desk(), false);
 }

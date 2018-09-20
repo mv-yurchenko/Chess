@@ -44,14 +44,7 @@ void PVP_GAME::local_game() {
                                      new_coordinates.getX(), new_coordinates.getY());
         setWhite_turn(not isWhite_turn());
         this->setIs_game_finished(is_mate(new_coordinates.getX(), new_coordinates.getY()));
-        //////////////////////////////////////////
-        //  Дебаг
-        /////////////////////////////////////////
-        getCurrent_desk()->get_figure_by_coordinates(new_coordinates)->print_possible_moves();
     } else {
-        //////////////////////////////////////////
-        //  Дебаг
-        /////////////////////////////////////////
         getCurrent_desk()->get_figure_by_coordinates(figure_coordinates)->print_possible_moves();
         print_msg_about_failed_move(figure_coordinates.getX(), figure_coordinates.getY(),
                                     new_coordinates.getX(), new_coordinates.getY());
