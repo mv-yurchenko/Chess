@@ -37,7 +37,7 @@ bool Figure::is_out_of_border(Coordinates coordinates) {
 }
 
 Figure::Figure() {
-    this->name = "No figure";
+    this->name = "No_figure";
     this->side = NULL;
 }
 

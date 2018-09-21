@@ -1,10 +1,9 @@
 #include "Game/PVP_GAME.h"
+#include "Game/PVE_GAME.h"
 
 
 int main(){
-    PVP_GAME pvp_game;
+    PVE_GAME pve_game;
 
-    pvp_game.pvp_game(false);
-
-    return EXIT_SUCCESS;
+    pve_game.pve_game();
 }
