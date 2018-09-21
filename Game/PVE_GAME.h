@@ -8,6 +8,7 @@
 
 #include "Game.h"
 #include "../Graphics/ChessGraphic.h"
+#include "../LogsWriter/FiguresPossibleMovesWriter.h"
 
 class PVE_GAME : public Game{
 
@@ -16,6 +17,7 @@ class PVE_GAME : public Game{
     bool engine_side;
     GameLogsWriter gameLogsWriter;
     ChessGraphic chessGraphic;
+    FiguresPossibleMovesWriter figuresPossibleMovesWriter;
 public:
     PVE_GAME();
 
@@ -42,6 +44,7 @@ public:
                                         new_coordinates.getX(), new_coordinates.getY());
         }
         write_desk();
+        figuresPossibleMovesWriter.write_all_figures_possible_moves(getCurrent_desk());
     }
 
     void engine_turn(bool side);
