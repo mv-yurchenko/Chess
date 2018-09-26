@@ -41,11 +41,6 @@ Figure::Figure() {
     this->side = NULL;
 }
 
-void Figure::add_move_to_available_moves(Coordinates new_coordinates) {
-    Move available_move(this->getCoordinates(), new_coordinates);
-    this->available_moves.push_back(available_move);
-}
-
 void Figure::setCoordinates(const Coordinates &coordinates) {
     this->coordinates = coordinates;
 }
@@ -136,10 +131,6 @@ void Figure::clear_possible_moves() {
     this->possible_moves.clear();
 }
 
-void Figure::clear_available_moves() {
-    this->available_moves.clear();
-}
-
 const char *Figure::get_side_as_string() {
     if (getSide()){
         return "White";
@@ -168,4 +159,8 @@ bool Figure::is_cell_empty(Coordinates cell, std::vector<Figure> white_figures, 
         }
     }
     return true;
+}
+
+int Figure::getValue() const {
+    return value;
 }

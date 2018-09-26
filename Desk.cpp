@@ -106,7 +106,6 @@ void Desk::reinitialize_white_black_figures() {
 void Desk::initialize_possible_moves() {
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
-            this->desk[i][j]->clear_available_moves();
             this->desk[i][j]->clear_possible_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }
@@ -250,5 +249,9 @@ void Desk::initialize_pawn(bool side, int num) {
         pawn_coordinates.setY(6);
     Pawn *pawn = new Pawn(side, pawn_coordinates, num);
     desk[pawn_coordinates.getX()][pawn_coordinates.getY()] = pawn;
+}
+
+int Desk::get_move_weight(Move move) {
+    return desk[move.getNew_coordinates().getX()][move.getNew_coordinates().getY()]->getValue();
 }
 
