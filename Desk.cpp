@@ -251,7 +251,3 @@ void Desk::initialize_pawn(bool side, int num) {
     desk[pawn_coordinates.getX()][pawn_coordinates.getY()] = pawn;
 }
 
-int Desk::get_move_weight(Move move) {
-    return desk[move.getNew_coordinates().getX()][move.getNew_coordinates().getY()]->getValue();
-}
-

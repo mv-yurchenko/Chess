@@ -9,6 +9,7 @@
 #include "Game.h"
 #include "../Graphics/ChessGraphic.h"
 #include "../LogsWriter/FiguresPossibleMovesWriter.h"
+#include "../Engine/Engine.h"
 
 class PVE_GAME : public Game{
 

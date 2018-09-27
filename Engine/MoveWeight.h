@@ -13,6 +13,8 @@ private:
     int weight;
 
 public:
+    MoveWeight() = default;
+
     MoveWeight(int weight, Move move);
 
     const Move &getMove() const;

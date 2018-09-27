@@ -11,8 +11,8 @@ PVE_GAME::PVE_GAME() {
     is_player_turn = player_side;
 }
 
-void PVE_GAME::engine_turn(bool side) {
-    // TODO  !!!!!!!!!!
+void PVE_GAME::engine_turn(bool is_white_turn) {
+    Engine engine(this->getCurrent_desk(), is_white_turn);
 }
 
 void PVE_GAME::pve_game() {
@@ -28,7 +28,7 @@ void PVE_GAME::pve_game() {
             human_turn(isWhite_turn());
 //            is_player_turn = not is_player_turn;
         } else{
-            engine_turn(engine_side);
+            engine_turn(isWhite_turn());
         }
     }
 }
