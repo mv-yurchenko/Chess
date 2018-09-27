@@ -19,5 +19,7 @@ os_command = add_file(os_command, "Coordinates.cpp")
 
 os_command = add_file(os_command, "Graphics/*.cpp")
 
+os_command = add_file(os_command, "Engine/*.cpp")
+
 
 os.system(os_command)
