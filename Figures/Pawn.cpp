@@ -8,6 +8,7 @@ Pawn::Pawn(bool side, Coordinates coordinates, int num){
     this->setName("Pawn" + std::to_string(num));
     this->setSide(side);
     this->setCoordinates(coordinates);
+    this->setValue(1);
     if (side){
         setDesk_name("W_P");
     } else{

@@ -43,8 +43,11 @@ void Desk::initialize_desk() {
         initialize_pawn(false, i);
     }
 
-    reinitialize_white_black_figures();
     initialize_possible_moves();
+
+    reinitialize_white_black_figures();
+
+
 }
 
 void Desk::print_desk() {
