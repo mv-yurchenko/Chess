@@ -42,5 +42,6 @@ void Engine::print_possibilities() {
         output_file << "New coordinates : " << possibility.getMove().getNew_coordinates().getX() << " " <<
                   possibility.getMove().getNew_coordinates().getY() << std::endl;
         output_file << "Weight: " << possibility.getWeight() << std::endl;
+        output_file << "----------------------------------------------------" << std::endl;
     }
 }
