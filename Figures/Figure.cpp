@@ -39,6 +39,7 @@ bool Figure::is_out_of_border(Coordinates coordinates) {
 Figure::Figure() {
     this->name = "NoFigure";
     this->side = NULL;
+    this->setValue(0);
 }
 
 void Figure::setCoordinates(const Coordinates &coordinates) {
