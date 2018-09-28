@@ -13,6 +13,10 @@ PVE_GAME::PVE_GAME() {
 
 void PVE_GAME::engine_turn(bool is_white_turn) {
     Engine engine(this->getCurrent_desk(), is_white_turn);
+    Move engine_move = engine.move();
+    if (this->getCurrent_desk()->move_figure(engine_move.getOld_coordinates(), engine_move.getNew_coordinates())){
+        this->setWhite_turn(not is_white_turn);
+    }
 }
 
 void PVE_GAME::pve_game() {
@@ -26,9 +30,10 @@ void PVE_GAME::pve_game() {
         chessGraphic.print_desk(getCurrent_desk());
         if (is_player_turn){
             human_turn(isWhite_turn());
-//            is_player_turn = not is_player_turn;
+            is_player_turn = not is_player_turn;
         } else{
             engine_turn(isWhite_turn());
+            is_player_turn = not is_player_turn;
         }
     }
 }

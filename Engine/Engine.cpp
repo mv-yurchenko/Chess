@@ -45,3 +45,20 @@ void Engine::print_possibilities() {
         output_file << "----------------------------------------------------" << std::endl;
     }
 }
+
+void Engine::search_max_possibility() {
+    this->most_profitable_move = possibilities[0];
+    for (auto possibility : possibilities){
+        if (possibility.getWeight() > this->most_profitable_move.getWeight()){
+            this->most_profitable_move = possibility;
+        }
+        if (possibility.getWeight() == this->most_profitable_move.getWeight() && rand() % 2 == 0) {
+            this->most_profitable_move = possibility;
+        }
+    }
+}
+
+Move Engine::move() {
+    search_max_possibility();
+    return this->most_profitable_move.getMove();
+}
