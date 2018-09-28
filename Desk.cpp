@@ -44,7 +44,10 @@ void Desk::initialize_desk() {
     }
 
     reinitialize_white_black_figures();
+
     initialize_possible_moves();
+
+    reinitialize_white_black_figures();
 }
 
 void Desk::print_desk() {
@@ -106,7 +109,6 @@ void Desk::reinitialize_white_black_figures() {
 void Desk::initialize_possible_moves() {
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
-            this->desk[i][j]->clear_available_moves();
             this->desk[i][j]->clear_possible_moves();
             this->desk[i][j]->calculate_possible_moves(white_figures, black_figures);
         }

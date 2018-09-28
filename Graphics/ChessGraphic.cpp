@@ -46,6 +46,9 @@ void ChessGraphic::print_figure_on_cell(Figure *figure) {
 }
 
 void ChessGraphic::clear_desk() {
-    system("clear");
-    system("cls");
+    if (getenv("windir") == nullptr) {
+        system("clear");
+    } else{
+        system("cls");
+    }
 }

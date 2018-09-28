@@ -16,6 +16,9 @@ class Figure  {
     bool side;
     int value;
 public:
+    int getValue() const;
+
+public:
     void setValue(int value);
 
 private:
@@ -55,8 +58,6 @@ public:
 
     bool is_out_of_border(Coordinates coordinates);
 
-    void add_move_to_available_moves(Coordinates new_coordinates);
-
     void add_move_to_possible_moves(Coordinates new_coordinates);
 
     bool is_coordinates_same(Coordinates coordinates1, Coordinates coordinates2);
@@ -80,8 +81,6 @@ public:
     bool getSide() const;
 
     void clear_possible_moves();
-
-    void clear_available_moves();
 
     const char *get_side_as_string();
 };

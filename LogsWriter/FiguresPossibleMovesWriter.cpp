@@ -5,10 +5,11 @@
 #include "FiguresPossibleMovesWriter.h"
 
 void FiguresPossibleMovesWriter::write_all_figures_possible_moves(Desk *desk) {
-    for (uint8_t i = 0; i < 7; i++){
-        for (uint8_t j = 0; j < 7; j++) {
+    for (int i = 0; i < 8; i++){
+        for (int j = 0; j < 8; j++) {
             auto figure = desk->get_figure_by_coordinates(i, j);
-            write_figure_possible_moves(figure, figure->getSide());
+            if (figure->getName() != "No figure")
+                write_figure_possible_moves(figure, figure->getSide());
         }
     }
 }
@@ -25,6 +26,8 @@ bool FiguresPossibleMovesWriter::DoesFileExist(const std::string &name) {
 }
 
 void FiguresPossibleMovesWriter::write_figure_possible_moves(Figure *figure, bool side) {
+    if (figure->getName() == "No figure")
+        return;
     if (side){
         this->full_path_to_output_file = this->path_to_white_figure_logs_directory +  figure->getName() + ".txt";
     } else{

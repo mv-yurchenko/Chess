@@ -18,8 +18,6 @@ class PVP_GAME : public Game{
 
 public:
 
-    bool player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates);
-
     void local_game();
 
     void pvp_game(bool is_game_online);
