@@ -23,8 +23,6 @@ void PVE_GAME::engine_turn(bool is_white_turn) {
 void PVE_GAME::pve_game() {
     initialize_game();
 
-    this->player_side = random_player_side();
-    this->engine_side = not this->player_side;
     this->setWhite_turn(true);
 
     while (not this->get_is_game_finished()){

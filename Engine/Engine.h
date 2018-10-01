@@ -23,11 +23,9 @@ public:
 
     void print_possibilities();
 
-    Move move();
+    Move move(){
 
-    void search_max_possibility();
-
-    void clear_possibilities();
+    }
 };
 
 
