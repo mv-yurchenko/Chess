@@ -7,6 +7,9 @@
 
 #include "../Desk.h"
 #include "MoveWeight.h"
+#include "cstdlib"
+#include <ctime>
+
 
 class Engine {
     std::vector<MoveWeight> possibilities;
@@ -26,6 +29,8 @@ public:
     Move move();
 
     void search_max_possibility();
+
+    int get_random_num(int max_num);
 };
 
 
