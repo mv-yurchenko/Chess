@@ -15,7 +15,7 @@ void PVE_GAME::engine_turn(bool is_white_turn) {
     Engine engine(this->getCurrent_desk(), is_white_turn);
     Move engine_move = engine.move();
     if (this->getCurrent_desk()->move_figure(engine_move.getOld_coordinates(), engine_move.getNew_coordinates())){
-        this->setWhite_turn(not is_white_turn);
+//        this->setWhite_turn(not is_white_turn);
         this->setIs_game_finished(is_mate(engine_move.getNew_coordinates().getX(), engine_move.getNew_coordinates().getY()));
     }
 }
@@ -52,7 +52,7 @@ void PVE_GAME::human_turn(bool is_white_turn) {
     if (player_turn(isWhite_turn(), figure_coordinates, new_coordinates)) {
         print_msg_about_success_move(figure_coordinates.getX(), figure_coordinates.getY(),
                                      new_coordinates.getX(), new_coordinates.getY());
-//        setWhite_turn(not isWhite_turn());
+        setWhite_turn(not isWhite_turn());
         this->setIs_game_finished(is_mate(new_coordinates.getX(), new_coordinates.getY()));
         this->is_player_turn = not this->is_player_turn;
     } else {

@@ -40,6 +40,7 @@ void Engine::print_possibilities() {
 }
 
 void Engine::add_possible_moves_to_possibilities(Figure figure) {
+    possibilities.clear();
     for (auto possible_move : figure.getPossible_moves()){
         MoveWeight possibility;
         possibility.setMove(possible_move);
