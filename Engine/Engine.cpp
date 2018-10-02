@@ -49,4 +49,26 @@ void Engine::add_possible_moves_to_possibilities(Figure figure) {
     }
 }
 
+int Engine::get_random_num(int max_num) {
+    srand(static_cast<unsigned int>(time(nullptr)));
+    return rand() % max_num;
+}
+
+void Engine::search_max_possibility() {
+    for (auto possibility : possibilities) {
+        if (possibility.getWeight() > most_profitable_move.getWeight()) {
+            most_profitable_move = possibility;
+        }
+        if (possibility.getWeight() == most_profitable_move.getWeight() and
+            (20 + (rand() % static_cast<int>(100 - 20 + 1))) % 2) {
+            most_profitable_move = possibility;
+        }
+    }
+}
+
+Move Engine::move() {
+    search_max_possibility();
+    return most_profitable_move.getMove();
+}
+
 
