@@ -24,7 +24,20 @@ public:
     void print_possibilities();
 
     Move move(){
+        search_max_possibility();
+        return most_profitable_move.getMove();
+    }
 
+    void search_max_possibility(){
+        most_profitable_move = possibilities[0];
+        for (auto possibility : possibilities){
+            if (possibility.getWeight() > most_profitable_move.getWeight()){
+                most_profitable_move = possibility;
+            }
+            if (possibility.getWeight() == most_profitable_move.getWeight() and ( 20 + (rand() % static_cast<int>(100 - 20 + 1))) % 2) {
+                most_profitable_move = possibility;
+            }
+        }
     }
 };
 

@@ -32,6 +32,7 @@ void PVE_GAME::pve_game() {
         } else{
             engine_turn(isWhite_turn());
             is_player_turn = not is_player_turn;
+            setWhite_turn(not isWhite_turn());
         }
     }
 }
@@ -51,7 +52,7 @@ void PVE_GAME::human_turn(bool is_white_turn) {
     if (player_turn(isWhite_turn(), figure_coordinates, new_coordinates)) {
         print_msg_about_success_move(figure_coordinates.getX(), figure_coordinates.getY(),
                                      new_coordinates.getX(), new_coordinates.getY());
-        setWhite_turn(not isWhite_turn());
+//        setWhite_turn(not isWhite_turn());
         this->setIs_game_finished(is_mate(new_coordinates.getX(), new_coordinates.getY()));
         this->is_player_turn = not this->is_player_turn;
     } else {
