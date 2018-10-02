@@ -73,7 +73,7 @@ void Pawn::calculate_move_forward_possibility(std::vector<Figure> white_figures,
         new_coordinates.setY(getCoordinates().getY() + 1);
     }
     else{
-        new_coordinates.setY(new_coordinates.getY() - 1);
+        new_coordinates.setY(getCoordinates().getY() - 1);
     }
 
     if (not is_out_of_border(new_coordinates) and
