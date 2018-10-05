@@ -18,16 +18,6 @@ public:
     Engine() = default;
 
     Engine(Desk *desk, bool is_move_white);
-
-    void add_possible_moves_to_possibilities(Figure figure);
-
-    void print_possibilities();
-
-    Move move();
-
-    void search_max_possibility();
-
-    void clear_possibilities();
 };
 
 
