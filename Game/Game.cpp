@@ -167,4 +167,19 @@ bool Game::player_turn(bool is_white_move, Coordinates old_coordinates, Coordina
     }
 }
 
+void Game::print_all_figures_coordinates(bool to_file) {
+    std::ofstream output_file;
+    output_file.open("../DebugOutput/FiguresCoordinates.txt");
+    output_file << "White Figures : " << std::endl;
+    for(auto figure : getCurrent_desk()->getWhite_figures()){
+        output_file << figure.get_figure_info();
+    }
+
+    output_file << "-----------------------------------------\n";
+    output_file << "Black Figures : " << std::endl;
+    for(auto figure : getCurrent_desk()->getBlack_figures()){
+        output_file << figure.get_figure_info();
+    }
+}
+
 

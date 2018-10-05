@@ -22,7 +22,7 @@ void PVE_GAME::engine_turn(bool is_white_turn) {
 
 void PVE_GAME::pve_game() {
     initialize_game();
-
+    print_all_figures_coordinates(true);
     this->setWhite_turn(true);
 
     while (not this->get_is_game_finished()){

@@ -61,6 +61,8 @@ public:
     void print_msg_about_figure_choice(Coordinates figure_coordinates);
 
     bool player_turn(bool is_white_move, Coordinates old_coordinates, Coordinates new_coordinates);
+
+    void print_all_figures_coordinates(bool to_file);;
 };
 
 
