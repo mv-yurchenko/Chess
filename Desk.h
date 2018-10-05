@@ -25,9 +25,6 @@ public:
 
     const std::vector<Figure> &getBlack_figures() const;
 
-
-public:
-
     Desk();
 
     Figure *get_figure_by_coordinates(int x, int y);
@@ -61,6 +58,8 @@ public:
     void initialize_queen(bool side);
 
     void initialize_pawn(bool side, int num);
+
+    void print_all_figures_coordinates();
 };
 
 

@@ -254,3 +254,18 @@ void Desk::initialize_pawn(bool side, int num) {
     desk[pawn_coordinates.getX()][pawn_coordinates.getY()] = pawn;
 }
 
+void Desk::print_all_figures_coordinates() {
+    std::ofstream out_file;
+    out_file.open("../DebugOutput/FiguresCoordinates.txt");
+    out_file << "White Figures: \n";
+    out_file << "--------------------------------------------\n";
+    for(auto figure: getWhite_figures()){
+        out_file << figure.get_figure_info();
+    }
+    out_file << "Black Figures: \n";
+    out_file << "--------------------------------------------\n";
+    for(auto figure: getBlack_figures()){
+        out_file << figure.get_figure_info();
+    }
+}
+
