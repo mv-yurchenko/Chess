@@ -96,10 +96,10 @@ void Desk::reinitialize_white_black_figures() {
     black_figures.clear();
     for (int i = 0; i < 8; i++){
         for(int j = 0; j < 8; j ++){
-            if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "no figure")){
+            if(desk[i][j]->getSide() and not (desk[i][j]->getName() == "NoFigure")){
                 white_figures.push_back(*desk[i][j]);
             }
-            if(not desk[i][j]->getSide() and  desk[i][j]->getName() != "no figure"){
+            if(not desk[i][j]->getSide() and  desk[i][j]->getName() != "NoFigure"){
                 black_figures.push_back(*desk[i][j]);
             }
         }
