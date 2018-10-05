@@ -25,7 +25,7 @@ public:
 
     void setWeight(int weight);
 
-
+    Coordinates get_new_coordinates();;
 };
 
 

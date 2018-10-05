@@ -21,3 +21,7 @@ void MoveWeight::setMove(const Move &move) {
 void MoveWeight::setWeight(int weight) {
     MoveWeight::weight = weight;
 }
+
+Coordinates MoveWeight::get_new_coordinates() {
+    return move.getNew_coordinates();
+}
