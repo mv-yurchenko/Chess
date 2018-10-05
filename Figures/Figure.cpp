@@ -165,3 +165,10 @@ bool Figure::is_cell_empty(Coordinates cell, std::vector<Figure> white_figures, 
 int Figure::getValue() const {
     return value;
 }
+
+std::string Figure::get_figure_info() {
+    std::string out_string;
+    out_string += get_side_as_string();
+    out_string += " " + getName() + " " + " on (" + std::to_string(getCoordinates().getX()) + "," + std::to_string(getCoordinates().getY()) + ")\n";
+    return  out_string;
+}

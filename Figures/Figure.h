@@ -83,6 +83,8 @@ public:
     void clear_possible_moves();
 
     const char *get_side_as_string();
+
+    std::string get_figure_info();
 };
 
 #endif //CHESS_FIGURE_H
