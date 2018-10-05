@@ -22,6 +22,7 @@ void PVE_GAME::engine_turn(bool is_white_turn) {
 
 void PVE_GAME::pve_game() {
     initialize_game();
+    getCurrent_desk()->print_all_figures_coordinates();
 
     this->player_side = random_player_side();
     this->engine_side = not this->player_side;
