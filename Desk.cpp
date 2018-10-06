@@ -280,7 +280,7 @@ bool Desk::force_move_figure(Coordinates old_coordinates, Coordinates new_coordi
     desk[new_x][new_y] = desk[old_x][old_y];
     desk[new_x][new_y]->setCoordinates(new_coordinates);
 
-    Figure *figure;
+    Figure *figure = new Figure;
     desk[old_x][old_y] = figure;
 
     reinitialize_white_black_figures();
