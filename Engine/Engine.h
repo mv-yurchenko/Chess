@@ -12,34 +12,26 @@ class Engine {
     std::vector<MoveWeight> possibilities;
     Desk *new_desk;
     Desk *current_desk;
-    MoveWeight most_profitable_move;
+    std::vector<MoveWeight> most_profitable_moves;
     bool is_move_white;
 public:
     Engine() = default;
 
-    Engine(Desk *desk, bool is_move_white){
-        this->current_desk = desk;
-        std::vector<Figure> figures;
-        if (is_move_white) {
-             figures = desk->getWhite_figures();
-        } else{
-            figures = desk->getBlack_figures();
-        }
-        this->initialize_possibilities(figures);
-    }
+    void search_max_possibilities();
 
-    void initialize_possibilities(std::vector<Figure> figures){
-        for (auto figure : figures){
-            for (auto possible_move : figure.getPossible_moves()){
-                MoveWeight possibility;
-                possibility.setMove(possible_move);
-                possibility.setWeight(this->current_desk->get_figure_by_coordinates(possible_move.getNew_coordinates())->getValue());
-                possibilities.push_back(possibility);
-            }
-        }
-    }
+    MoveWeight search_most_profitable_move();
+
+    std::vector<MoveWeight> search_moves_with_same_weight(MoveWeight move);
+
+    Engine(Desk *desk, bool is_move_white);
+
+    void initialize_possibilities(std::vector<Figure> figures);
 
     void print_possibilities();
+
+    const std::vector<MoveWeight> &getPossibilities() const;
+
+    const std::vector<MoveWeight> &getMost_profitable_moves() const;
 };
 
 
