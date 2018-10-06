@@ -14,6 +14,8 @@ void Engine::print_possibilities() {
     std::ofstream output_file;
     output_file.open("../DebugOutput/print_possibilities.txt");
     for (MoveWeight possibility : possibilities){
+        output_file << "Figure : " + this->current_desk->get_figure_by_coordinates(possibility.getMove().getOld_coordinates())->getName() + "\n";
+        output_file << "Side : " + (std::string)this->current_desk->get_figure_by_coordinates(possibility.getMove().getOld_coordinates())->get_side_as_string() + "\n";
         output_file << "Possibility:" << std::endl;
         output_file << "Current coordinates : " << possibility.getMove().getOld_coordinates().getX() << " " <<
                 possibility.getMove().getOld_coordinates().getY() << std::endl;
