@@ -83,3 +83,9 @@ std::vector<MoveWeight> Engine::search_moves_with_same_weight(MoveWeight move) {
     }
     return moves_with_the_same_weight;
 }
+
+Move Engine::engine_move() {
+    this->search_max_possibilities();
+    shuffle(most_profitable_moves.begin(), most_profitable_moves.end(), std::mt19937(std::random_device()()));
+    return most_profitable_moves[0].getMove();
+}

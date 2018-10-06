@@ -1,3 +1,5 @@
+#include <random>
+
 //
 // Created by max on 27.09.18.
 //
@@ -7,6 +9,7 @@
 
 #include "../Desk.h"
 #include "MoveWeight.h"
+#include <algorithm>
 
 class Engine {
     std::vector<MoveWeight> possibilities;
@@ -32,6 +35,8 @@ public:
     const std::vector<MoveWeight> &getPossibilities() const;
 
     const std::vector<MoveWeight> &getMost_profitable_moves() const;
+
+    Move engine_move();
 };
 
 
