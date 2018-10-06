@@ -269,3 +269,21 @@ void Desk::print_all_figures_coordinates() {
     }
 }
 
+bool Desk::force_move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
+    // TODO : return
+    int old_x = old_coordinates.getX();
+    int old_y = old_coordinates.getY();
+
+    int new_x = new_coordinates.getX();
+    int new_y = new_coordinates.getY();
+
+    desk[new_x][new_y] = desk[old_x][old_y];
+    desk[new_x][new_y]->setCoordinates(new_coordinates);
+
+    Figure *figure;
+    desk[old_x][old_y] = figure;
+
+    reinitialize_white_black_figures();
+    this->initialize_possible_moves();
+}
+

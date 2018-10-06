@@ -167,4 +167,9 @@ bool Game::player_turn(bool is_white_move, Coordinates old_coordinates, Coordina
     }
 }
 
+bool Game::force_move_figure(Coordinates old_coordinates, Coordinates new_coordinates) {
+    // TODO return !!!!
+    current_desk->force_move_figure(old_coordinates, new_coordinates);
+}
+
 

@@ -34,6 +34,8 @@ public:
 
     bool move_figure(int old_x, int old_y, int new_x, int new_y);
 
+    bool force_move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
+
     void finish_game();
 
     int input_coordinate(const char *coord_name);
