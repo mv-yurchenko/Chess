@@ -67,13 +67,15 @@ void Pawn::calculate_two_cell_move_possibility(std::vector<Figure> white_figures
 }
 
 void Pawn::calculate_move_forward_possibility(std::vector<Figure> white_figures, std::vector<Figure> black_figures) {
+
     Coordinates new_coordinates;
+    
     new_coordinates.setX(getCoordinates().getX());
     if (is_figure_white()){
         new_coordinates.setY(getCoordinates().getY() + 1);
     }
     else{
-        new_coordinates.setY(new_coordinates.getY() - 1);
+        new_coordinates.setY(getCoordinates().getY() - 1);
     }
 
     if (not is_out_of_border(new_coordinates) and
