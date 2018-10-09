@@ -12,8 +12,8 @@ PVE_GAME::PVE_GAME() {
 }
 
 void PVE_GAME::engine_turn(bool is_white_turn) {
-    Engine engine(this->getCurrent_desk(), is_white_turn);
-    Move engine_move = engine.move();
+    Engine engine(getCurrent_desk(), is_white_turn);
+    Move engine_move = engine.engine_move();
     if (this->getCurrent_desk()->move_figure(engine_move.getOld_coordinates(), engine_move.getNew_coordinates())){
         this->setWhite_turn(not is_white_turn);
         this->setIs_game_finished(is_mate(engine_move.getNew_coordinates().getX(), engine_move.getNew_coordinates().getY()));

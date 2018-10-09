@@ -35,6 +35,8 @@ public:
 
     bool move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
 
+    bool force_move_figure(Coordinates old_coordinates, Coordinates new_coordinates);
+
     bool is_move_possible(Figure figure, Coordinates new_coordinates);
 
     void initialize_possible_moves();

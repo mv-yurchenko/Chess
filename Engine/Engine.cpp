@@ -7,38 +7,6 @@
 #include <random>
 #include "Engine.h"
 
-Engine::Engine(Desk *desk, bool is_move_white) {
-    this->current_desk = desk;
-    this->is_move_white = is_move_white;
-    if (is_move_white){
-        for (Figure figure : desk->getWhite_figures()){
-            std::cout << figure.getDesk_name() << std::endl;
-                add_possible_moves_to_possibilities(figure);
-        }
-    } else{
-        for (Figure figure : desk->getBlack_figures()){
-            std::cout << figure.getDesk_name() << std::endl;
-            add_possible_moves_to_possibilities(figure);
-        }
-    }
-    this->print_possibilities();
-}
-
-void Engine::add_possible_moves_to_possibilities(Figure figure) {
-    clear_possibilities();
-    for (const auto possible_move : figure.getPossible_moves()){
-        MoveWeight possibility;
-        possibility.setWeight(current_desk->get_figure_by_coordinates(possible_move.getNew_coordinates().getX(),
-                                                                      possible_move.getNew_coordinates().getY())->getValue());
-        possibility.setMove(possible_move);
-        this->possibilities.push_back(possibility);
-    }
-}
-
-void Engine::clear_possibilities() {
-    this->possibilities.clear();
-}
-
 void Engine::print_possibilities() {
     //////////////////////////////////////////
     //  Дебаг функция
@@ -46,6 +14,8 @@ void Engine::print_possibilities() {
     std::ofstream output_file;
     output_file.open("../DebugOutput/print_possibilities.txt");
     for (MoveWeight possibility : possibilities){
+        output_file << "Figure : " + this->current_desk->get_figure_by_coordinates(possibility.getMove().getOld_coordinates())->getName() + "\n";
+        output_file << "Side : " + (std::string)this->current_desk->get_figure_by_coordinates(possibility.getMove().getOld_coordinates())->get_side_as_string() + "\n";
         output_file << "Possibility:" << std::endl;
         output_file << "Current coordinates : " << possibility.getMove().getOld_coordinates().getX() << " " <<
                 possibility.getMove().getOld_coordinates().getY() << std::endl;
@@ -56,22 +26,68 @@ void Engine::print_possibilities() {
     }
 }
 
-void Engine::search_max_possibility() {
-    srand (time(NULL));
-    auto random_engine = std::default_random_engine {};
-    std::shuffle ( this->possibilities.begin(), this->possibilities.end() , random_engine);
-    this->most_profitable_move = possibilities[0];
-    for (auto possibility : possibilities){
-        if (possibility.getWeight() > this->most_profitable_move.getWeight()){
-            this->most_profitable_move = possibility;
-        }
-        if (possibility.getWeight() == this->most_profitable_move.getWeight() && rand() % 2 == 0) {
-            this->most_profitable_move = possibility;
+void Engine::initialize_possibilities(std::vector<Figure> figures) {
+    for (auto figure : figures){
+        for (auto possible_move : figure.getPossible_moves()){
+            MoveWeight possibility;
+            possibility.setMove(possible_move);
+            possibility.setWeight(this->current_desk->get_figure_by_coordinates(possible_move.getNew_coordinates())->getValue());
+            possibilities.push_back(possibility);
         }
     }
 }
 
-Move Engine::move() {
-    search_max_possibility();
-    return this->most_profitable_move.getMove();
+Engine::Engine(Desk *desk, bool is_move_white) {
+    this->current_desk = desk;
+    std::vector<Figure> figures;
+    if (is_move_white) {
+        figures = desk->getWhite_figures();
+    } else{
+        figures = desk->getBlack_figures();
+    }
+    this->initialize_possibilities(figures);
+}
+
+const std::vector<MoveWeight> &Engine::getPossibilities() const {
+    return possibilities;
+}
+
+const std::vector<MoveWeight> &Engine::getMost_profitable_moves() const {
+    return most_profitable_moves;
+}
+
+void Engine::search_max_possibilities() {
+    MoveWeight most_profitable_move = this->search_most_profitable_move();
+    this->most_profitable_moves.push_back(most_profitable_move);
+    std::vector<MoveWeight> moves_with_the_max_weight = search_moves_with_same_weight(most_profitable_move);
+    this->most_profitable_moves.insert(this->most_profitable_moves.end(), moves_with_the_max_weight.begin(),
+                                       moves_with_the_max_weight.end());
+}
+
+MoveWeight Engine::search_most_profitable_move() {
+    MoveWeight most_profitable_move = possibilities[0];
+    for (auto possibility : possibilities){
+        if (possibility.getWeight() > most_profitable_move.getWeight()){
+            most_profitable_move = possibility;
+        }
+    }
+    return most_profitable_move;
+}
+
+std::vector<MoveWeight> Engine::search_moves_with_same_weight(MoveWeight move) {
+    std::vector <MoveWeight> moves_with_the_same_weight;
+    for (auto possible_move : this->possibilities){
+        if (possible_move.getWeight() == move.getWeight()){
+            moves_with_the_same_weight.push_back(possible_move);
+        }
+    }
+    return moves_with_the_same_weight;
+}
+
+Move Engine::engine_move() {
+    this->search_max_possibilities();
+    shuffle(most_profitable_moves.begin(), most_profitable_moves.end(), std::mt19937(std::random_device()()));
+    shuffle(most_profitable_moves.begin(), most_profitable_moves.end(), std::mt19937(std::random_device()()));
+    shuffle(most_profitable_moves.begin(), most_profitable_moves.end(), std::mt19937(std::random_device()()));
+    return most_profitable_moves[0].getMove();
 }
