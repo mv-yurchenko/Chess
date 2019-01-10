@@ -19,11 +19,8 @@ pip install chess_py
 ```bash
 python setup.py install
 ```
-## Documentation
 
-View complete technical documentation [here](http://lorddarkula.github.io/chess_py/html/html/index.html).
-
-## Great! How do you use it? (*An Example*)
+## (*An Example*)
 
 Chess_py has the capability of creating games between players, either human, or AI 
 
