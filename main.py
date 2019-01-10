@@ -16,7 +16,6 @@ Everything starts here
 --╚═══════════════
 ——-a b c d e f g h
 
-Copyright © 2016 Aubhro Sengupta. All rights reserved.
 """
 
 from chess_py import color, Human, Game
