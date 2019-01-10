@@ -1,12 +1,7 @@
-# chess_py
+# Chess
 
 ![Board](http://i.stack.imgur.com/yQaOq.png)
 
-## License
-chess_py is available under the MIT license. See the [LICENSE](https://github.com/LordDarkula/chess_py/blob/master/LICENSE) file for more info.
-Copyright © 2016 Aubhro Sengupta. All rights reserved.
-
-## Talk @mv_yurchenkp (Telehram)
 
 
 ## Introduction
