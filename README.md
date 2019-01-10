@@ -1,13 +1,5 @@
 # Chess
 
-![Board](http://i.stack.imgur.com/yQaOq.png)
-
-
-
-## Introduction
-
-Chess_py is an open source chess library written in Python designed to aid in the creation of chess engines. Handles the chess so you can focus on the engine.
-
 ## Installation
 
 To use as a immediately start up a game between two human players in the console, navigate inside the root directory of the package and run main.py. 
