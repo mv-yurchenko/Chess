@@ -7,8 +7,8 @@ Prints position and takes move written in algebraic notation as string input
 | Copyright © 2018 Maxim Yurchenko. All rights reserved.
 """
 
-from chess_py.core.algebraic import converter
-from chess_py.players.player import Player
+from Chess.core.algebraic import converter
+from Chess.players.player import Player
 
 try:
     input = raw_input

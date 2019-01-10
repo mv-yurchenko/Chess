@@ -1,10 +1,10 @@
 from unittest import TestCase
 
-from chess_py.core.algebraic import notation_const
-from chess_py.core import Board
-from chess_py.core.algebraic import Location, Move
-from chess_py.pieces import Queen, Rook, Bishop, Knight, Pawn
-from chess_py import color
+from Chess.core.algebraic import notation_const
+from Chess.core import Board
+from Chess.core.algebraic import Location, Move
+from Chess.pieces import Queen, Rook, Bishop, Knight, Pawn
+from Chess import color
 
 
 class TestPawn(TestCase):

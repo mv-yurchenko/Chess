@@ -18,7 +18,9 @@ Everything starts here
 
 """
 
-from chess_py import color, Human, Game
+
+from Chess import color, Human, Game
+import os
 
 
 def main():
@@ -32,5 +34,7 @@ def main():
 
     print("Result is ", result)
 
+
 if __name__ == "__main__":
+    # os.system("pip3 install -r requirements.txt")
     main()

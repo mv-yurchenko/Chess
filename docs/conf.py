@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# chess_py documentation build configuration file, created by
+# Chess documentation build configuration file, created by
 # sphinx-quickstart on Sat Sep 17 16:32:26 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'chess_py'
+project = u'Chess'
 copyright = u'2016, Aubhro Sengupta'
 author = u'Aubhro Sengupta'
 
@@ -124,7 +124,7 @@ html_theme = 'classic'
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
-#html_title = u'chess_py v'
+#html_title = u'Chess v'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -228,7 +228,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'chess_py.tex', u'chess\\_py Documentation',
+    (master_doc, 'Chess.tex', u'chess\\_py Documentation',
      u'Author', 'manual'),
 ]
 
@@ -258,7 +258,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'chess_py', u'chess_py Documentation',
+    (master_doc, 'Chess', u'Chess Documentation',
      [author], 1)
 ]
 
@@ -272,8 +272,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'chess_py', u'chess_py Documentation',
-     author, 'chess_py', 'One line description of project.',
+    (master_doc, 'Chess', u'Chess Documentation',
+     author, 'Chess', 'One line description of project.',
      'Miscellaneous'),
 ]
 

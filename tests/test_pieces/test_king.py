@@ -1,5 +1,5 @@
 from unittest import TestCase
-from chess_py import color, Location, Move, Board, King, converter, notation_const, Rook
+from Chess import color, Location, Move, Board, King, converter, notation_const, Rook
 
 
 class TestKing(TestCase):

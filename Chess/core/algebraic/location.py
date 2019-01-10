@@ -38,6 +38,7 @@ Examples (shown on board below):
 
 from .. import color
 
+
 class Direction:
     UP = 0
     RIGHT = 1

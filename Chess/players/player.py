@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Parent class of chess engines built on chess_py. This class must be inherited
+Parent class of chess engines built on Chess. This class must be inherited
 and abstract method ``generate_move(self, position) must be implemented.``.
 | Copyright © 2018 Maxim Yurchenko. All rights reserved.
 """

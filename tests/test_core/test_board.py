@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from chess_py import Board, color, Location
-from chess_py import Pawn, Knight, Bishop, Rook, Queen, King, piece_const, converter
+from Chess import Board, color, Location
+from Chess import Pawn, Knight, Bishop, Rook, Queen, King, piece_const, converter
 
 
 class TestBoard(TestCase):

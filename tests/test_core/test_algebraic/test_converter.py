@@ -1,7 +1,7 @@
 import unittest
 
-from chess_py import converter, Board, Move, Location, color, notation_const
-from chess_py import Pawn, Knight, Queen, Rook
+from Chess import converter, Board, Move, Location, color, notation_const
+from Chess import Pawn, Knight, Queen, Rook
 
 
 class TestConverter(unittest.TestCase):

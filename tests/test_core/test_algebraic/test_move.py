@@ -1,6 +1,6 @@
 import unittest
 
-from chess_py import Move, Location, notation_const, Pawn, color, Queen
+from Chess import Move, Location, notation_const, Pawn, color, Queen
 
 
 class TestMove(unittest.TestCase):

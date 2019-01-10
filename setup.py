@@ -12,7 +12,7 @@ except ImportError:
 
 
 setup(
-    name='chess_py',
+    name='Chess',
     version='3.3.0',
     description='Python chess client',
     long_description=read_md("README.md"),
@@ -26,7 +26,7 @@ setup(
     ],
     author='Aubhro Sengupta',
     author_email='maxonus2@gmail.com',
-    url='https://github.com/mv-yurchenko/chess_py',
+    url='https://github.com/mv-yurchenko/Chess',
     license='MIT',
     packages=setuptools.find_packages()
 )

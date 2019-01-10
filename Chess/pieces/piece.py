@@ -90,7 +90,7 @@ class Piece:
 
     def create_move(self, end_loc, status):
         # TODO: fix circular imports
-        from chess_py import Move
+        from Chess import Move
         return Move(end_loc=end_loc,
                     piece=self,
                     status=status,

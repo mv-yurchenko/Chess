@@ -1,6 +1,6 @@
 import unittest
 
-from chess_py import Location
+from Chess import Location
 
 
 class TestLocation(unittest.TestCase):

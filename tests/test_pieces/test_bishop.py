@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from chess_py import Board, Location, converter
+from Chess import Board, Location, converter
 
 
 class TestBishop(TestCase):

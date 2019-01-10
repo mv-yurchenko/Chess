@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from chess_py import color
+from Chess import color
 
 
 class TestColor(TestCase):

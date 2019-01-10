@@ -4,7 +4,7 @@
 Class that holds state of a game.
 
 Takes two subclasses of Player as defined
-in chess_py.players.player.Player, and calls 
+in Chess.players.player.Player, and calls
 ``generate_move(position)``
 from each of the players and updates the board using 
 each corresponding result.
@@ -22,6 +22,7 @@ from ..core.board import Board
 from ..core import color
 from . import game_state
 from ..core.algebraic.converter import make_legal
+from ..Logs.LogWriter import LogWriter
 
 
 class Game:
@@ -35,8 +36,9 @@ class Game:
         self.player_white = player_white
         self.player_black = player_black
         self.position = Board.init_default()
+        self.log_writer = LogWriter("player1", "player2")
 
-    def play(self):
+    def play(self)-> int:
         """
         Starts game and returns one of 3 results . 
         Iterates between methods ``white_move()`` and
@@ -71,6 +73,7 @@ class Game:
         move = self.player_white.generate_move(self.position)
         move = make_legal(move, self.position)
         self.position.update(move)
+        self.log_writer.write_move_log(move, "white")
 
     def black_move(self):
         """
@@ -80,6 +83,7 @@ class Game:
         move = self.player_black.generate_move(self.position)
         move = make_legal(move, self.position)
         self.position.update(move)
+        self.log_writer.write_move_log(move, "black")
 
     def all_possible_moves(self, input_color):
         """
