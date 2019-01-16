@@ -1,40 +1,54 @@
-# -*- coding: utf-8 -*-
-
-"""
-Chess playing program
-Everything starts here
-
-
-8 ║♜♞♝♛♚♝♞♜
-7 ║♟♟♟♟♟♟♟♟
-6 ║…………………………………
-5 ║…………………………………
-4 ║…………………………………
-3 ║…………………………………
-2 ║♙♙♙♙♙♙♙♙
-1 ║♖♘♗♕♔♗♘♖
---╚═══════════════
-——-a b c d e f g h
-
-"""
+########################################################################
+########################################################################
+# AUTHOR	: Max Yurchenko
+# TWITTER	: @mv_yruchenko
+# MAIL		:mv.yurchenko.dev@gmail.come
+# LICENCE	: GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+########################################################################
 
 
-from Chess import color, Human, Game
-import os
+# Import object classes
+from board import *
+from engine import *
 
+b=Board()
+e=Engine()
 
-def main():
-    """
-    Main method
-    """
-    print("Creating a new game...")
+while(True):
 
-    new_game = Game(Human(color.white), Human(color.black))
-    result = new_game.play()
+    b.render()
 
-    print("Result is ", result)
+    c=input('>>> ')
 
+    if c == 'quit' or c == 'exit':
+        exit(0)
 
-if __name__ == "__main__":
-    # os.system("pip3 install -r requirements.txt")
-    main()
+    elif c == 'undomove':
+        e.undomove(b)
+
+    elif 'setboard' in c:
+        e.setboard(b,c) 
+
+    elif c == 'getboard':
+        e.getboard(b)
+
+    elif c =='go':
+        e.search(b)
+
+    elif c=='new' :
+        e.newgame(b)
+
+    elif c=='bench' :
+        e.bench(b)        
+
+    elif 'sd ' in c :
+        e.setDepth(c)
+
+    elif 'perft ' in c:
+        e.perft(c,b)        
+
+    elif c=='legalmoves':
+        e.legalmoves(b)
+        
+    else:
+        e.usermove(b,c)
